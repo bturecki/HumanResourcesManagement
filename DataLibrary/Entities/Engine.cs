@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Dapper;
 using System.Data.SQLite;
 using DataLibrary.Abstract;
+using System;
 
 namespace DataLibrary.Entities
 {
@@ -16,46 +17,18 @@ namespace DataLibrary.Entities
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<PersonModel>("select * from Person p left join PersonDepartament pd on p.id = pd.personid", new DynamicParameters());
+                var output = cnn.Query<PersonModel>("select * from Person p inner join PersonDepartament pd on p.id = pd.personid", new DynamicParameters());
                 return output.ToList<IPersonModel>();
             }
         }
         public void SavePerson(IPersonModel pPersonModel)
         {
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString())) // dodać tranzakcje https://www.youtube.com/watch?v=eKkh5Xm0OlU&ab_channel=IAmTimCorey
             {
                 cnn.Execute("insert into Person (FirstName, LastName, Salary) values (@FirstName, @LastName, @Salary)", pPersonModel);
+                pPersonModel.ID = cnn.Query<int>("select max(id) from Person", new DynamicParameters()).Single();
+                cnn.Execute("insert into PersonDepartament (PersonID, DepartamentID) values (@ID, @DepartamentID)", pPersonModel);
             }
-            /* SQLiteConnection sqConnection = new SQLiteConnection(LoadConnectionString());
-             sqConnection.Open();
-
-             SQLiteCommand sqCommand = new SQLiteCommand();
-             sqCommand.Connection = sqConnection;
-             SQLiteTransaction myTrans;
-
-             myTrans = sqConnection.BeginTransaction();
-             sqCommand.Transaction = myTrans;
-
-             try
-             {
-                 sqCommand.CommandText = $"INSERT INTO Person(FirstName, LastName, Salary) Values('{pPersonModel.FirstName}', '{pPersonModel.LastName}', {pPersonModel.Salary})";
-                 sqCommand.ExecuteNonQuery();
-
-                 sqCommand.CommandText = "select seq from sqlite_sequence where name='Person'; ";
-                 pPersonModel.ID = Convert.ToInt32(sqCommand.ExecuteScalar());
-
-                 sqCommand.CommandText = $"INSERT INTO PersonDepartament(PersonID, DepartamentID) Values({pPersonModel.ID}, {pPersonModel.DepartamentID})";
-
-                 myTrans.Commit();
-             }
-             catch (Exception e)
-             {
-                 myTrans.Rollback();
-             }
-             finally
-             {
-                 sqConnection.Close();
-             }*/
         }
         public List<IDepartament> GetAllDepartaments()
         {
@@ -68,6 +41,13 @@ namespace DataLibrary.Entities
         private static string LoadConnectionString(string id = "Default")
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
+        }
+        public void SaveDepartament(IDepartament pDepartament)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("insert into Departament (Name) values (@Name)", pDepartament);
+            }
         }
     }
 }

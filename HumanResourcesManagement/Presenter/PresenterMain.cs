@@ -15,6 +15,12 @@ namespace HumanResourcesManagement.Presenter
         {
             View = pView;
             View.PeopleBtnClick += View_PeopleBtnClick;
+            View.DepartamentsBtnClick += View_DepartamentsBtnClick;
+        }
+
+        private void View_DepartamentsBtnClick()
+        {
+            View.OpenDepartamentsView();
         }
 
         private void View_PeopleBtnClick()

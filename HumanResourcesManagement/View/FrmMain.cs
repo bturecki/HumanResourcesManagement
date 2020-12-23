@@ -22,6 +22,7 @@ namespace HumanResourcesManagement
         }
 
         public event Action PeopleBtnClick;
+        public event Action DepartamentsBtnClick;
 
         private void btnPeople_Click(object sender, EventArgs e)
         {
@@ -33,6 +34,18 @@ namespace HumanResourcesManagement
             using (var _frmPeople = new FrmPeople())
             {
                 _frmPeople.ShowDialog();
+            }
+        }
+
+        private void btnShowDepartaments_Click(object sender, EventArgs e)
+        {
+            DepartamentsBtnClick();
+        }
+        public void OpenDepartamentsView()
+        {
+            using (var _frmDepartaments = new FrmDepartaments())
+            {
+                _frmDepartaments.ShowDialog();
             }
         }
     }

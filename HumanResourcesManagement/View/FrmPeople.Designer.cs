@@ -37,7 +37,6 @@ namespace HumanResourcesManagement.View
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DepartamentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPersonModelBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -54,8 +53,7 @@ namespace HumanResourcesManagement.View
             this.iDDataGridViewTextBoxColumn,
             this.firstNameDataGridViewTextBoxColumn,
             this.lastNameDataGridViewTextBoxColumn,
-            this.Salary,
-            this.DepartamentID});
+            this.Salary});
             this.dataGridView1.DataSource = this.iPersonModelBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
@@ -109,13 +107,6 @@ namespace HumanResourcesManagement.View
             this.Salary.Name = "Salary";
             this.Salary.ReadOnly = true;
             // 
-            // DepartamentID
-            // 
-            this.DepartamentID.DataPropertyName = "DepartamentID";
-            this.DepartamentID.HeaderText = "DepartamentID";
-            this.DepartamentID.Name = "DepartamentID";
-            this.DepartamentID.ReadOnly = true;
-            // 
             // FrmPeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,6 +132,5 @@ namespace HumanResourcesManagement.View
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Salary;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DepartamentID;
     }
 }

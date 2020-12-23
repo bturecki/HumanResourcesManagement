@@ -13,7 +13,6 @@ namespace DataLibrary.Abstract
         string FirstName { get; set; }
         string LastName { get; set; }
         decimal Salary { get; set; }
-
         bool Validate(out string pResult);
     }
 }

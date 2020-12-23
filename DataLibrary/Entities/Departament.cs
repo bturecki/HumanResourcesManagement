@@ -9,6 +9,13 @@ namespace DataLibrary.Entities
 {
     class Departament : IDepartament
     {
+        public Departament(string pName)
+        {
+            Name = pName ?? throw new ArgumentNullException(nameof(pName));
+        }
+        public Departament()
+        {
+        }
         public int ID { get; set; }
         public string Name { get; set; }
     }

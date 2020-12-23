@@ -18,5 +18,9 @@ namespace DataLibrary
         {
             return new PersonModel(pFirstName, pLastName, pSalary, pDepartamentID);
         }
+        public static IDepartament GetDepartament(string pName)
+        {
+            return new Departament(pName);
+        }
     }
 }
