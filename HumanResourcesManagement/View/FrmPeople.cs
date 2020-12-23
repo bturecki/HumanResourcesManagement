@@ -1,16 +1,8 @@
-﻿using DataLibrary;
-using DataLibrary.Abstract;
-using DataLibrary.Entities;
+﻿using DataLibrary.Abstract;
 using HumanResourcesManagement.Interface;
 using HumanResourcesManagement.Presenter;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HumanResourcesManagement.View
@@ -41,9 +33,9 @@ namespace HumanResourcesManagement.View
         }
         public void OpenAddingNewPerson(IPersonModel pPersonModel)
         {
-            using (var _frmAddEditPerson = new FrmAddEditPerson(pPersonModel))
+            using (FrmAddEditPerson _frmAddEditPerson = new FrmAddEditPerson(pPersonModel))
             {
-                if(_frmAddEditPerson.ShowDialog()==DialogResult.OK)
+                if (_frmAddEditPerson.ShowDialog() == DialogResult.OK)
                     PersonEdited();
             }
         }

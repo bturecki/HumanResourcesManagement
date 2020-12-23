@@ -1,16 +1,8 @@
-﻿using DataLibrary;
-using DataLibrary.Abstract;
-using DataLibrary.Entities;
+﻿using DataLibrary.Abstract;
 using HumanResourcesManagement.Interface;
 using HumanResourcesManagement.Presenter;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HumanResourcesManagement.View
@@ -41,9 +33,9 @@ namespace HumanResourcesManagement.View
         }
         public void OpenAddingNewDepartament(IDepartament pDepartament)
         {
-            using (var _frmAddEditDepartament = new FrmAddEditDepartament(pDepartament))
+            using (FrmAddEditDepartament _frmAddEditDepartament = new FrmAddEditDepartament(pDepartament))
             {
-                if(_frmAddEditDepartament.ShowDialog()==DialogResult.OK)
+                if (_frmAddEditDepartament.ShowDialog() == DialogResult.OK)
                     DepartamentEdited();
             }
         }

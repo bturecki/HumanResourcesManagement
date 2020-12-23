@@ -3,12 +3,6 @@ using HumanResourcesManagement.Interface;
 using HumanResourcesManagement.Presenter;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HumanResourcesManagement.View
@@ -32,19 +26,16 @@ namespace HumanResourcesManagement.View
         {
             SaveBtnClick();
         }
-
         private void FrmAddEditPerson_Shown(object sender, EventArgs e)
         {
             FrmShown();
         }
-
         public void FillDepartaments(List<IDepartament> pDepartaments)
         {
             ((ListBox)listBoxDepartaments).DataSource = pDepartaments;
             ((ListBox)listBoxDepartaments).DisplayMember = "Name";
             ((ListBox)listBoxDepartaments).ValueMember = "ID";
         }
-
         public void ShowMessageBox(string pMessage)
         {
             MessageBox.Show(pMessage);

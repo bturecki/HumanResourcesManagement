@@ -1,11 +1,6 @@
 ﻿using DataLibrary;
 using DataLibrary.Abstract;
 using HumanResourcesManagement.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HumanResourcesManagement.Presenter
 {

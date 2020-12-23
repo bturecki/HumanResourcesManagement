@@ -2,13 +2,6 @@
 using HumanResourcesManagement.Presenter;
 using HumanResourcesManagement.View;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HumanResourcesManagement
@@ -31,19 +24,18 @@ namespace HumanResourcesManagement
 
         public void OpenPeopleView()
         {
-            using (var _frmPeople = new FrmPeople())
+            using (FrmPeople _frmPeople = new FrmPeople())
             {
                 _frmPeople.ShowDialog();
             }
         }
-
         private void btnShowDepartaments_Click(object sender, EventArgs e)
         {
             DepartamentsBtnClick();
         }
         public void OpenDepartamentsView()
         {
-            using (var _frmDepartaments = new FrmDepartaments())
+            using (FrmDepartaments _frmDepartaments = new FrmDepartaments())
             {
                 _frmDepartaments.ShowDialog();
             }
