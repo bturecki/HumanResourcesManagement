@@ -11,6 +11,8 @@ namespace DataLibrary.Abstract
         List<IPersonModel> GetAllPeople();
         List<IDepartament> GetAllDepartaments();
         void SavePerson(IPersonModel pPersonModel);
+        void UpdatePerson(IPersonModel pPersonModel);
         void SaveDepartament(IDepartament pDepartament);
+        void UpdateDepartament(IDepartament pDepartament);
     }
 }

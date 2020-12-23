@@ -28,7 +28,18 @@ namespace HumanResourcesManagement.Presenter
                 View.ShowMessageBox("Departament name can not be null or empty!");
                 return;
             }
-            Engine.SaveDepartament(Factory.GetDepartament(View.DepartamentName));
+            if (Departament == null)
+                Engine.SaveDepartament(Factory.GetDepartament(View.DepartamentName));
+            else
+            {
+                if (Departament.Name == View.DepartamentName)
+                {
+                    View.ShowMessageBox("New departament name can not be equal to the old departament name.");
+                    return;
+                }
+                Departament.Name = View.DepartamentName;
+                Engine.UpdateDepartament(Departament);
+            }
             View.SetDialogResultOK();
         }
     }

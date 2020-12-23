@@ -1,6 +1,7 @@
 ﻿using DataLibrary;
 using DataLibrary.Abstract;
 using HumanResourcesManagement.Interface;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace HumanResourcesManagement.Presenter
@@ -41,12 +42,22 @@ namespace HumanResourcesManagement.Presenter
                 return;
             }
 
-            Engine.SavePerson(_person);
+            if (PersonModel == null)
+                Engine.SavePerson(_person);
+            else
+            {
+                PersonModel.FirstName = _person.FirstName;
+                PersonModel.LastName = _person.LastName;
+                PersonModel.Salary = _person.Salary;
+                PersonModel.DepartamentID = _person.DepartamentID;
+                Engine.UpdatePerson(PersonModel);
+            }
+
             View.SetDialogResultOK();
         }
         private void View_FrmShown()
         {
-            var _departaments = Engine.GetAllDepartaments();
+            List<IDepartament> _departaments = Engine.GetAllDepartaments();
             View.FillDepartaments(_departaments);
             if (PersonModel != null)
                 View.SelectedDepartament = _departaments.Where(x => x.ID == PersonModel.DepartamentID).Single();

@@ -14,7 +14,7 @@ namespace DataLibrary.Entities
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                IEnumerable<PersonModel> output = cnn.Query<PersonModel>("select * from Person p inner join PersonDepartament pd on p.id = pd.personid", new DynamicParameters());
+                IEnumerable<PersonModel> output = cnn.Query<PersonModel>("select p.id, p.firstname, p.lastname, p.salary, pd.departamentid from Person p inner join PersonDepartament pd on p.id = pd.personid", new DynamicParameters());
                 return output.ToList<IPersonModel>();
             }
         }
@@ -45,6 +45,21 @@ namespace DataLibrary.Entities
         private static string LoadConnectionString(string id = "Default")
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
+        }
+        public void UpdatePerson(IPersonModel pPersonModel)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString())) // dodać tranzakcje https://www.youtube.com/watch?v=eKkh5Xm0OlU&ab_channel=IAmTimCorey
+            {
+                cnn.Execute("update Person set FirstName = @FirstName, LastName = @LastName, Salary = @Salary where ID = @ID", pPersonModel);
+                cnn.Execute("update PersonDepartament set DepartamentID = @DepartamentID where PersonID = @ID", pPersonModel);
+            }
+        }
+        public void UpdateDepartament(IDepartament pDepartament)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("update Departament set Name = @Name where ID = @ID", pDepartament);
+            }
         }
     }
 }
