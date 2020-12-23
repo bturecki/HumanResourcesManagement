@@ -30,41 +30,40 @@ namespace HumanResourcesManagement.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iPersonModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridPeople = new System.Windows.Forms.DataGridView();
             this.btnAddNewPerson = new System.Windows.Forms.Button();
+            this.iPersonModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPeople)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPersonModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // gridPeople
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gridPeople.AllowUserToAddRows = false;
+            this.gridPeople.AllowUserToDeleteRows = false;
+            this.gridPeople.AutoGenerateColumns = false;
+            this.gridPeople.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridPeople.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.gridPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridPeople.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
             this.firstNameDataGridViewTextBoxColumn,
             this.lastNameDataGridViewTextBoxColumn,
-            this.Salary});
-            this.dataGridView1.DataSource = this.iPersonModelBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(616, 485);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // iPersonModelBindingSource
-            // 
-            this.iPersonModelBindingSource.DataSource = typeof(DataLibrary.Abstract.IPersonModel);
+            this.Salary,
+            this.Edit});
+            this.gridPeople.DataSource = this.iPersonModelBindingSource;
+            this.gridPeople.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridPeople.Location = new System.Drawing.Point(0, 0);
+            this.gridPeople.Name = "gridPeople";
+            this.gridPeople.ReadOnly = true;
+            this.gridPeople.Size = new System.Drawing.Size(616, 485);
+            this.gridPeople.TabIndex = 0;
+            this.gridPeople.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPeople_CellContentClick);
             // 
             // btnAddNewPerson
             // 
@@ -78,6 +77,10 @@ namespace HumanResourcesManagement.View
             this.btnAddNewPerson.Text = "Add new person";
             this.btnAddNewPerson.UseVisualStyleBackColor = true;
             this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
+            // 
+            // iPersonModelBindingSource
+            // 
+            this.iPersonModelBindingSource.DataSource = typeof(DataLibrary.Abstract.IPersonModel);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -107,30 +110,42 @@ namespace HumanResourcesManagement.View
             this.Salary.Name = "Salary";
             this.Salary.ReadOnly = true;
             // 
+            // Edit
+            // 
+            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Edit";
+            this.Edit.ToolTipText = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
+            this.Edit.Width = 31;
+            // 
             // FrmPeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 485);
             this.Controls.Add(this.btnAddNewPerson);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gridPeople);
             this.Name = "FrmPeople";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "List of people";
             this.Shown += new System.EventHandler(this.FrmPeople_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPeople)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPersonModelBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridPeople;
         private System.Windows.Forms.BindingSource iPersonModelBindingSource;
         private System.Windows.Forms.Button btnAddNewPerson;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Salary;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
     }
 }

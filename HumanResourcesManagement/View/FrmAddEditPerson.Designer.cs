@@ -29,18 +29,24 @@ namespace HumanResourcesManagement.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tbFirstName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbLastName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.listBoxDepartaments = new System.Windows.Forms.CheckedListBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.numSalary = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.gridDepartaments = new System.Windows.Forms.DataGridView();
+            this.iDepartamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSalary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDepartaments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iDepartamentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -52,12 +58,12 @@ namespace HumanResourcesManagement.View
             this.flowLayoutPanel1.Controls.Add(this.label3);
             this.flowLayoutPanel1.Controls.Add(this.numSalary);
             this.flowLayoutPanel1.Controls.Add(this.label4);
-            this.flowLayoutPanel1.Controls.Add(this.listBoxDepartaments);
+            this.flowLayoutPanel1.Controls.Add(this.gridDepartaments);
             this.flowLayoutPanel1.Controls.Add(this.btnSave);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(488, 260);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(488, 320);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -106,6 +112,14 @@ namespace HumanResourcesManagement.View
             this.label3.TabIndex = 4;
             this.label3.Text = "Salary";
             // 
+            // numSalary
+            // 
+            this.numSalary.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.numSalary.Location = new System.Drawing.Point(3, 94);
+            this.numSalary.Name = "numSalary";
+            this.numSalary.Size = new System.Drawing.Size(485, 20);
+            this.numSalary.TabIndex = 9;
+            // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -116,19 +130,10 @@ namespace HumanResourcesManagement.View
             this.label4.TabIndex = 6;
             this.label4.Text = "Departament";
             // 
-            // listBoxDepartaments
-            // 
-            this.listBoxDepartaments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBoxDepartaments.FormattingEnabled = true;
-            this.listBoxDepartaments.Location = new System.Drawing.Point(3, 133);
-            this.listBoxDepartaments.Name = "listBoxDepartaments";
-            this.listBoxDepartaments.Size = new System.Drawing.Size(485, 94);
-            this.listBoxDepartaments.TabIndex = 7;
-            // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(3, 233);
+            this.btnSave.Location = new System.Drawing.Point(3, 289);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(485, 23);
             this.btnSave.TabIndex = 8;
@@ -136,19 +141,50 @@ namespace HumanResourcesManagement.View
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // numSalary
+            // gridDepartaments
             // 
-            this.numSalary.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.numSalary.Location = new System.Drawing.Point(3, 94);
-            this.numSalary.Name = "numSalary";
-            this.numSalary.Size = new System.Drawing.Size(485, 20);
-            this.numSalary.TabIndex = 9;
+            this.gridDepartaments.AllowUserToAddRows = false;
+            this.gridDepartaments.AllowUserToDeleteRows = false;
+            this.gridDepartaments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridDepartaments.AutoGenerateColumns = false;
+            this.gridDepartaments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridDepartaments.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.gridDepartaments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridDepartaments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn});
+            this.gridDepartaments.DataSource = this.iDepartamentBindingSource;
+            this.gridDepartaments.Location = new System.Drawing.Point(3, 133);
+            this.gridDepartaments.Name = "gridDepartaments";
+            this.gridDepartaments.ReadOnly = true;
+            this.gridDepartaments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridDepartaments.Size = new System.Drawing.Size(485, 150);
+            this.gridDepartaments.TabIndex = 10;
+            // 
+            // iDepartamentBindingSource
+            // 
+            this.iDepartamentBindingSource.DataSource = typeof(DataLibrary.Abstract.IDepartament);
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FrmAddEditPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 260);
+            this.ClientSize = new System.Drawing.Size(488, 320);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -160,6 +196,8 @@ namespace HumanResourcesManagement.View
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSalary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDepartaments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iDepartamentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -173,8 +211,11 @@ namespace HumanResourcesManagement.View
         private System.Windows.Forms.TextBox tbLastName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckedListBox listBoxDepartaments;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.NumericUpDown numSalary;
+        private System.Windows.Forms.DataGridView gridDepartaments;
+        private System.Windows.Forms.BindingSource iDepartamentBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
     }
 }

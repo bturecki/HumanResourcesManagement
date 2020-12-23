@@ -9,6 +9,8 @@ namespace HumanResourcesManagement.View
 {
     public partial class FrmDepartaments : Form, IDepartaments
     {
+        public IDepartament SelectedRow => (IDepartament)gridDepartaments.CurrentRow.DataBoundItem;
+
         public FrmDepartaments()
         {
             InitializeComponent();
@@ -18,6 +20,7 @@ namespace HumanResourcesManagement.View
         public event Action FrmShown;
         public event Action AddNewDepartamentBtnClick;
         public event Action DepartamentEdited;
+        public event Action EditBtnClick;
 
         public void FillGridDepartaments(List<IDepartament> pDepartaments)
         {
@@ -38,6 +41,13 @@ namespace HumanResourcesManagement.View
                 if (_frmAddEditDepartament.ShowDialog() == DialogResult.OK)
                     DepartamentEdited();
             }
+        }
+        private void gridDepartaments_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+                EditBtnClick();
         }
     }
 }

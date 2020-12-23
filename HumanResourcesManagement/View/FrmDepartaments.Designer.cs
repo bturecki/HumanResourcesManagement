@@ -30,31 +30,38 @@ namespace HumanResourcesManagement.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnAddNewDepartament = new System.Windows.Forms.Button();
+            this.gridDepartaments = new System.Windows.Forms.DataGridView();
             this.iDepartamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnAddNewDepartament = new System.Windows.Forms.Button();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDepartaments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iDepartamentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // gridDepartaments
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.iDepartamentBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(616, 485);
-            this.dataGridView1.TabIndex = 0;
+            this.gridDepartaments.AllowUserToAddRows = false;
+            this.gridDepartaments.AllowUserToDeleteRows = false;
+            this.gridDepartaments.AutoGenerateColumns = false;
+            this.gridDepartaments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridDepartaments.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.gridDepartaments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridDepartaments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.Edit});
+            this.gridDepartaments.DataSource = this.iDepartamentBindingSource;
+            this.gridDepartaments.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridDepartaments.Location = new System.Drawing.Point(0, 0);
+            this.gridDepartaments.Name = "gridDepartaments";
+            this.gridDepartaments.ReadOnly = true;
+            this.gridDepartaments.Size = new System.Drawing.Size(616, 485);
+            this.gridDepartaments.TabIndex = 0;
+            this.gridDepartaments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDepartaments_CellContentClick);
+            // 
+            // iDepartamentBindingSource
+            // 
+            this.iDepartamentBindingSource.DataSource = typeof(DataLibrary.Abstract.IDepartament);
             // 
             // btnAddNewDepartament
             // 
@@ -69,10 +76,6 @@ namespace HumanResourcesManagement.View
             this.btnAddNewDepartament.UseVisualStyleBackColor = true;
             this.btnAddNewDepartament.Click += new System.EventHandler(this.btnAddNewPerson_Click);
             // 
-            // iDepartamentBindingSource
-            // 
-            this.iDepartamentBindingSource.DataSource = typeof(DataLibrary.Abstract.IDepartament);
-            // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
@@ -80,27 +83,39 @@ namespace HumanResourcesManagement.View
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // Edit
+            // 
+            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Edit";
+            this.Edit.ToolTipText = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
+            this.Edit.Width = 31;
+            // 
             // FrmDepartaments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 485);
             this.Controls.Add(this.btnAddNewDepartament);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gridDepartaments);
             this.Name = "FrmDepartaments";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "List of departaments";
             this.Shown += new System.EventHandler(this.FrmPeople_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDepartaments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iDepartamentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridDepartaments;
         private System.Windows.Forms.Button btnAddNewDepartament;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource iDepartamentBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
     }
 }

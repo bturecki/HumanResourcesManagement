@@ -1,13 +1,10 @@
-﻿using System.Data;
+﻿using Dapper;
+using DataLibrary.Abstract;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dapper;
+using System.Data;
 using System.Data.SQLite;
-using DataLibrary.Abstract;
-using System;
+using System.Linq;
 
 namespace DataLibrary.Entities
 {
@@ -17,7 +14,7 @@ namespace DataLibrary.Entities
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<PersonModel>("select * from Person p inner join PersonDepartament pd on p.id = pd.personid", new DynamicParameters());
+                IEnumerable<PersonModel> output = cnn.Query<PersonModel>("select * from Person p inner join PersonDepartament pd on p.id = pd.personid", new DynamicParameters());
                 return output.ToList<IPersonModel>();
             }
         }
@@ -34,13 +31,9 @@ namespace DataLibrary.Entities
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<Departament>("select * from Departament", new DynamicParameters());
+                IEnumerable<Departament> output = cnn.Query<Departament>("select * from Departament", new DynamicParameters());
                 return output.ToList<IDepartament>();
             }
-        }
-        private static string LoadConnectionString(string id = "Default")
-        {
-            return ConfigurationManager.ConnectionStrings[id].ConnectionString;
         }
         public void SaveDepartament(IDepartament pDepartament)
         {
@@ -48,6 +41,10 @@ namespace DataLibrary.Entities
             {
                 cnn.Execute("insert into Departament (Name) values (@Name)", pDepartament);
             }
+        }
+        private static string LoadConnectionString(string id = "Default")
+        {
+            return ConfigurationManager.ConnectionStrings[id].ConnectionString;
         }
     }
 }

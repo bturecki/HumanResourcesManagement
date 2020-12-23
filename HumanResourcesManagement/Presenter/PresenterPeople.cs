@@ -16,8 +16,13 @@ namespace HumanResourcesManagement.Presenter
             View.FrmShown += View_FrmShown;
             View.AddNewPersonBtnClick += View_AddNewPersonBtnClick;
             View.PersonEdited += View_PersonEdited;
+            View.EditBtnClick += View_EditBtnClick;
         }
 
+        private void View_EditBtnClick()
+        {
+            View.OpenAddingNewPerson(View.SelectedRow);
+        }
         private void View_PersonEdited()
         {
             FillAllPeople();

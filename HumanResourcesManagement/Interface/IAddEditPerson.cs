@@ -9,6 +9,7 @@ namespace HumanResourcesManagement.Interface
         string FirstName { get; set; }
         string LastName { get; set; }
         decimal Salary { get; set; }
+        IDepartament SelectedDepartament { get; set; }
 
         event Action SaveBtnClick;
         event Action FrmShown;

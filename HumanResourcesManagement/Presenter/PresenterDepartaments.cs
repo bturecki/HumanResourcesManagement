@@ -16,8 +16,13 @@ namespace HumanResourcesManagement.Presenter
             View.FrmShown += View_FrmShown;
             View.AddNewDepartamentBtnClick += View_AddNewDepartamentBtnClick;
             View.DepartamentEdited += View_DepartamentEdited;
+            View.EditBtnClick += View_EditBtnClick;
         }
 
+        private void View_EditBtnClick()
+        {
+            View.OpenAddingNewDepartament(View.SelectedRow);
+        }
         private void View_AddNewDepartamentBtnClick()
         {
             View.OpenAddingNewDepartament(null);

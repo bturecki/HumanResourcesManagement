@@ -3,6 +3,7 @@ using HumanResourcesManagement.Interface;
 using HumanResourcesManagement.Presenter;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace HumanResourcesManagement.View
@@ -12,6 +13,18 @@ namespace HumanResourcesManagement.View
         public string FirstName { get => tbFirstName.Text; set => tbFirstName.Text = value; }
         public string LastName { get => tbLastName.Text; set => tbLastName.Text = value; }
         public decimal Salary { get => numSalary.Value; set => numSalary.Value = value; }
+        public IDepartament SelectedDepartament
+        {
+            get
+            {
+                return (IDepartament)gridDepartaments.CurrentRow.DataBoundItem;
+            }
+            set
+            {
+                gridDepartaments.ClearSelection();
+                gridDepartaments.Rows.OfType<DataGridViewRow>().Where(x => (int)x.Cells["iDDataGridViewTextBoxColumn"].Value == value.ID).ToArray<DataGridViewRow>()[0].Selected = true;
+            }
+        }
 
         public event Action SaveBtnClick;
         public event Action FrmShown;
@@ -32,9 +45,7 @@ namespace HumanResourcesManagement.View
         }
         public void FillDepartaments(List<IDepartament> pDepartaments)
         {
-            ((ListBox)listBoxDepartaments).DataSource = pDepartaments;
-            ((ListBox)listBoxDepartaments).DisplayMember = "Name";
-            ((ListBox)listBoxDepartaments).ValueMember = "ID";
+            iDepartamentBindingSource.DataSource = pDepartaments;
         }
         public void ShowMessageBox(string pMessage)
         {

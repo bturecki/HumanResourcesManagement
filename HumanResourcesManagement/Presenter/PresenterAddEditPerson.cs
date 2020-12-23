@@ -1,6 +1,7 @@
 ﻿using DataLibrary;
 using DataLibrary.Abstract;
 using HumanResourcesManagement.Interface;
+using System.Linq;
 
 namespace HumanResourcesManagement.Presenter
 {
@@ -29,7 +30,7 @@ namespace HumanResourcesManagement.Presenter
 
         private void View_SaveBtnClick()
         {
-            IPersonModel _person = Factory.GetPersonModel(View.FirstName, View.LastName, View.Salary, 2);
+            IPersonModel _person = Factory.GetPersonModel(View.FirstName, View.LastName, View.Salary, View.SelectedDepartament.ID);
 
             string output;
 
@@ -43,11 +44,12 @@ namespace HumanResourcesManagement.Presenter
             Engine.SavePerson(_person);
             View.SetDialogResultOK();
         }
-
         private void View_FrmShown()
         {
-            System.Collections.Generic.List<IDepartament> _departaments = Engine.GetAllDepartaments();
+            var _departaments = Engine.GetAllDepartaments();
             View.FillDepartaments(_departaments);
+            if (PersonModel != null)
+                View.SelectedDepartament = _departaments.Where(x => x.ID == PersonModel.DepartamentID).Single();
         }
     }
 }
