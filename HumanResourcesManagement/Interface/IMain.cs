@@ -7,6 +7,7 @@ namespace HumanResourcesManagement.Interface
         event Action PeopleBtnClick;
         event Action DepartamentsBtnClick;
 
+        string LabelCreator { set; }
         void OpenPeopleView();
         void OpenDepartamentsView();
     }

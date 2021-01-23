@@ -29,6 +29,7 @@ namespace HumanResourcesManagement.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddEditDepartament));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
@@ -44,7 +45,7 @@ namespace HumanResourcesManagement.View
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(488, 72);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(490, 72);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -57,11 +58,11 @@ namespace HumanResourcesManagement.View
             this.label1.TabIndex = 0;
             this.label1.Text = "Departament name";
             // 
-            // tbFirstName
+            // tbName
             // 
             this.tbName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tbName.Location = new System.Drawing.Point(3, 16);
-            this.tbName.Name = "tbFirstName";
+            this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(485, 20);
             this.tbName.TabIndex = 1;
             // 
@@ -80,9 +81,10 @@ namespace HumanResourcesManagement.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 72);
+            this.ClientSize = new System.Drawing.Size(490, 72);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmAddEditDepartament";

@@ -30,11 +30,12 @@ namespace HumanResourcesManagement.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDepartaments));
             this.gridDepartaments = new System.Windows.Forms.DataGridView();
-            this.iDepartamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnAddNewDepartament = new System.Windows.Forms.Button();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.iDepartamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridDepartaments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iDepartamentBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -59,14 +60,20 @@ namespace HumanResourcesManagement.View
             this.gridDepartaments.TabIndex = 0;
             this.gridDepartaments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDepartaments_CellContentClick);
             // 
-            // iDepartamentBindingSource
+            // Edit
             // 
-            this.iDepartamentBindingSource.DataSource = typeof(DataLibrary.Abstract.IDepartament);
+            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Edit";
+            this.Edit.ToolTipText = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
+            this.Edit.Width = 31;
             // 
             // btnAddNewDepartament
             // 
-            this.btnAddNewDepartament.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnAddNewDepartament.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddNewDepartament.Location = new System.Drawing.Point(0, 462);
             this.btnAddNewDepartament.Name = "btnAddNewDepartament";
@@ -83,24 +90,19 @@ namespace HumanResourcesManagement.View
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Edit
+            // iDepartamentBindingSource
             // 
-            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Text = "Edit";
-            this.Edit.ToolTipText = "Edit";
-            this.Edit.UseColumnTextForButtonValue = true;
-            this.Edit.Width = 31;
+            this.iDepartamentBindingSource.DataSource = typeof(DataLibrary.Abstract.IDepartament);
             // 
             // FrmDepartaments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(616, 485);
             this.Controls.Add(this.btnAddNewDepartament);
             this.Controls.Add(this.gridDepartaments);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmDepartaments";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "List of departaments";

@@ -29,63 +29,73 @@ namespace HumanResourcesManagement
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.btnPeople = new System.Windows.Forms.Button();
             this.btnShowDepartaments = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.lblCreator = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.btnPeople);
-            this.flowLayoutPanel1.Controls.Add(this.btnShowDepartaments);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(580, 371);
-            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnPeople
             // 
-            this.btnPeople.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPeople.Location = new System.Drawing.Point(3, 3);
+            this.btnPeople.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPeople.Location = new System.Drawing.Point(12, 12);
             this.btnPeople.Name = "btnPeople";
-            this.btnPeople.Size = new System.Drawing.Size(574, 23);
-            this.btnPeople.TabIndex = 0;
-            this.btnPeople.Text = "Show all people";
+            this.btnPeople.Size = new System.Drawing.Size(631, 33);
+            this.btnPeople.TabIndex = 2;
+            this.btnPeople.Text = "Manage people";
             this.btnPeople.UseVisualStyleBackColor = true;
-            this.btnPeople.Click += new System.EventHandler(this.btnPeople_Click);
+            this.btnPeople.Click += new System.EventHandler(this.btnPeople_Click_1);
             // 
             // btnShowDepartaments
             // 
-            this.btnShowDepartaments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShowDepartaments.Location = new System.Drawing.Point(3, 32);
+            this.btnShowDepartaments.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShowDepartaments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnShowDepartaments.Location = new System.Drawing.Point(12, 51);
             this.btnShowDepartaments.Name = "btnShowDepartaments";
-            this.btnShowDepartaments.Size = new System.Drawing.Size(574, 23);
-            this.btnShowDepartaments.TabIndex = 1;
-            this.btnShowDepartaments.Text = "Show all departaments";
+            this.btnShowDepartaments.Size = new System.Drawing.Size(631, 33);
+            this.btnShowDepartaments.TabIndex = 3;
+            this.btnShowDepartaments.Text = "Manage departaments";
             this.btnShowDepartaments.UseVisualStyleBackColor = true;
-            this.btnShowDepartaments.Click += new System.EventHandler(this.btnShowDepartaments_Click);
+            this.btnShowDepartaments.Click += new System.EventHandler(this.btnShowDepartaments_Click_1);
+            // 
+            // lblCreator
+            // 
+            this.lblCreator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCreator.AutoSize = true;
+            this.lblCreator.BackColor = System.Drawing.Color.Transparent;
+            this.lblCreator.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreator.Location = new System.Drawing.Point(9, 349);
+            this.lblCreator.Name = "lblCreator";
+            this.lblCreator.Size = new System.Drawing.Size(0, 16);
+            this.lblCreator.TabIndex = 4;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 371);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(655, 371);
+            this.Controls.Add(this.lblCreator);
+            this.Controls.Add(this.btnShowDepartaments);
+            this.Controls.Add(this.btnPeople);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Human resource management system";
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnPeople;
         private System.Windows.Forms.Button btnShowDepartaments;
+        private System.Windows.Forms.Label lblCreator;
     }
 }
 

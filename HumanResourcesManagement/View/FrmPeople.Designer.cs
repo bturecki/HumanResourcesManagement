@@ -30,14 +30,15 @@ namespace HumanResourcesManagement.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPeople));
             this.gridPeople = new System.Windows.Forms.DataGridView();
+            this.Salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnAddNewPerson = new System.Windows.Forms.Button();
-            this.iPersonModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.iPersonModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridPeople)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPersonModelBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -61,26 +62,39 @@ namespace HumanResourcesManagement.View
             this.gridPeople.Location = new System.Drawing.Point(0, 0);
             this.gridPeople.Name = "gridPeople";
             this.gridPeople.ReadOnly = true;
-            this.gridPeople.Size = new System.Drawing.Size(616, 485);
+            this.gridPeople.Size = new System.Drawing.Size(626, 485);
             this.gridPeople.TabIndex = 0;
             this.gridPeople.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPeople_CellContentClick);
             // 
+            // Salary
+            // 
+            this.Salary.DataPropertyName = "Salary";
+            this.Salary.HeaderText = "Salary";
+            this.Salary.Name = "Salary";
+            this.Salary.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Edit";
+            this.Edit.ToolTipText = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
+            this.Edit.Width = 31;
+            // 
             // btnAddNewPerson
             // 
-            this.btnAddNewPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnAddNewPerson.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddNewPerson.Location = new System.Drawing.Point(0, 462);
             this.btnAddNewPerson.Name = "btnAddNewPerson";
-            this.btnAddNewPerson.Size = new System.Drawing.Size(616, 23);
+            this.btnAddNewPerson.Size = new System.Drawing.Size(626, 23);
             this.btnAddNewPerson.TabIndex = 1;
             this.btnAddNewPerson.Text = "Add new person";
             this.btnAddNewPerson.UseVisualStyleBackColor = true;
             this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
-            // 
-            // iPersonModelBindingSource
-            // 
-            this.iPersonModelBindingSource.DataSource = typeof(DataLibrary.Abstract.IPersonModel);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -103,31 +117,18 @@ namespace HumanResourcesManagement.View
             this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
             this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Salary
+            // iPersonModelBindingSource
             // 
-            this.Salary.DataPropertyName = "Salary";
-            this.Salary.HeaderText = "Salary";
-            this.Salary.Name = "Salary";
-            this.Salary.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Text = "Edit";
-            this.Edit.ToolTipText = "Edit";
-            this.Edit.UseColumnTextForButtonValue = true;
-            this.Edit.Width = 31;
+            this.iPersonModelBindingSource.DataSource = typeof(DataLibrary.Abstract.IPersonModel);
             // 
             // FrmPeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 485);
+            this.ClientSize = new System.Drawing.Size(626, 485);
             this.Controls.Add(this.btnAddNewPerson);
             this.Controls.Add(this.gridPeople);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPeople";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "List of people";
