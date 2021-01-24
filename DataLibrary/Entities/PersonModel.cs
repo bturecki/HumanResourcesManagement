@@ -27,6 +27,7 @@ namespace DataLibrary.Entities
         public string LastName { get; set; }
         public decimal Salary { get; set; }
         public int DepartamentID { get; set; }
+        public string DepartamentName { get; set; }
 
         public bool Validate(out string pResult)
         {

@@ -14,7 +14,7 @@ namespace DataLibrary.Entities
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                IEnumerable<PersonModel> output = cnn.Query<PersonModel>("select p.id, p.firstname, p.lastname, p.salary, pd.departamentid from Person p inner join PersonDepartament pd on p.id = pd.personid", new DynamicParameters());
+                IEnumerable<PersonModel> output = cnn.Query<PersonModel>("select p.id, p.firstname, p.lastname, p.salary, pd.departamentid, d.name DepartamentName from Person p inner join PersonDepartament pd on p.id = pd.personid inner join Departament d on pd.DepartamentID = d.ID", new DynamicParameters());
                 return output.ToList<IPersonModel>();
             }
         }
