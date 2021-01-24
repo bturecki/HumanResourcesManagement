@@ -33,6 +33,7 @@ namespace HumanResourcesManagement
             this.btnPeople = new System.Windows.Forms.Button();
             this.btnShowDepartaments = new System.Windows.Forms.Button();
             this.lblCreator = new System.Windows.Forms.Label();
+            this.btnManageVacations = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPeople
@@ -73,12 +74,26 @@ namespace HumanResourcesManagement
             this.lblCreator.Size = new System.Drawing.Size(0, 16);
             this.lblCreator.TabIndex = 4;
             // 
+            // btnManageVacations
+            // 
+            this.btnManageVacations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnManageVacations.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnManageVacations.Location = new System.Drawing.Point(12, 90);
+            this.btnManageVacations.Name = "btnManageVacations";
+            this.btnManageVacations.Size = new System.Drawing.Size(631, 33);
+            this.btnManageVacations.TabIndex = 5;
+            this.btnManageVacations.Text = "Manage vacations";
+            this.btnManageVacations.UseVisualStyleBackColor = true;
+            this.btnManageVacations.Click += new System.EventHandler(this.btnManageVacations_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(655, 371);
+            this.Controls.Add(this.btnManageVacations);
             this.Controls.Add(this.lblCreator);
             this.Controls.Add(this.btnShowDepartaments);
             this.Controls.Add(this.btnPeople);
@@ -96,6 +111,7 @@ namespace HumanResourcesManagement
         private System.Windows.Forms.Button btnPeople;
         private System.Windows.Forms.Button btnShowDepartaments;
         private System.Windows.Forms.Label lblCreator;
+        private System.Windows.Forms.Button btnManageVacations;
     }
 }
 

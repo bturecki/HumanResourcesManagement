@@ -74,9 +74,11 @@
     <Compile Include="Abstract\IDepartament.cs" />
     <Compile Include="Abstract\IEngine.cs" />
     <Compile Include="Abstract\IPersonModel.cs" />
+    <Compile Include="Abstract\IPersonVacation.cs" />
     <Compile Include="Entities\Departament.cs" />
     <Compile Include="Entities\Engine.cs" />
     <Compile Include="Entities\PersonModel.cs" />
+    <Compile Include="Entities\PersonVacation.cs" />
     <Compile Include="Factory.cs" />
   </ItemGroup>
   <ItemGroup />

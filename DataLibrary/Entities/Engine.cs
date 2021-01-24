@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using DataLibrary.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -38,9 +39,7 @@ namespace DataLibrary.Entities
         public void SaveDepartament(IDepartament pDepartament)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-            {
                 cnn.Execute("insert into Departament (Name) values (@Name)", pDepartament);
-            }
         }
         private static string LoadConnectionString(string id = "Default")
         {
@@ -57,8 +56,25 @@ namespace DataLibrary.Entities
         public void UpdateDepartament(IDepartament pDepartament)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-            {
                 cnn.Execute("update Departament set Name = @Name where ID = @ID", pDepartament);
+        }
+        public void AddPersonVacation(IPersonModel pPersonModel, DateTime pDateFrom, DateTime pDateTo)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+                cnn.Execute($"insert into Vacation(PersonID, DateFrom, DateTo) values ({pPersonModel.ID}, {ConvertToUnixTimestamp(pDateFrom)}, {ConvertToUnixTimestamp(pDateTo)})");
+        }
+        private static double ConvertToUnixTimestamp(DateTime date)
+        {
+            DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+            TimeSpan diff = date.ToUniversalTime() - origin;
+            return Math.Floor(diff.TotalSeconds);
+        }
+        public List<IPersonVacation> GetAllVacations()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                IEnumerable<PersonVacation> output = cnn.Query<PersonVacation>("select t.id rowid, t.PersonID, t.DateFrom DateFromSec, t.DateTo DateToSec, p.FirstName PersonName, p.LastName PersonLastName from Vacation t inner join Person p on t.PersonID = p.ID;", new DynamicParameters());
+                return output.ToList<IPersonVacation>();
             }
         }
     }

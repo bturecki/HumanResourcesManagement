@@ -69,14 +69,18 @@
   <ItemGroup>
     <Compile Include="Interface\IAddEditDepartament.cs" />
     <Compile Include="Interface\IAddEditPerson.cs" />
+    <Compile Include="Interface\IAddNewVacation.cs" />
     <Compile Include="Interface\IMain.cs" />
     <Compile Include="Interface\IDepartaments.cs" />
     <Compile Include="Interface\IPeople.cs" />
+    <Compile Include="Interface\IPeopleVacations.cs" />
     <Compile Include="Presenter\PresenterAddEditDepartament.cs" />
     <Compile Include="Presenter\PresenterAddEditPerson.cs" />
+    <Compile Include="Presenter\PresenterAddNewVacation.cs" />
     <Compile Include="Presenter\PresenterMain.cs" />
     <Compile Include="Presenter\PresenterDepartaments.cs" />
     <Compile Include="Presenter\PresenterPeople.cs" />
+    <Compile Include="Presenter\PresenterPeopleVacations.cs" />
     <Compile Include="View\FrmAddEditDepartament.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +92,12 @@
     </Compile>
     <Compile Include="View\FrmAddEditPerson.Designer.cs">
       <DependentUpon>FrmAddEditPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmAddNewVacation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmAddNewVacation.Designer.cs">
+      <DependentUpon>FrmAddNewVacation.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmMain.cs">
       <SubType>Form</SubType>
@@ -109,11 +119,20 @@
     <Compile Include="View\FrmPeople.Designer.cs">
       <DependentUpon>FrmPeople.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmPeopleVacations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmPeopleVacations.Designer.cs">
+      <DependentUpon>FrmPeopleVacations.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\FrmAddEditDepartament.resx">
       <DependentUpon>FrmAddEditDepartament.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmAddEditPerson.resx">
       <DependentUpon>FrmAddEditPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmAddNewVacation.resx">
+      <DependentUpon>FrmAddNewVacation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
@@ -133,9 +152,13 @@
     <EmbeddedResource Include="View\FrmPeople.resx">
       <DependentUpon>FrmPeople.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmPeopleVacations.resx">
+      <DependentUpon>FrmPeopleVacations.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DataLibrary.Abstract.IDepartament.datasource" />
     <None Include="Properties\DataSources\DataLibrary.Abstract.IPersonModel.datasource" />
+    <None Include="Properties\DataSources\DataLibrary.Abstract.IPersonVacation.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

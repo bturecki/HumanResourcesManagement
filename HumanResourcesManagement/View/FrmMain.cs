@@ -18,20 +18,22 @@ namespace HumanResourcesManagement
 
         public event Action PeopleBtnClick;
         public event Action DepartamentsBtnClick;
+        public event Action VacationsBtnClick;
 
         public void OpenPeopleView()
         {
             using (FrmPeople _frmPeople = new FrmPeople())
-            {
                 _frmPeople.ShowDialog();
-            }
         }
         public void OpenDepartamentsView()
         {
             using (FrmDepartaments _frmDepartaments = new FrmDepartaments())
-            {
                 _frmDepartaments.ShowDialog();
-            }
+        }
+        public void OpenVacationsView()
+        {
+            using (FrmPeopleVacations _frmVacations = new FrmPeopleVacations())
+                _frmVacations.ShowDialog();
         }
         private void btnShowDepartaments_Click_1(object sender, EventArgs e)
         {
@@ -41,5 +43,11 @@ namespace HumanResourcesManagement
         {
             PeopleBtnClick();
         }
+
+        private void btnManageVacations_Click(object sender, EventArgs e)
+        {
+            VacationsBtnClick();
+        }
+
     }
 }
