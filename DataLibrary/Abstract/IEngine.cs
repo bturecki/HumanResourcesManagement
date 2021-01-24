@@ -16,5 +16,6 @@ namespace DataLibrary.Abstract
         void SaveDepartament(IDepartament pDepartament);
         void UpdateDepartament(IDepartament pDepartament);
         void AddPersonVacation(IPersonModel pPersonModel, DateTime pDateFrom, DateTime pDateTo);
+        bool CanSaveVacation(IPersonModel pPersonModel, DateTime pDateFrom, DateTime pDateTo);
     }
 }

@@ -77,5 +77,13 @@ namespace DataLibrary.Entities
                 return output.ToList<IPersonVacation>();
             }
         }
+        public bool CanSaveVacation(IPersonModel pPersonModel, DateTime pDateFrom, DateTime pDateTo)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                IEnumerable<PersonVacation> output = cnn.Query<PersonVacation>($"select t.id rowid, t.PersonID, t.DateFrom DateFromSec, t.DateTo DateToSec, p.FirstName PersonName, p.LastName PersonLastName from Vacation t inner join Person p on t.PersonID = p.ID where t.PersonID = {pPersonModel.ID} and (t.DateFrom between {ConvertToUnixTimestamp(pDateFrom)} and {ConvertToUnixTimestamp(pDateTo)}) or (t.DateTo between {ConvertToUnixTimestamp(pDateFrom)} and {ConvertToUnixTimestamp(pDateTo)});", new DynamicParameters());
+                return output.ToList<IPersonVacation>().Count() == 0;
+            }
+        }
     }
 }

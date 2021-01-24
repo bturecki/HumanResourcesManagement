@@ -31,6 +31,11 @@ namespace HumanResourcesManagement.Presenter
                 View.ShowMessageBox("Date to should be greater than date from.");
                 return;
             }
+            if (!Engine.CanSaveVacation(View.Person, _dateFrom, _dateTo))
+            {
+                View.ShowMessageBox("Selected person already has a saved vacation within these dates.");
+                return;
+            }
             Engine.AddPersonVacation(View.Person, _dateFrom, _dateTo);
             View.SetDialogResultOK();
         }
