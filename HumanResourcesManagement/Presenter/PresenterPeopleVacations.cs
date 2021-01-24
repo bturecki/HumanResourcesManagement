@@ -14,10 +14,16 @@ namespace HumanResourcesManagement.Presenter
             Engine = Factory.GetEngine();
             View.FrmShown += ReloadGrid;
             View.AddNewVacationBtnClick += View_AddNewVacationBtnClick;
-            View.VacationAddedDeleted += View_VacationAddedDeleted;
+            View.VacationAdded += View_VacationAdded;
+            View.DeleteRecordBtnClick += View_DeleteRecordBtnClick;
         }
 
-        private void View_VacationAddedDeleted()
+        private void View_DeleteRecordBtnClick(IPersonVacation pPersonVacation)
+        {
+            Engine.DeleteVacation(pPersonVacation);
+            ReloadGrid();
+        }
+        private void View_VacationAdded()
         {
             ReloadGrid();
         }

@@ -12,6 +12,7 @@ namespace DataLibrary.Abstract
         List<IDepartament> GetAllDepartaments();
         List<IPersonVacation> GetAllVacations();
         void SavePerson(IPersonModel pPersonModel);
+        void DeleteVacation(IPersonVacation pPersonVacation);
         void UpdatePerson(IPersonModel pPersonModel);
         void SaveDepartament(IDepartament pDepartament);
         void UpdateDepartament(IDepartament pDepartament);

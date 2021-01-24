@@ -17,7 +17,8 @@ namespace HumanResourcesManagement.View
 
         public event Action FrmShown;
         public event Action AddNewVacationBtnClick;
-        public event Action VacationAddedDeleted;
+        public event Action VacationAdded;
+        public event Action<IPersonVacation> DeleteRecordBtnClick;
 
         public void FillGrid(List<IPersonVacation> pList)
         {
@@ -35,7 +36,12 @@ namespace HumanResourcesManagement.View
         {
             using (FrmAddNewVacation _frmAddNewVacation = new FrmAddNewVacation())
                 if (_frmAddNewVacation.ShowDialog() == DialogResult.OK)
-                    VacationAddedDeleted();
+                    VacationAdded();
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (((DataGridView)sender).Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+                DeleteRecordBtnClick((IPersonVacation)gridVacations.CurrentRow.DataBoundItem);
         }
     }
 }

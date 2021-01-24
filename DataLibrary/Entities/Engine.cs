@@ -85,5 +85,10 @@ namespace DataLibrary.Entities
                 return output.ToList<IPersonVacation>().Count() == 0;
             }
         }
+        public void DeleteVacation(IPersonVacation pPersonVacation)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+                cnn.Execute($"delete from Vacation where ID = {pPersonVacation.RowId};");
+        }
     }
 }
