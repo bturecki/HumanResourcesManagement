@@ -15,7 +15,7 @@ namespace HumanResourcesManagement.Presenter
             Departament = pDepartament;
             View = pView;
             Engine = Factory.GetEngine();
-
+            View.FrmText = Departament == null ? "Adding new departament" : "Departament edit";
             if (Departament != null)
                 View.DepartamentName = Departament.Name;
 

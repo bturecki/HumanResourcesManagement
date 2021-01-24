@@ -7,6 +7,7 @@ namespace HumanResourcesManagement.Interface
         string DepartamentName { get; set; }
 
         event Action SaveBtnClick;
+        string FrmText { set; }
 
         void ShowMessageBox(string pMessage);
         void SetDialogResultOK();

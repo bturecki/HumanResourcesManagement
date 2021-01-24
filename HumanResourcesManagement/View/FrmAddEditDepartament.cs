@@ -9,6 +9,7 @@ namespace HumanResourcesManagement.View
     public partial class FrmAddEditDepartament : Form, IAddEditDepartament
     {
         public string DepartamentName { get => tbName.Text; set => tbName.Text = value; }
+        public string FrmText { set => this.Text = value; }
 
         public event Action SaveBtnClick;
 
