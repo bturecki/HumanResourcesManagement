@@ -44,6 +44,7 @@ namespace HumanResourcesManagement.View
             // 
             this.gridDepartaments.AllowUserToAddRows = false;
             this.gridDepartaments.AllowUserToDeleteRows = false;
+            this.gridDepartaments.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gridDepartaments.AutoGenerateColumns = false;
             this.gridDepartaments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridDepartaments.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -52,11 +53,10 @@ namespace HumanResourcesManagement.View
             this.nameDataGridViewTextBoxColumn,
             this.Edit});
             this.gridDepartaments.DataSource = this.iDepartamentBindingSource;
-            this.gridDepartaments.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridDepartaments.Location = new System.Drawing.Point(0, 0);
+            this.gridDepartaments.Location = new System.Drawing.Point(12, 12);
             this.gridDepartaments.Name = "gridDepartaments";
             this.gridDepartaments.ReadOnly = true;
-            this.gridDepartaments.Size = new System.Drawing.Size(616, 485);
+            this.gridDepartaments.Size = new System.Drawing.Size(736, 494);
             this.gridDepartaments.TabIndex = 0;
             this.gridDepartaments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDepartaments_CellContentClick);
             // 
@@ -73,11 +73,10 @@ namespace HumanResourcesManagement.View
             // 
             // btnAddNewDepartament
             // 
-            this.btnAddNewDepartament.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNewDepartament.Location = new System.Drawing.Point(0, 462);
+            this.btnAddNewDepartament.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddNewDepartament.Location = new System.Drawing.Point(12, 512);
             this.btnAddNewDepartament.Name = "btnAddNewDepartament";
-            this.btnAddNewDepartament.Size = new System.Drawing.Size(616, 23);
+            this.btnAddNewDepartament.Size = new System.Drawing.Size(736, 29);
             this.btnAddNewDepartament.TabIndex = 1;
             this.btnAddNewDepartament.Text = "Add new departament";
             this.btnAddNewDepartament.UseVisualStyleBackColor = true;
@@ -99,7 +98,7 @@ namespace HumanResourcesManagement.View
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(616, 485);
+            this.ClientSize = new System.Drawing.Size(760, 553);
             this.Controls.Add(this.btnAddNewDepartament);
             this.Controls.Add(this.gridDepartaments);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
