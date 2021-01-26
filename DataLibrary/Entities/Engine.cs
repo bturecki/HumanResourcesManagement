@@ -90,5 +90,14 @@ namespace DataLibrary.Entities
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
                 cnn.Execute($"delete from Vacation where ID = {pPersonVacation.RowId};");
         }
+
+        public List<IPersonWorkingHours> GetAllWorkingHours()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                IEnumerable<PersonWorkingHours> output = cnn.Query<PersonWorkingHours>("select p.id, p.firstname, p.lastname, p.salary, pd.departamentid, d.name DepartamentName, 21 FromTicks, 37 ToTicks from Person p inner join PersonDepartament pd on p.id = pd.personid inner join Departament d on pd.DepartamentID = d.ID", new DynamicParameters());
+                return output.ToList<IPersonWorkingHours>();
+            }
+        }
     }
 }

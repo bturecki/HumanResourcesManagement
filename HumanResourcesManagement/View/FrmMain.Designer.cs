@@ -34,6 +34,7 @@ namespace HumanResourcesManagement
             this.btnShowDepartaments = new System.Windows.Forms.Button();
             this.lblCreator = new System.Windows.Forms.Label();
             this.btnManageVacations = new System.Windows.Forms.Button();
+            this.btnWorkingHours = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPeople
@@ -87,12 +88,26 @@ namespace HumanResourcesManagement
             this.btnManageVacations.UseVisualStyleBackColor = true;
             this.btnManageVacations.Click += new System.EventHandler(this.btnManageVacations_Click);
             // 
+            // btnWorkingHours
+            // 
+            this.btnWorkingHours.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnWorkingHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWorkingHours.Location = new System.Drawing.Point(12, 129);
+            this.btnWorkingHours.Name = "btnWorkingHours";
+            this.btnWorkingHours.Size = new System.Drawing.Size(631, 33);
+            this.btnWorkingHours.TabIndex = 6;
+            this.btnWorkingHours.Text = "Manage working hours";
+            this.btnWorkingHours.UseVisualStyleBackColor = true;
+            this.btnWorkingHours.Click += new System.EventHandler(this.btnWorkingHours_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(655, 371);
+            this.Controls.Add(this.btnWorkingHours);
             this.Controls.Add(this.btnManageVacations);
             this.Controls.Add(this.lblCreator);
             this.Controls.Add(this.btnShowDepartaments);
@@ -112,6 +127,7 @@ namespace HumanResourcesManagement
         private System.Windows.Forms.Button btnShowDepartaments;
         private System.Windows.Forms.Label lblCreator;
         private System.Windows.Forms.Button btnManageVacations;
+        private System.Windows.Forms.Button btnWorkingHours;
     }
 }
 

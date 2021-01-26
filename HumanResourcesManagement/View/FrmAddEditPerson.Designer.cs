@@ -39,10 +39,10 @@ namespace HumanResourcesManagement.View
             this.numSalary = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.gridDepartaments = new System.Windows.Forms.DataGridView();
-            this.btnSave = new System.Windows.Forms.Button();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDepartamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numSalary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDepartaments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iDepartamentBindingSource)).BeginInit();
@@ -110,6 +110,11 @@ namespace HumanResourcesManagement.View
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.numSalary.Location = new System.Drawing.Point(3, 100);
+            this.numSalary.Maximum = new decimal(new int[] {
+            -1486618625,
+            232830643,
+            0,
+            0});
             this.numSalary.Name = "numSalary";
             this.numSalary.Size = new System.Drawing.Size(603, 20);
             this.numSalary.TabIndex = 9;
@@ -148,19 +153,6 @@ namespace HumanResourcesManagement.View
             this.gridDepartaments.Size = new System.Drawing.Size(603, 126);
             this.gridDepartaments.TabIndex = 10;
             // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(3, 260);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(603, 24);
-            this.btnSave.TabIndex = 8;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -179,6 +171,19 @@ namespace HumanResourcesManagement.View
             // iDepartamentBindingSource
             // 
             this.iDepartamentBindingSource.DataSource = typeof(DataLibrary.Abstract.IDepartament);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Location = new System.Drawing.Point(3, 260);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(603, 24);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FrmAddEditPerson
             // 

@@ -12,7 +12,7 @@ namespace HumanResourcesManagement.View
     {
         public string FirstName { get => tbFirstName.Text; set => tbFirstName.Text = value; }
         public string LastName { get => tbLastName.Text; set => tbLastName.Text = value; }
-        public decimal Salary { get => numSalary.Value; set => numSalary.Value = value; }
+        public decimal Salary { get => numSalary.Value; set => numSalary.Value = value; } //TODO FIXME
         public IDepartament SelectedDepartament
         {
             get

@@ -7,10 +7,12 @@ namespace HumanResourcesManagement.Interface
         event Action PeopleBtnClick;
         event Action DepartamentsBtnClick;
         event Action VacationsBtnClick;
+        event Action WorkingHoursBtnClick;
 
         string LabelCreator { set; }
         void OpenPeopleView();
         void OpenVacationsView();
         void OpenDepartamentsView();
+        void OpenWorkingHoursView();
     }
 }
