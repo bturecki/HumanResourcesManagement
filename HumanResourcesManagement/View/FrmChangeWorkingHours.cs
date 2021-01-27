@@ -14,8 +14,8 @@ namespace HumanResourcesManagement.View
             new PresenterChangeWorkingHours(this, pWorkingHours);
         }
 
-        public TimeSpan TimeFrom { get => dateTimePickerFrom.Value.TimeOfDay; set { DateTime _now = new DateTime(1753, 1, 1); _now.AddTicks(value.Ticks); dateTimePickerFrom.Value = _now; } }
-        public TimeSpan TimeTo { get => dateTimePickerTo.Value.TimeOfDay; set { DateTime _now = new DateTime(1753, 1, 1); _now.AddTicks(value.Ticks); dateTimePickerTo.Value = _now; } }
+        public TimeSpan TimeFrom { get => dateTimePickerFrom.Value.TimeOfDay; set { DateTime _now = new DateTime(1753, 1, 1); _now = _now.Date + value; dateTimePickerFrom.Value = _now; } }
+        public TimeSpan TimeTo { get => dateTimePickerTo.Value.TimeOfDay; set { DateTime _now = new DateTime(1753, 1, 1); _now = _now.Date + value; dateTimePickerTo.Value = _now; } }
         public string FrmText { set => this.Text = value; }
 
         public event Action SaveBtnClick;

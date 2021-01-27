@@ -23,6 +23,7 @@ namespace HumanResourcesManagement.Presenter
         private void View_SaveBtnClick()
         {
             Engine.SavePersonWorkingHours(PersonWorkingHours, View.TimeFrom, View.TimeTo);
+            View.SetDialogResultOK();
         }
     }
 }
