@@ -71,6 +71,7 @@
     <Compile Include="Interface\IAddEditPerson.cs" />
     <Compile Include="Interface\IAddNewVacation.cs" />
     <Compile Include="Interface\IChangeWorkingHours.cs" />
+    <Compile Include="Interface\IMails.cs" />
     <Compile Include="Interface\IMain.cs" />
     <Compile Include="Interface\IDepartaments.cs" />
     <Compile Include="Interface\IPeople.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Presenter\PresenterAddEditPerson.cs" />
     <Compile Include="Presenter\PresenterAddNewVacation.cs" />
     <Compile Include="Presenter\PresenterChangeWorkingHours.cs" />
+    <Compile Include="Presenter\PresenterMails.cs" />
     <Compile Include="Presenter\PresenterMain.cs" />
     <Compile Include="Presenter\PresenterDepartaments.cs" />
     <Compile Include="Presenter\PresenterPeople.cs" />
@@ -108,6 +110,12 @@
     </Compile>
     <Compile Include="View\FrmChangeWorkingHours.Designer.cs">
       <DependentUpon>FrmChangeWorkingHours.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmMails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmMails.Designer.cs">
+      <DependentUpon>FrmMails.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmMain.cs">
       <SubType>Form</SubType>
@@ -152,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmChangeWorkingHours.resx">
       <DependentUpon>FrmChangeWorkingHours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmMails.resx">
+      <DependentUpon>FrmMails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>

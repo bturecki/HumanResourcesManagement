@@ -45,6 +45,9 @@
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.0.78\lib\net461\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.11.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.11\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
@@ -73,11 +76,13 @@
   <ItemGroup>
     <Compile Include="Abstract\IDepartament.cs" />
     <Compile Include="Abstract\IEngine.cs" />
+    <Compile Include="Abstract\IMailToSend.cs" />
     <Compile Include="Abstract\IPersonModel.cs" />
     <Compile Include="Abstract\IPersonVacation.cs" />
     <Compile Include="Abstract\IPersonWorkingHours.cs" />
     <Compile Include="Entities\Departament.cs" />
     <Compile Include="Entities\Engine.cs" />
+    <Compile Include="Entities\MailToSend.cs" />
     <Compile Include="Entities\PersonModel.cs" />
     <Compile Include="Entities\PersonVacation.cs" />
     <Compile Include="Entities\PersonWorkingHours.cs" />

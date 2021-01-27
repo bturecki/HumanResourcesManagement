@@ -35,6 +35,7 @@ namespace HumanResourcesManagement
             this.lblCreator = new System.Windows.Forms.Label();
             this.btnManageVacations = new System.Windows.Forms.Button();
             this.btnWorkingHours = new System.Windows.Forms.Button();
+            this.btnEmails = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPeople
@@ -101,12 +102,26 @@ namespace HumanResourcesManagement
             this.btnWorkingHours.UseVisualStyleBackColor = true;
             this.btnWorkingHours.Click += new System.EventHandler(this.btnWorkingHours_Click);
             // 
+            // btnEmails
+            // 
+            this.btnEmails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEmails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnEmails.Location = new System.Drawing.Point(12, 169);
+            this.btnEmails.Name = "btnEmails";
+            this.btnEmails.Size = new System.Drawing.Size(631, 33);
+            this.btnEmails.TabIndex = 7;
+            this.btnEmails.Text = "Send e-mails";
+            this.btnEmails.UseVisualStyleBackColor = true;
+            this.btnEmails.Click += new System.EventHandler(this.btnEmails_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(655, 371);
+            this.Controls.Add(this.btnEmails);
             this.Controls.Add(this.btnWorkingHours);
             this.Controls.Add(this.btnManageVacations);
             this.Controls.Add(this.lblCreator);
@@ -128,6 +143,7 @@ namespace HumanResourcesManagement
         private System.Windows.Forms.Label lblCreator;
         private System.Windows.Forms.Button btnManageVacations;
         private System.Windows.Forms.Button btnWorkingHours;
+        private System.Windows.Forms.Button btnEmails;
     }
 }
 

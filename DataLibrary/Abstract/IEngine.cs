@@ -13,6 +13,7 @@ namespace DataLibrary.Abstract
         List<IPersonVacation> GetAllVacations();
         List<IPersonWorkingHours> GetAllWorkingHours();
         void SavePerson(IPersonModel pPersonModel);
+        void SendMailAsync(IMailToSend pMailToSend);
         void DeleteVacation(IPersonVacation pPersonVacation);
         void UpdatePerson(IPersonModel pPersonModel);
         void SaveDepartament(IDepartament pDepartament);

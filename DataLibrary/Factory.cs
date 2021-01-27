@@ -22,5 +22,9 @@ namespace DataLibrary
         {
             return new Departament(pName);
         }
+        public static IMailToSend GetMailModel(string pContent, string pSubject, List<IPersonModel> pPeopleList)
+        {
+            return new MailToSend(pContent, pSubject, pPeopleList);
+        }
     }
 }

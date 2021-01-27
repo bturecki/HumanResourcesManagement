@@ -32,14 +32,14 @@ namespace HumanResourcesManagement.View
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPeopleVacations));
             this.gridVacations = new System.Windows.Forms.DataGridView();
-            this.btnAddNewVacation = new System.Windows.Forms.Button();
-            this.iPersonVacationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.personNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personLastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateFromDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.iPersonVacationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnAddNewVacation = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridVacations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPersonVacationBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -69,22 +69,6 @@ namespace HumanResourcesManagement.View
             this.gridVacations.Size = new System.Drawing.Size(776, 443);
             this.gridVacations.TabIndex = 0;
             this.gridVacations.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // btnAddNewVacation
-            // 
-            this.btnAddNewVacation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNewVacation.Location = new System.Drawing.Point(12, 462);
-            this.btnAddNewVacation.Name = "btnAddNewVacation";
-            this.btnAddNewVacation.Size = new System.Drawing.Size(776, 35);
-            this.btnAddNewVacation.TabIndex = 1;
-            this.btnAddNewVacation.Text = "Add new vacation";
-            this.btnAddNewVacation.UseVisualStyleBackColor = true;
-            this.btnAddNewVacation.Click += new System.EventHandler(this.btnAddNewVacation_Click);
-            // 
-            // iPersonVacationBindingSource
-            // 
-            this.iPersonVacationBindingSource.DataSource = typeof(DataLibrary.Abstract.IPersonVacation);
             // 
             // personNameDataGridViewTextBoxColumn
             // 
@@ -131,10 +115,27 @@ namespace HumanResourcesManagement.View
             this.Delete.ToolTipText = "Delete";
             this.Delete.UseColumnTextForButtonValue = true;
             // 
+            // iPersonVacationBindingSource
+            // 
+            this.iPersonVacationBindingSource.DataSource = typeof(DataLibrary.Abstract.IPersonVacation);
+            // 
+            // btnAddNewVacation
+            // 
+            this.btnAddNewVacation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNewVacation.Location = new System.Drawing.Point(12, 462);
+            this.btnAddNewVacation.Name = "btnAddNewVacation";
+            this.btnAddNewVacation.Size = new System.Drawing.Size(776, 35);
+            this.btnAddNewVacation.TabIndex = 1;
+            this.btnAddNewVacation.Text = "Add new vacation";
+            this.btnAddNewVacation.UseVisualStyleBackColor = true;
+            this.btnAddNewVacation.Click += new System.EventHandler(this.btnAddNewVacation_Click);
+            // 
             // FrmPeopleVacations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 509);
             this.Controls.Add(this.btnAddNewVacation);
             this.Controls.Add(this.gridVacations);

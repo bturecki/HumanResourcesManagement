@@ -6,6 +6,8 @@ using System.Configuration;
 using System.Data;
 using System.Data.SQLite;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 
 namespace DataLibrary.Entities
 {
@@ -104,11 +106,22 @@ namespace DataLibrary.Entities
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 IEnumerable<PersonWorkingHours> output = cnn.Query<PersonWorkingHours>($"select p.id, p.firstname, p.lastname, p.salary, pd.departamentid, d.name DepartamentName, wh.HoursFrom FromTicks, wh.HoursTo ToTicks from Person p inner join PersonDepartament pd on p.id = pd.personid inner join Departament d on pd.DepartamentID = d.ID left join WorkingHours wh on wh.PersonID = p.id where wh.PersonID = {pPersonWorkingHours.ID}", new DynamicParameters());
-                if(output.Count() == 0)
+                if (output.Count() == 0)
                     cnn.Execute($"insert into WorkingHours(PersonID, HoursFrom, HoursTo) values({pPersonWorkingHours.ID}, {pTimeFrom.Ticks}, {pTimeTo.Ticks});");
                 else
                     cnn.Execute($"update WorkingHours set HoursFrom = {pTimeFrom.Ticks}, HoursTo = {pTimeTo.Ticks} where PersonID = {pPersonWorkingHours.ID};");
             }
+        }
+        public void SendMailAsync(IMailToSend pMailToSend)
+        {
+            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com")
+            {
+                Port = 587,
+                Credentials = new NetworkCredential("bturipp@gmail.com", "Jipp2021!"),
+                EnableSsl = true,
+            };
+            foreach (IPersonModel _person in pMailToSend.PeopleList)
+                smtpClient.Send("bturipp@gmail.com", "gaahl75@gmail.com", pMailToSend.Subject, $"{_person.FirstName} {_person.LastName}, you have a new message: {pMailToSend.Content}");
         }
     }
 }
