@@ -35,6 +35,7 @@ namespace HumanResourcesManagement.Presenter
             View.EmailContent = string.Empty;
             View.EmailSubject = string.Empty;
             View.ClearGridSelection();
+            View.ShowMessageBox(_mail.PeopleList.Count == 1 ? "1 mail was sent" : $"{_mail.PeopleList.Count} mails were sent");
         }
     }
 }

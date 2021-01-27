@@ -32,14 +32,15 @@ namespace HumanResourcesManagement.View
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPeople));
             this.gridPeople = new System.Windows.Forms.DataGridView();
-            this.btnAddNewPerson = new System.Windows.Forms.Button();
-            this.Salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DepartamentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DepartamentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.iPersonModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnAddNewPerson = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridPeople)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPersonModelBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -61,51 +62,15 @@ namespace HumanResourcesManagement.View
             this.lastNameDataGridViewTextBoxColumn,
             this.Salary,
             this.DepartamentName,
+            this.Email,
             this.Edit});
             this.gridPeople.DataSource = this.iPersonModelBindingSource;
             this.gridPeople.Location = new System.Drawing.Point(12, 12);
             this.gridPeople.Name = "gridPeople";
             this.gridPeople.ReadOnly = true;
-            this.gridPeople.Size = new System.Drawing.Size(736, 494);
+            this.gridPeople.Size = new System.Drawing.Size(944, 494);
             this.gridPeople.TabIndex = 0;
             this.gridPeople.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPeople_CellContentClick);
-            // 
-            // btnAddNewPerson
-            // 
-            this.btnAddNewPerson.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNewPerson.Location = new System.Drawing.Point(12, 512);
-            this.btnAddNewPerson.Name = "btnAddNewPerson";
-            this.btnAddNewPerson.Size = new System.Drawing.Size(736, 29);
-            this.btnAddNewPerson.TabIndex = 1;
-            this.btnAddNewPerson.Text = "Add new person";
-            this.btnAddNewPerson.UseVisualStyleBackColor = true;
-            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
-            // 
-            // Salary
-            // 
-            this.Salary.DataPropertyName = "Salary";
-            this.Salary.HeaderText = "Salary";
-            this.Salary.Name = "Salary";
-            this.Salary.ReadOnly = true;
-            // 
-            // DepartamentName
-            // 
-            this.DepartamentName.DataPropertyName = "DepartamentName";
-            this.DepartamentName.HeaderText = "Departament";
-            this.DepartamentName.Name = "DepartamentName";
-            this.DepartamentName.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Text = "Edit";
-            this.Edit.ToolTipText = "Edit";
-            this.Edit.UseColumnTextForButtonValue = true;
-            this.Edit.Width = 31;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -128,15 +93,60 @@ namespace HumanResourcesManagement.View
             this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
             this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // Salary
+            // 
+            this.Salary.DataPropertyName = "Salary";
+            this.Salary.HeaderText = "Salary";
+            this.Salary.Name = "Salary";
+            this.Salary.ReadOnly = true;
+            // 
+            // DepartamentName
+            // 
+            this.DepartamentName.DataPropertyName = "DepartamentName";
+            this.DepartamentName.HeaderText = "Departament";
+            this.DepartamentName.Name = "DepartamentName";
+            this.DepartamentName.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Edit";
+            this.Edit.ToolTipText = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
+            this.Edit.Width = 31;
+            // 
             // iPersonModelBindingSource
             // 
             this.iPersonModelBindingSource.DataSource = typeof(DataLibrary.Abstract.IPersonModel);
+            // 
+            // btnAddNewPerson
+            // 
+            this.btnAddNewPerson.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNewPerson.Location = new System.Drawing.Point(12, 512);
+            this.btnAddNewPerson.Name = "btnAddNewPerson";
+            this.btnAddNewPerson.Size = new System.Drawing.Size(944, 29);
+            this.btnAddNewPerson.TabIndex = 1;
+            this.btnAddNewPerson.Text = "Add new person";
+            this.btnAddNewPerson.UseVisualStyleBackColor = true;
+            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
             // 
             // FrmPeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(760, 553);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(968, 553);
             this.Controls.Add(this.btnAddNewPerson);
             this.Controls.Add(this.gridPeople);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -159,6 +169,7 @@ namespace HumanResourcesManagement.View
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Salary;
         private System.Windows.Forms.DataGridViewTextBoxColumn DepartamentName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
     }
 }

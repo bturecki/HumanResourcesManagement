@@ -19,6 +19,7 @@ namespace DataLibrary.Entities
         public decimal Salary { get; set; }
         private long? FromTicks{ get; set;}
         private long? ToTicks { get; set; }
+        public string Email { get => "bartosz.turecki@gmail.com"; }
 
         public bool Validate(out string pResult)
         {

@@ -12,7 +12,9 @@ namespace HumanResourcesManagement.View
     {
         public string FirstName { get => tbFirstName.Text; set => tbFirstName.Text = value; }
         public string LastName { get => tbLastName.Text; set => tbLastName.Text = value; }
-        public decimal Salary { get => numSalary.Value; set => numSalary.Value = value; } //TODO FIXME
+        public decimal Salary { get => numSalary.Value; set => numSalary.Value = value; }
+        public string FrmText { set => this.Text = value; }
+
         public IDepartament SelectedDepartament
         {
             get
@@ -25,6 +27,7 @@ namespace HumanResourcesManagement.View
                 gridDepartaments.Rows.OfType<DataGridViewRow>().Where(x => (int)x.Cells["iDDataGridViewTextBoxColumn"].Value == value.ID).ToArray<DataGridViewRow>()[0].Selected = true;
             }
         }
+
 
         public event Action SaveBtnClick;
         public event Action FrmShown;

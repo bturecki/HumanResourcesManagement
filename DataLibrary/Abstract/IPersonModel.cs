@@ -14,6 +14,7 @@ namespace DataLibrary.Abstract
         string LastName { get; set; }
         decimal Salary { get; set; }
         string DepartamentName { get; set; }
+        string Email { get; }
         bool Validate(out string pResult);
     }
 }

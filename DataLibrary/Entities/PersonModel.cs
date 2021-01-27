@@ -28,6 +28,7 @@ namespace DataLibrary.Entities
         public decimal Salary { get; set; }
         public int DepartamentID { get; set; }
         public string DepartamentName { get; set; }
+        public string Email { get => "bartosz.turecki@gmail.com";  }
 
         public bool Validate(out string pResult)
         {

@@ -114,14 +114,18 @@ namespace DataLibrary.Entities
         }
         public void SendMailAsync(IMailToSend pMailToSend)
         {
-            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com")
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                Port = 587,
-                Credentials = new NetworkCredential("bturipp@gmail.com", "Jipp2021!"),
-                EnableSsl = true,
-            };
-            foreach (IPersonModel _person in pMailToSend.PeopleList)
-                smtpClient.Send("bturipp@gmail.com", "gaahl75@gmail.com", pMailToSend.Subject, $"{_person.FirstName} {_person.LastName}, you have a new message: {pMailToSend.Content}");
+                EmailCredintials credintials = cnn.Query<EmailCredintials>("select email, pass from EmailCredintial;", new DynamicParameters()).Single();
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com")
+                {
+                    Port = 587,
+                    Credentials = new NetworkCredential(credintials.Email, credintials.Pass),
+                    EnableSsl = true,
+                };
+                foreach (IPersonModel _person in pMailToSend.PeopleList)
+                    smtpClient.Send(credintials.Email, _person.Email, pMailToSend.Subject, $"{_person.FirstName} {_person.LastName}, you have a new message: {pMailToSend.Content}");
+            }
         }
     }
 }

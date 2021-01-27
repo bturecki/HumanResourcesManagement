@@ -23,7 +23,10 @@ namespace HumanResourcesManagement.Presenter
                 View.FirstName = PersonModel.FirstName;
                 View.LastName = PersonModel.LastName;
                 View.Salary = PersonModel.Salary;
+                View.FrmText = "Person edit";
             }
+            else
+                View.FrmText = "Adding new person";
 
             View.FrmShown += View_FrmShown;
             View.SaveBtnClick += View_SaveBtnClick;
