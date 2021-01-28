@@ -13,6 +13,7 @@ namespace HumanResourcesManagement.Interface
         event Action AddNewVacationBtnClick;
         event Action VacationAdded;
         event Action<IPersonVacation> DeleteRecordBtnClick;
+
         void FillGrid(List<IPersonVacation> pList);
         void OpenNewVacation();
     }

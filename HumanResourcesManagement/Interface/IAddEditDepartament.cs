@@ -5,9 +5,9 @@ namespace HumanResourcesManagement.Interface
     interface IAddEditDepartament
     {
         string DepartamentName { get; set; }
+        string FrmText { set; }
 
         event Action SaveBtnClick;
-        string FrmText { set; }
 
         void ShowMessageBox(string pMessage);
         void SetDialogResultOK();

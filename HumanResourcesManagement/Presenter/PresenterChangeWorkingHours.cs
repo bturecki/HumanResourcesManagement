@@ -20,6 +20,7 @@ namespace HumanResourcesManagement.Presenter
             View.TimeTo = PersonWorkingHours.HourTo;
             View.SaveBtnClick += View_SaveBtnClick;
         }
+
         private void View_SaveBtnClick()
         {
             Engine.SavePersonWorkingHours(PersonWorkingHours, View.TimeFrom, View.TimeTo);

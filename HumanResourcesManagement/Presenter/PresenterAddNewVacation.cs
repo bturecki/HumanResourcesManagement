@@ -20,7 +20,6 @@ namespace HumanResourcesManagement.Presenter
         {
             View.FillGridPeople(Engine.GetAllPeople());
         }
-
         private void View_SaveBtnClick()
         {
             System.DateTime _dateFrom = View.DateFrom;

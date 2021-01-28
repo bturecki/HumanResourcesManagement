@@ -8,6 +8,7 @@ namespace HumanResourcesManagement.Interface
     {
         event Action FrmShown;
         event Action<IPersonWorkingHours> EditBtnClick;
+
         void FillGrid(List<IPersonWorkingHours> pList);
         void OpenChangeWorkingHours(IPersonWorkingHours pWorkingHours);
     }

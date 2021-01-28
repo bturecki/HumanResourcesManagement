@@ -21,7 +21,6 @@ namespace HumanResourcesManagement.Presenter
             View.FillGridPeople(Engine.GetAllPeople());
             View.ClearGridSelection();
         }
-
         private void View_SendBtnClick()
         {
             IMailToSend _mail = Factory.GetMailModel(View.EmailContent, View.EmailSubject, View.SelectedPeople);

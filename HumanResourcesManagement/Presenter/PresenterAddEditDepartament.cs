@@ -21,6 +21,7 @@ namespace HumanResourcesManagement.Presenter
 
             View.SaveBtnClick += View_SaveBtnClick;
         }
+
         private void View_SaveBtnClick()
         {
             if (string.IsNullOrEmpty(View.DepartamentName))
