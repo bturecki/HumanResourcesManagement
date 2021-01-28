@@ -32,8 +32,6 @@ namespace HumanResourcesManagement.View
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPeople));
             this.gridPeople = new System.Windows.Forms.DataGridView();
-            this.iPersonModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnAddNewPerson = new System.Windows.Forms.Button();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +40,8 @@ namespace HumanResourcesManagement.View
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.iPersonModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnAddNewPerson = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridPeople)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPersonModelBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -68,27 +68,13 @@ namespace HumanResourcesManagement.View
             this.Delete});
             this.gridPeople.DataSource = this.iPersonModelBindingSource;
             this.gridPeople.Location = new System.Drawing.Point(12, 12);
+            this.gridPeople.MultiSelect = false;
             this.gridPeople.Name = "gridPeople";
             this.gridPeople.ReadOnly = true;
+            this.gridPeople.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridPeople.Size = new System.Drawing.Size(944, 494);
             this.gridPeople.TabIndex = 0;
             this.gridPeople.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPeople_CellContentClick);
-            // 
-            // iPersonModelBindingSource
-            // 
-            this.iPersonModelBindingSource.DataSource = typeof(DataLibrary.Abstract.IPersonModel);
-            // 
-            // btnAddNewPerson
-            // 
-            this.btnAddNewPerson.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNewPerson.Location = new System.Drawing.Point(12, 512);
-            this.btnAddNewPerson.Name = "btnAddNewPerson";
-            this.btnAddNewPerson.Size = new System.Drawing.Size(944, 29);
-            this.btnAddNewPerson.TabIndex = 1;
-            this.btnAddNewPerson.Text = "Add new person";
-            this.btnAddNewPerson.UseVisualStyleBackColor = true;
-            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -161,6 +147,22 @@ namespace HumanResourcesManagement.View
             this.Delete.ToolTipText = "Delete";
             this.Delete.UseColumnTextForButtonValue = true;
             this.Delete.Width = 44;
+            // 
+            // iPersonModelBindingSource
+            // 
+            this.iPersonModelBindingSource.DataSource = typeof(DataLibrary.Abstract.IPersonModel);
+            // 
+            // btnAddNewPerson
+            // 
+            this.btnAddNewPerson.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNewPerson.Location = new System.Drawing.Point(12, 512);
+            this.btnAddNewPerson.Name = "btnAddNewPerson";
+            this.btnAddNewPerson.Size = new System.Drawing.Size(944, 29);
+            this.btnAddNewPerson.TabIndex = 1;
+            this.btnAddNewPerson.Text = "Add new person";
+            this.btnAddNewPerson.UseVisualStyleBackColor = true;
+            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
             // 
             // FrmPeople
             // 

@@ -4,11 +4,11 @@ namespace DataLibrary.Abstract
 {
     public interface IPersonVacation
     {
-        int PersonID { get; set; }
+        int PersonID { get; }
         DateTime DateFrom { get; }
         DateTime DateTo { get; }
-        string PersonName { get; set; }
-        string PersonLastname { get; set; }
-        int RowId { get; set; }
+        string PersonName { get; }
+        string PersonLastname { get;  }
+        int RowId { get; }
     }
 }

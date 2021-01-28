@@ -64,8 +64,10 @@ namespace HumanResourcesManagement.View
             this.Delete});
             this.gridVacations.DataSource = this.iPersonVacationBindingSource;
             this.gridVacations.Location = new System.Drawing.Point(12, 12);
+            this.gridVacations.MultiSelect = false;
             this.gridVacations.Name = "gridVacations";
             this.gridVacations.ReadOnly = true;
+            this.gridVacations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridVacations.Size = new System.Drawing.Size(776, 443);
             this.gridVacations.TabIndex = 0;
             this.gridVacations.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);

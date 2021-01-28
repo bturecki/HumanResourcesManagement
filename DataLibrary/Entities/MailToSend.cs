@@ -14,9 +14,9 @@ namespace DataLibrary.Entities
             PeopleList = pPeopleList;
         }
 
-        public string Content { get; set; }
-        public string Subject { get; set; }
-        public List<IPersonModel> PeopleList { get; set; }
+        public string Content { get; }
+        public string Subject { get; }
+        public List<IPersonModel> PeopleList { get; }
 
         public bool Validate(out string pErrMsg)
         {

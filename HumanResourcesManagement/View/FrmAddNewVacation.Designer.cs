@@ -61,8 +61,10 @@ namespace HumanResourcesManagement.View
             this.departamentNameDataGridViewTextBoxColumn});
             this.gridPeople.DataSource = this.iPersonModelBindingSource;
             this.gridPeople.Location = new System.Drawing.Point(12, 12);
+            this.gridPeople.MultiSelect = false;
             this.gridPeople.Name = "gridPeople";
             this.gridPeople.ReadOnly = true;
+            this.gridPeople.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridPeople.Size = new System.Drawing.Size(360, 305);
             this.gridPeople.TabIndex = 0;
             // 

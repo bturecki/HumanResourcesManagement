@@ -8,7 +8,7 @@ namespace DataLibrary.Abstract
 {
     public interface IDepartament
     {
-        int ID { get; set; }
+        int ID { get; }
         string Name { get; set; }
     }
 }

@@ -63,8 +63,10 @@ namespace HumanResourcesManagement.View
             this.edit});
             this.gvWorkingHours.DataSource = this.iPersonWorkingHoursBindingSource;
             this.gvWorkingHours.Location = new System.Drawing.Point(12, 12);
+            this.gvWorkingHours.MultiSelect = false;
             this.gvWorkingHours.Name = "gvWorkingHours";
             this.gvWorkingHours.ReadOnly = true;
+            this.gvWorkingHours.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvWorkingHours.Size = new System.Drawing.Size(776, 485);
             this.gvWorkingHours.TabIndex = 0;
             this.gvWorkingHours.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvWorkingHours_CellContentClick);

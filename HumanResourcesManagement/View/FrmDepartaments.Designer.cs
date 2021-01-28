@@ -32,11 +32,11 @@ namespace HumanResourcesManagement.View
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDepartaments));
             this.gridDepartaments = new System.Windows.Forms.DataGridView();
-            this.iDepartamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnAddNewDepartament = new System.Windows.Forms.Button();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.iDepartamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnAddNewDepartament = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridDepartaments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iDepartamentBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -56,26 +56,13 @@ namespace HumanResourcesManagement.View
             this.Delete});
             this.gridDepartaments.DataSource = this.iDepartamentBindingSource;
             this.gridDepartaments.Location = new System.Drawing.Point(12, 12);
+            this.gridDepartaments.MultiSelect = false;
             this.gridDepartaments.Name = "gridDepartaments";
             this.gridDepartaments.ReadOnly = true;
+            this.gridDepartaments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridDepartaments.Size = new System.Drawing.Size(736, 494);
             this.gridDepartaments.TabIndex = 0;
             this.gridDepartaments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDepartaments_CellContentClick);
-            // 
-            // iDepartamentBindingSource
-            // 
-            this.iDepartamentBindingSource.DataSource = typeof(DataLibrary.Abstract.IDepartament);
-            // 
-            // btnAddNewDepartament
-            // 
-            this.btnAddNewDepartament.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddNewDepartament.Location = new System.Drawing.Point(12, 512);
-            this.btnAddNewDepartament.Name = "btnAddNewDepartament";
-            this.btnAddNewDepartament.Size = new System.Drawing.Size(736, 29);
-            this.btnAddNewDepartament.TabIndex = 1;
-            this.btnAddNewDepartament.Text = "Add new departament";
-            this.btnAddNewDepartament.UseVisualStyleBackColor = true;
-            this.btnAddNewDepartament.Click += new System.EventHandler(this.btnAddNewPerson_Click);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -105,6 +92,21 @@ namespace HumanResourcesManagement.View
             this.Delete.ToolTipText = "Delete";
             this.Delete.UseColumnTextForButtonValue = true;
             this.Delete.Width = 44;
+            // 
+            // iDepartamentBindingSource
+            // 
+            this.iDepartamentBindingSource.DataSource = typeof(DataLibrary.Abstract.IDepartament);
+            // 
+            // btnAddNewDepartament
+            // 
+            this.btnAddNewDepartament.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddNewDepartament.Location = new System.Drawing.Point(12, 512);
+            this.btnAddNewDepartament.Name = "btnAddNewDepartament";
+            this.btnAddNewDepartament.Size = new System.Drawing.Size(736, 29);
+            this.btnAddNewDepartament.TabIndex = 1;
+            this.btnAddNewDepartament.Text = "Add new departament";
+            this.btnAddNewDepartament.UseVisualStyleBackColor = true;
+            this.btnAddNewDepartament.Click += new System.EventHandler(this.btnAddNewPerson_Click);
             // 
             // FrmDepartaments
             // 
