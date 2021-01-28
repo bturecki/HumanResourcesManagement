@@ -21,6 +21,7 @@ namespace HumanResourcesManagement.View
         public event Action AddNewDepartamentBtnClick;
         public event Action DepartamentEdited;
         public event Action EditBtnClick;
+        public event Action DeleteBtnClick;
 
         public void FillGridDepartaments(List<IDepartament> pDepartaments)
         {
@@ -44,8 +45,14 @@ namespace HumanResourcesManagement.View
         }
         private void gridDepartaments_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (((DataGridView)sender).Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            if (((DataGridView)sender).Columns[e.ColumnIndex] == Edit && e.RowIndex >= 0)
                 EditBtnClick();
+            else if (((DataGridView)sender).Columns[e.ColumnIndex] == Delete && e.RowIndex >= 0)
+                DeleteBtnClick();
+        }
+        public bool AskForConfirm(string pMessage, string pCaption = "Confirm")
+        {
+            return MessageBox.Show(pMessage, pCaption, MessageBoxButtons.YesNo) == DialogResult.Yes;
         }
     }
 }

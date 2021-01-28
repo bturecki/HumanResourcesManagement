@@ -17,8 +17,17 @@ namespace HumanResourcesManagement.Presenter
             View.AddNewDepartamentBtnClick += View_AddNewDepartamentBtnClick;
             View.DepartamentEdited += View_DepartamentEdited;
             View.EditBtnClick += View_EditBtnClick;
+            View.DeleteBtnClick += View_DeleteBtnClick;
         }
 
+        private void View_DeleteBtnClick()
+        {
+            IDepartament _selectedDepartament = View.SelectedRow;
+            if (!View.AskForConfirm($"Are you sure you want to delete {_selectedDepartament.Name}?"))
+                return;
+            Engine.DeleteDepartament(_selectedDepartament);
+            FillAllDepartaments();
+        }
         private void View_EditBtnClick()
         {
             View.OpenAddingNewDepartament(View.SelectedRow);

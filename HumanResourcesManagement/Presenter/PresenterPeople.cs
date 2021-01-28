@@ -17,8 +17,17 @@ namespace HumanResourcesManagement.Presenter
             View.AddNewPersonBtnClick += View_AddNewPersonBtnClick;
             View.PersonEdited += View_PersonEdited;
             View.EditBtnClick += View_EditBtnClick;
+            View.DeleteBtnClick += View_DeleteBtnClick;
         }
 
+        private void View_DeleteBtnClick()
+        {
+            IPersonModel _selectedPerson = View.SelectedRow;
+            if (!View.AskForConfirm($"Are you sure you want to delete {_selectedPerson.FirstName} {_selectedPerson.LastName}?"))
+                return;
+            Engine.DeletePerson(_selectedPerson);
+            FillAllPeople();
+        }
         private void View_EditBtnClick()
         {
             View.OpenAddingNewPerson(View.SelectedRow);

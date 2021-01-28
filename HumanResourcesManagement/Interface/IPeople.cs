@@ -12,8 +12,10 @@ namespace HumanResourcesManagement.Interface
         event Action AddNewPersonBtnClick;
         event Action PersonEdited;
         event Action EditBtnClick;
+        event Action DeleteBtnClick;
 
         void FillGridPeople(List<IPersonModel> pPeople);
         void OpenAddingNewPerson(IPersonModel pPersonModel);
+        bool AskForConfirm(string pMessage, string pCaption = "Confirm");
     }
 }

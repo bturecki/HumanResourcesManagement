@@ -127,5 +127,15 @@ namespace DataLibrary.Entities
                     smtpClient.Send(credintials.Email, _person.Email, pMailToSend.Subject, $"{_person.FirstName} {_person.LastName}, you have a new message: {pMailToSend.Content}");
             }
         }
+        public void DeletePerson(IPersonModel pPersonModel)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+                cnn.Execute($"delete from Person where ID = {pPersonModel.ID.Value}");
+        }
+        public void DeleteDepartament(IDepartament pDepartament)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+                cnn.Execute($"delete from Departament where ID = {pDepartament.ID}");
+        }
     }
 }
