@@ -32,15 +32,15 @@ namespace HumanResourcesManagement.View
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddNewVacation));
             this.gridPeople = new System.Windows.Forms.DataGridView();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departamentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iPersonModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnSave = new System.Windows.Forms.Button();
             this.dateFrom = new System.Windows.Forms.DateTimePicker();
             this.dateTo = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departamentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iPersonModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridPeople)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPersonModelBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -67,31 +67,6 @@ namespace HumanResourcesManagement.View
             this.gridPeople.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridPeople.Size = new System.Drawing.Size(360, 305);
             this.gridPeople.TabIndex = 0;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Lastname";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // departamentNameDataGridViewTextBoxColumn
-            // 
-            this.departamentNameDataGridViewTextBoxColumn.DataPropertyName = "DepartamentName";
-            this.departamentNameDataGridViewTextBoxColumn.HeaderText = "Departament";
-            this.departamentNameDataGridViewTextBoxColumn.Name = "departamentNameDataGridViewTextBoxColumn";
-            this.departamentNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iPersonModelBindingSource
-            // 
-            this.iPersonModelBindingSource.DataSource = typeof(DataLibrary.Abstract.IPersonModel);
             // 
             // btnSave
             // 
@@ -145,6 +120,31 @@ namespace HumanResourcesManagement.View
             this.label2.TabIndex = 5;
             this.label2.Text = "Date to";
             // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Lastname";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // departamentNameDataGridViewTextBoxColumn
+            // 
+            this.departamentNameDataGridViewTextBoxColumn.DataPropertyName = "DepartamentName";
+            this.departamentNameDataGridViewTextBoxColumn.HeaderText = "Departament";
+            this.departamentNameDataGridViewTextBoxColumn.Name = "departamentNameDataGridViewTextBoxColumn";
+            this.departamentNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iPersonModelBindingSource
+            // 
+            this.iPersonModelBindingSource.DataSource = typeof(DataLibrary.Abstract.IPersonModel);
+            // 
             // FrmAddNewVacation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,7 +159,7 @@ namespace HumanResourcesManagement.View
             this.Controls.Add(this.gridPeople);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAddNewVacation";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add new vacation";
             this.Shown += new System.EventHandler(this.FrmAddNewVacation_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.gridPeople)).EndInit();

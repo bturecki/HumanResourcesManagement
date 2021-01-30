@@ -38,13 +38,13 @@ namespace HumanResourcesManagement.View
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departamentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iPersonModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.emailContent = new System.Windows.Forms.RichTextBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.emailSubject = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridPeople)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPersonModelBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -121,6 +121,13 @@ namespace HumanResourcesManagement.View
             this.departamentNameDataGridViewTextBoxColumn.Name = "departamentNameDataGridViewTextBoxColumn";
             this.departamentNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
             // iPersonModelBindingSource
             // 
             this.iPersonModelBindingSource.DataSource = typeof(DataLibrary.Abstract.IPersonModel);
@@ -170,13 +177,6 @@ namespace HumanResourcesManagement.View
             this.label2.TabIndex = 5;
             this.label2.Text = "Content";
             // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
             // FrmMails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,7 +191,7 @@ namespace HumanResourcesManagement.View
             this.Controls.Add(this.gridPeople);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMails";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "E-mails";
             this.Shown += new System.EventHandler(this.FrmMails_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.gridPeople)).EndInit();
