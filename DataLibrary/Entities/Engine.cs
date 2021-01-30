@@ -23,7 +23,7 @@ namespace DataLibrary.Entities
         }
         public void SavePerson(IPersonModel pPersonModel)
         {
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString())) // dodać tranzakcje https://www.youtube.com/watch?v=eKkh5Xm0OlU&ab_channel=IAmTimCorey
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 cnn.Execute("insert into Person (FirstName, LastName, Salary) values (@FirstName, @LastName, @Salary)", pPersonModel);
                 pPersonModel.ID = cnn.Query<int>("select max(id) from Person", new DynamicParameters()).Single();
@@ -49,7 +49,7 @@ namespace DataLibrary.Entities
         }
         public void UpdatePerson(IPersonModel pPersonModel)
         {
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString())) // dodać tranzakcje https://www.youtube.com/watch?v=eKkh5Xm0OlU&ab_channel=IAmTimCorey
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 cnn.Execute("update Person set FirstName = @FirstName, LastName = @LastName, Salary = @Salary where ID = @ID", pPersonModel);
                 cnn.Execute("update PersonDepartament set DepartamentID = @DepartamentID where PersonID = @ID", pPersonModel);
@@ -83,7 +83,7 @@ namespace DataLibrary.Entities
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                IEnumerable<PersonVacation> output = cnn.Query<PersonVacation>($"select t.id rowid, t.PersonID, t.DateFrom DateFromSec, t.DateTo DateToSec, p.FirstName PersonName, p.LastName PersonLastName from Vacation t inner join Person p on t.PersonID = p.ID where t.PersonID = {pPersonModel.ID} and (t.DateFrom between {ConvertToUnixTimestamp(pDateFrom)} and {ConvertToUnixTimestamp(pDateTo)}) or (t.DateTo between {ConvertToUnixTimestamp(pDateFrom)} and {ConvertToUnixTimestamp(pDateTo)});", new DynamicParameters());
+                IEnumerable<PersonVacation> output = cnn.Query<PersonVacation>($"select t.id rowid, t.PersonID, t.DateFrom DateFromSec, t.DateTo DateToSec, p.FirstName PersonName, p.LastName PersonLastName from Vacation t inner join Person p on t.PersonID = p.ID where t.PersonID = {pPersonModel.ID} and ((t.DateFrom between {ConvertToUnixTimestamp(pDateFrom)} and {ConvertToUnixTimestamp(pDateTo)}) or (t.DateTo between {ConvertToUnixTimestamp(pDateFrom)} and {ConvertToUnixTimestamp(pDateTo)}));", new DynamicParameters());
                 return output.ToList<IPersonVacation>().Count() == 0;
             }
         }
