@@ -30,16 +30,19 @@ namespace HumanResourcesManagement.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPeopleVacations));
             this.gridVacations = new System.Windows.Forms.DataGridView();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.iPersonVacationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAddNewVacation = new System.Windows.Forms.Button();
             this.personNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personLastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateFromDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iPersonVacationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridVacations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPersonVacationBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -68,26 +71,21 @@ namespace HumanResourcesManagement.View
             this.gridVacations.Name = "gridVacations";
             this.gridVacations.ReadOnly = true;
             this.gridVacations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridVacations.Size = new System.Drawing.Size(776, 443);
+            this.gridVacations.Size = new System.Drawing.Size(895, 499);
             this.gridVacations.TabIndex = 0;
             this.gridVacations.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Delete
+            // iPersonVacationBindingSource
             // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.ToolTipText = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
+            this.iPersonVacationBindingSource.DataSource = typeof(DataLibrary.Abstract.IPersonVacation);
             // 
             // btnAddNewVacation
             // 
             this.btnAddNewVacation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNewVacation.Location = new System.Drawing.Point(12, 462);
+            this.btnAddNewVacation.Location = new System.Drawing.Point(12, 518);
             this.btnAddNewVacation.Name = "btnAddNewVacation";
-            this.btnAddNewVacation.Size = new System.Drawing.Size(776, 35);
+            this.btnAddNewVacation.Size = new System.Drawing.Size(895, 35);
             this.btnAddNewVacation.TabIndex = 1;
             this.btnAddNewVacation.Text = "Add new vacation";
             this.btnAddNewVacation.UseVisualStyleBackColor = true;
@@ -96,6 +94,8 @@ namespace HumanResourcesManagement.View
             // personNameDataGridViewTextBoxColumn
             // 
             this.personNameDataGridViewTextBoxColumn.DataPropertyName = "PersonName";
+            dataGridViewCellStyle1.NullValue = null;
+            this.personNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.personNameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.personNameDataGridViewTextBoxColumn.Name = "personNameDataGridViewTextBoxColumn";
             this.personNameDataGridViewTextBoxColumn.ReadOnly = true;
@@ -118,6 +118,9 @@ namespace HumanResourcesManagement.View
             // dateFromDataGridViewTextBoxColumn
             // 
             this.dateFromDataGridViewTextBoxColumn.DataPropertyName = "DateFrom";
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dateFromDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.dateFromDataGridViewTextBoxColumn.HeaderText = "Date from";
             this.dateFromDataGridViewTextBoxColumn.Name = "dateFromDataGridViewTextBoxColumn";
             this.dateFromDataGridViewTextBoxColumn.ReadOnly = true;
@@ -125,20 +128,28 @@ namespace HumanResourcesManagement.View
             // dateToDataGridViewTextBoxColumn
             // 
             this.dateToDataGridViewTextBoxColumn.DataPropertyName = "DateTo";
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dateToDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.dateToDataGridViewTextBoxColumn.HeaderText = "Date to";
             this.dateToDataGridViewTextBoxColumn.Name = "dateToDataGridViewTextBoxColumn";
             this.dateToDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // iPersonVacationBindingSource
+            // Delete
             // 
-            this.iPersonVacationBindingSource.DataSource = typeof(DataLibrary.Abstract.IPersonVacation);
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.ToolTipText = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // FrmPeopleVacations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(800, 509);
+            this.ClientSize = new System.Drawing.Size(919, 565);
             this.Controls.Add(this.btnAddNewVacation);
             this.Controls.Add(this.gridVacations);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

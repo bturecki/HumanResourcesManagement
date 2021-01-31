@@ -42,23 +42,30 @@ namespace HumanResourcesManagement
             // 
             this.btnPeople.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPeople.BackColor = System.Drawing.SystemColors.Control;
+            this.btnPeople.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPeople.BackgroundImage")));
+            this.btnPeople.FlatAppearance.BorderSize = 2;
+            this.btnPeople.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnPeople.Location = new System.Drawing.Point(12, 12);
             this.btnPeople.Name = "btnPeople";
-            this.btnPeople.Size = new System.Drawing.Size(631, 33);
+            this.btnPeople.Size = new System.Drawing.Size(821, 33);
             this.btnPeople.TabIndex = 2;
             this.btnPeople.Text = "Manage people";
-            this.btnPeople.UseVisualStyleBackColor = true;
+            this.btnPeople.UseVisualStyleBackColor = false;
             this.btnPeople.Click += new System.EventHandler(this.btnPeople_Click_1);
             // 
             // btnShowDepartaments
             // 
             this.btnShowDepartaments.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShowDepartaments.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnShowDepartaments.BackgroundImage")));
+            this.btnShowDepartaments.FlatAppearance.BorderSize = 2;
+            this.btnShowDepartaments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowDepartaments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnShowDepartaments.Location = new System.Drawing.Point(12, 51);
             this.btnShowDepartaments.Name = "btnShowDepartaments";
-            this.btnShowDepartaments.Size = new System.Drawing.Size(631, 33);
+            this.btnShowDepartaments.Size = new System.Drawing.Size(821, 33);
             this.btnShowDepartaments.TabIndex = 3;
             this.btnShowDepartaments.Text = "Manage departaments";
             this.btnShowDepartaments.UseVisualStyleBackColor = true;
@@ -71,7 +78,7 @@ namespace HumanResourcesManagement
             this.lblCreator.AutoSize = true;
             this.lblCreator.BackColor = System.Drawing.Color.Transparent;
             this.lblCreator.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreator.Location = new System.Drawing.Point(9, 349);
+            this.lblCreator.Location = new System.Drawing.Point(9, 449);
             this.lblCreator.Name = "lblCreator";
             this.lblCreator.Size = new System.Drawing.Size(0, 16);
             this.lblCreator.TabIndex = 4;
@@ -80,10 +87,13 @@ namespace HumanResourcesManagement
             // 
             this.btnManageVacations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnManageVacations.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnManageVacations.BackgroundImage")));
+            this.btnManageVacations.FlatAppearance.BorderSize = 2;
+            this.btnManageVacations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageVacations.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnManageVacations.Location = new System.Drawing.Point(12, 90);
             this.btnManageVacations.Name = "btnManageVacations";
-            this.btnManageVacations.Size = new System.Drawing.Size(631, 33);
+            this.btnManageVacations.Size = new System.Drawing.Size(821, 33);
             this.btnManageVacations.TabIndex = 5;
             this.btnManageVacations.Text = "Manage vacations";
             this.btnManageVacations.UseVisualStyleBackColor = true;
@@ -93,10 +103,13 @@ namespace HumanResourcesManagement
             // 
             this.btnWorkingHours.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnWorkingHours.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnWorkingHours.BackgroundImage")));
+            this.btnWorkingHours.FlatAppearance.BorderSize = 2;
+            this.btnWorkingHours.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWorkingHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWorkingHours.Location = new System.Drawing.Point(12, 129);
             this.btnWorkingHours.Name = "btnWorkingHours";
-            this.btnWorkingHours.Size = new System.Drawing.Size(631, 33);
+            this.btnWorkingHours.Size = new System.Drawing.Size(821, 33);
             this.btnWorkingHours.TabIndex = 6;
             this.btnWorkingHours.Text = "Manage working hours";
             this.btnWorkingHours.UseVisualStyleBackColor = true;
@@ -106,10 +119,13 @@ namespace HumanResourcesManagement
             // 
             this.btnEmails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEmails.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEmails.BackgroundImage")));
+            this.btnEmails.FlatAppearance.BorderSize = 2;
+            this.btnEmails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnEmails.Location = new System.Drawing.Point(12, 169);
             this.btnEmails.Name = "btnEmails";
-            this.btnEmails.Size = new System.Drawing.Size(631, 33);
+            this.btnEmails.Size = new System.Drawing.Size(821, 33);
             this.btnEmails.TabIndex = 7;
             this.btnEmails.Text = "Send e-mails";
             this.btnEmails.UseVisualStyleBackColor = true;
@@ -120,7 +136,7 @@ namespace HumanResourcesManagement
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(655, 371);
+            this.ClientSize = new System.Drawing.Size(845, 471);
             this.Controls.Add(this.btnEmails);
             this.Controls.Add(this.btnWorkingHours);
             this.Controls.Add(this.btnManageVacations);
