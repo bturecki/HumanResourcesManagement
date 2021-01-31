@@ -55,6 +55,7 @@ namespace HumanResourcesManagement.View
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTimeFrom.AutoSize = true;
+            this.lblTimeFrom.BackColor = System.Drawing.Color.Transparent;
             this.lblTimeFrom.Location = new System.Drawing.Point(12, 9);
             this.lblTimeFrom.Name = "lblTimeFrom";
             this.lblTimeFrom.Size = new System.Drawing.Size(53, 13);
@@ -67,6 +68,7 @@ namespace HumanResourcesManagement.View
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTimeTo.AutoSize = true;
+            this.lblTimeTo.BackColor = System.Drawing.Color.Transparent;
             this.lblTimeTo.Location = new System.Drawing.Point(12, 57);
             this.lblTimeTo.Name = "lblTimeTo";
             this.lblTimeTo.Size = new System.Drawing.Size(42, 13);

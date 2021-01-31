@@ -130,6 +130,7 @@ namespace HumanResourcesManagement.View
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(11, 164);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 13);
