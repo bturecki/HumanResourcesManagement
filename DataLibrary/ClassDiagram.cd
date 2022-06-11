@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DataLibrary.Entities.PersonWorkingHours" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAGAAICCAgCAAAAAAAQAAAAAAEAAABAAAAAAAAAg=</HashCode>
+      <FileName>Entities\PersonWorkingHours.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLibrary.Entities.Departament" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Departament.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLibrary.Entities.EmailCredintials" Collapsed="true">
+    <Position X="10.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\EmailCredintials.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataLibrary.Entities.Engine" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAgBACIAAECAAAAEBBAAAAAAAAgQAAgAQgAAiA=</HashCode>
+      <FileName>Entities\Engine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLibrary.Entities.MailToSend" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAgCAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\MailToSend.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLibrary.Entities.PersonModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAGAAACCAgAAAAAAAAAAAAAAAEAAABAAAAAAAAAg=</HashCode>
+      <FileName>Entities\PersonModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLibrary.Entities.PersonVacation" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAIAAAQAAEAABAAAABAAAEEABA=</HashCode>
+      <FileName>Entities\PersonVacation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="DataLibrary.Abstract.IPersonWorkingHours" Collapsed="true">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAEAAIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Abstract\IPersonWorkingHours.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DataLibrary.Abstract.IDepartament" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstract\IDepartament.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DataLibrary.Abstract.IEngine" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAgBACIAAEAAAAAEBBAAAAAAAAAQAAgAQgAAiA=</HashCode>
+      <FileName>Abstract\IEngine.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DataLibrary.Abstract.IMailToSend" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAgCAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstract\IMailToSend.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DataLibrary.Abstract.IPersonModel" Collapsed="true">
+    <Position X="3.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAGAAACCAgAAAAAAAAAAAAAAAEAAABAAAAAAAAAg=</HashCode>
+      <FileName>Abstract\IPersonModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DataLibrary.Abstract.IPersonVacation" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAIAAAQAAAAABAAAAAAAAAEABA=</HashCode>
+      <FileName>Abstract\IPersonVacation.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

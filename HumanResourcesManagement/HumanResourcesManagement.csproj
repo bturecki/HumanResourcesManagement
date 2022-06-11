@@ -188,6 +188,7 @@
     <EmbeddedResource Include="View\FrmWorkingHours.resx">
       <DependentUpon>FrmWorkingHours.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DataLibrary.Abstract.IDepartament.datasource" />
     <None Include="Properties\DataSources\DataLibrary.Abstract.IPersonModel.datasource" />
