@@ -10,7 +10,7 @@ namespace HumanResourcesManagement.Presenter
         public PresenterMain(IMain pView)
         {
             View = pView;
-            View.LabelCreator = $"Bartosz Turecki JiPP {DateTime.Now.Year}";
+            View.LabelCreator = $"Bartosz Turecki {DateTime.Now.Year}";
             View.PeopleBtnClick += View_PeopleBtnClick;
             View.DepartamentsBtnClick += View_DepartamentsBtnClick;
             View.VacationsBtnClick += View_VacationsBtnClick;
