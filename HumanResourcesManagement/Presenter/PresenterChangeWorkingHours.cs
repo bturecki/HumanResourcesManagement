@@ -6,25 +6,25 @@ namespace HumanResourcesManagement.Presenter
 {
     class PresenterChangeWorkingHours
     {
-        IChangeWorkingHours View { get; set; }
-        IEngine Engine { get; set; }
-        IPersonWorkingHours PersonWorkingHours { get; set; }
+        readonly IChangeWorkingHours iew;
+        readonly IEngine engine;
+        readonly IPersonWorkingHours personWorkingHours;
 
         public PresenterChangeWorkingHours(IChangeWorkingHours pView, IPersonWorkingHours pPersonWorkingHours)
         {
-            View = pView;
-            PersonWorkingHours = pPersonWorkingHours;
-            Engine = Factory.GetEngine();
-            View.FrmText = $"{PersonWorkingHours.FirstName} {PersonWorkingHours.LastName}";
-            View.TimeFrom = PersonWorkingHours.HourFrom;
-            View.TimeTo = PersonWorkingHours.HourTo;
-            View.SaveBtnClick += View_SaveBtnClick;
+            iew = pView;
+            personWorkingHours = pPersonWorkingHours;
+            engine = Factory.GetEngine();
+            iew.FrmText = $"{personWorkingHours.FirstName} {personWorkingHours.LastName}";
+            iew.TimeFrom = personWorkingHours.HourFrom;
+            iew.TimeTo = personWorkingHours.HourTo;
+            iew.SaveBtnClick += View_SaveBtnClick;
         }
 
         private void View_SaveBtnClick()
         {
-            Engine.SavePersonWorkingHours(PersonWorkingHours, View.TimeFrom, View.TimeTo);
-            View.SetDialogResultOK();
+            engine.SavePersonWorkingHours(personWorkingHours, iew.TimeFrom, iew.TimeTo);
+            iew.SetDialogResultOK();
         }
     }
 }

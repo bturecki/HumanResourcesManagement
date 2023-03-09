@@ -8,62 +8,62 @@ namespace HumanResourcesManagement.Presenter
 {
     class PresenterAddEditPerson
     {
-        IEngine Engine { get; set; }
-        IPersonModel PersonModel { get; set; }
-        IAddEditPerson View { get; set; }
+        readonly IEngine engine;
+        readonly IPersonModel personModel;
+        readonly IAddEditPerson view;
 
         public PresenterAddEditPerson(IAddEditPerson pView, IPersonModel pPersonModel)
         {
-            PersonModel = pPersonModel;
-            View = pView;
-            Engine = Factory.GetEngine();
+            personModel = pPersonModel;
+            view = pView;
+            engine = Factory.GetEngine();
 
             if (pPersonModel != null)
             {
-                View.FirstName = PersonModel.FirstName;
-                View.LastName = PersonModel.LastName;
-                View.Salary = PersonModel.Salary;
-                View.FrmText = "Person edit";
+                view.FirstName = personModel.FirstName;
+                view.LastName = personModel.LastName;
+                view.Salary = personModel.Salary;
+                view.FrmText = "Person edit";
             }
             else
-                View.FrmText = "Adding new person";
+                view.FrmText = "Adding new person";
 
-            View.FrmShown += View_FrmShown;
-            View.SaveBtnClick += View_SaveBtnClick;
+            view.FrmShown += View_FrmShown;
+            view.SaveBtnClick += View_SaveBtnClick;
         }
 
         private void View_SaveBtnClick()
         {
-            IPersonModel _person = Factory.GetPersonModel(View.FirstName, View.LastName, View.Salary, View.SelectedDepartament.ID);
+            IPersonModel _person = Factory.GetPersonModel(view.FirstName, view.LastName, view.Salary, view.SelectedDepartament.ID);
 
             string output;
 
             bool result = _person.Validate(out output);
             if (!result)
             {
-                View.ShowMessageBox(output);
+                view.ShowMessageBox(output);
                 return;
             }
 
-            if (PersonModel == null)
-                Engine.SavePerson(_person);
+            if (personModel == null)
+                engine.SavePerson(_person);
             else
             {
-                PersonModel.FirstName = _person.FirstName;
-                PersonModel.LastName = _person.LastName;
-                PersonModel.Salary = _person.Salary;
-                PersonModel.DepartamentID = _person.DepartamentID;
-                Engine.UpdatePerson(PersonModel);
+                personModel.FirstName = _person.FirstName;
+                personModel.LastName = _person.LastName;
+                personModel.Salary = _person.Salary;
+                personModel.DepartamentID = _person.DepartamentID;
+                engine.UpdatePerson(personModel);
             }
 
-            View.SetDialogResultOK();
+            view.SetDialogResultOK();
         }
         private void View_FrmShown()
         {
-            List<IDepartament> _departaments = Engine.GetAllDepartaments();
-            View.FillDepartaments(_departaments);
-            if (PersonModel != null)
-                View.SelectedDepartament = _departaments.Where(x => x.ID == PersonModel.DepartamentID).Single();
+            List<IDepartament> _departaments = engine.GetAllDepartaments();
+            view.FillDepartaments(_departaments);
+            if (personModel != null)
+                view.SelectedDepartament = _departaments.Where(x => x.ID == personModel.DepartamentID).Single();
         }
     }
 }

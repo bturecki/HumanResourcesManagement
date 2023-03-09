@@ -6,37 +6,37 @@ namespace HumanResourcesManagement.Presenter
 {
     class PresenterAddNewVacation
     {
-        IAddNewVacation View { get; set; }
-        IEngine Engine { get; set; }
+        readonly IAddNewVacation view;
+        readonly IEngine engine;
         public PresenterAddNewVacation(IAddNewVacation pView)
         {
-            View = pView;
-            Engine = Factory.GetEngine();
-            View.SaveBtnClick += View_SaveBtnClick;
-            View.FrmShown += View_FrmShown;
+            view = pView;
+            engine = Factory.GetEngine();
+            view.SaveBtnClick += View_SaveBtnClick;
+            view.FrmShown += View_FrmShown;
         }
 
         private void View_FrmShown()
         {
-            View.FillGridPeople(Engine.GetAllPeople());
+            view.FillGridPeople(engine.GetAllPeople());
         }
         private void View_SaveBtnClick()
         {
-            System.DateTime _dateFrom = View.DateFrom;
-            System.DateTime _dateTo = View.DateTo;
+            System.DateTime _dateFrom = view.DateFrom;
+            System.DateTime _dateTo = view.DateTo;
 
             if (_dateTo < _dateFrom)
             {
-                View.ShowMessageBox("Date to should be greater than date from.");
+                view.ShowMessageBox("Date to should be greater than date from.");
                 return;
             }
-            if (!Engine.CanSaveVacation(View.Person, _dateFrom, _dateTo))
+            if (!engine.CanSaveVacation(view.Person, _dateFrom, _dateTo))
             {
-                View.ShowMessageBox("Selected person already has a saved vacation within these dates.");
+                view.ShowMessageBox("Selected person already has a saved vacation within these dates.");
                 return;
             }
-            Engine.AddPersonVacation(View.Person, _dateFrom, _dateTo);
-            View.SetDialogResultOK();
+            engine.AddPersonVacation(view.Person, _dateFrom, _dateTo);
+            view.SetDialogResultOK();
         }
     }
 }

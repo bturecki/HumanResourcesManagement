@@ -6,35 +6,35 @@ namespace HumanResourcesManagement.Presenter
 {
     class PresenterDepartaments
     {
-        IDepartaments View { get; set; }
-        IEngine Engine { get; set; }
+        readonly IDepartaments view;
+        readonly IEngine engine;
 
         public PresenterDepartaments(IDepartaments pView)
         {
-            View = pView;
-            Engine = Factory.GetEngine();
-            View.FrmShown += View_FrmShown;
-            View.AddNewDepartamentBtnClick += View_AddNewDepartamentBtnClick;
-            View.DepartamentEdited += View_DepartamentEdited;
-            View.EditBtnClick += View_EditBtnClick;
-            View.DeleteBtnClick += View_DeleteBtnClick;
+            view = pView;
+            engine = Factory.GetEngine();
+            view.FrmShown += View_FrmShown;
+            view.AddNewDepartamentBtnClick += View_AddNewDepartamentBtnClick;
+            view.DepartamentEdited += View_DepartamentEdited;
+            view.EditBtnClick += View_EditBtnClick;
+            view.DeleteBtnClick += View_DeleteBtnClick;
         }
 
         private void View_DeleteBtnClick()
         {
-            IDepartament _selectedDepartament = View.SelectedRow;
-            if (!View.AskForConfirm($"Are you sure you want to delete {_selectedDepartament.Name}?"))
+            IDepartament _selectedDepartament = view.SelectedRow;
+            if (!view.AskForConfirm($"Are you sure you want to delete {_selectedDepartament.Name}?"))
                 return;
-            Engine.DeleteDepartament(_selectedDepartament);
+            engine.DeleteDepartament(_selectedDepartament);
             FillAllDepartaments();
         }
         private void View_EditBtnClick()
         {
-            View.OpenAddingNewDepartament(View.SelectedRow);
+            view.OpenAddingNewDepartament(view.SelectedRow);
         }
         private void View_AddNewDepartamentBtnClick()
         {
-            View.OpenAddingNewDepartament(null);
+            view.OpenAddingNewDepartament(null);
         }
         private void View_DepartamentEdited()
         {
@@ -46,7 +46,7 @@ namespace HumanResourcesManagement.Presenter
         }
         private void FillAllDepartaments()
         {
-            View.FillGridDepartaments(Engine.GetAllDepartaments());
+            view.FillGridDepartaments(engine.GetAllDepartaments());
         }
     }
 }

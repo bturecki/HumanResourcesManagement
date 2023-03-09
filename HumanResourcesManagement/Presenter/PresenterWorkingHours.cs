@@ -6,22 +6,22 @@ namespace HumanResourcesManagement.Presenter
 {
     class PresenterWorkingHours
     {
-        IWorkingHours View { get; set; }
-        IEngine Engine { get; set; }
+        readonly IWorkingHours view;
+        readonly IEngine engine;
         public PresenterWorkingHours(IWorkingHours pView)
         {
-            View = pView;
-            Engine = Factory.GetEngine();
-            View.FrmShown += View_FrmShown;
-            View.EditBtnClick += View_EditBtnClick;
+            view = pView;
+            engine = Factory.GetEngine();
+            view.FrmShown += View_FrmShown;
+            view.EditBtnClick += View_EditBtnClick;
         }
         private void View_EditBtnClick(IPersonWorkingHours pPersonWorkingHours)
         {
-            View.OpenChangeWorkingHours(pPersonWorkingHours);
+            view.OpenChangeWorkingHours(pPersonWorkingHours);
         }
         private void View_FrmShown()
         {
-            View.FillGrid(Engine.GetAllWorkingHours());
+            view.FillGrid(engine.GetAllWorkingHours());
         }
     }
 }

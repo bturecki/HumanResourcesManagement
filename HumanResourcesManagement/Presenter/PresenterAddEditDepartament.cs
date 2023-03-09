@@ -6,42 +6,42 @@ namespace HumanResourcesManagement.Presenter
 {
     class PresenterAddEditDepartament
     {
-        IEngine Engine { get; set; }
-        IDepartament Departament { get; set; }
-        IAddEditDepartament View { get; set; }
+        readonly IEngine engine;
+        readonly IDepartament departament;
+        readonly IAddEditDepartament view;
 
         public PresenterAddEditDepartament(IAddEditDepartament pView, IDepartament pDepartament)
         {
-            Departament = pDepartament;
-            View = pView;
-            Engine = Factory.GetEngine();
-            View.FrmText = Departament == null ? "Adding new departament" : "Departament edit";
-            if (Departament != null)
-                View.DepartamentName = Departament.Name;
+            departament = pDepartament;
+            view = pView;
+            engine = Factory.GetEngine();
+            view.FrmText = departament == null ? "Adding new departament" : "Departament edit";
+            if (departament != null)
+                view.DepartamentName = departament.Name;
 
-            View.SaveBtnClick += View_SaveBtnClick;
+            view.SaveBtnClick += View_SaveBtnClick;
         }
 
         private void View_SaveBtnClick()
         {
-            if (string.IsNullOrEmpty(View.DepartamentName))
+            if (string.IsNullOrEmpty(view.DepartamentName))
             {
-                View.ShowMessageBox("Departament name can not be null or empty!");
+                view.ShowMessageBox("Departament name can not be null or empty!");
                 return;
             }
-            if (Departament == null)
-                Engine.SaveDepartament(Factory.GetDepartament(View.DepartamentName));
+            if (departament == null)
+                engine.SaveDepartament(Factory.GetDepartament(view.DepartamentName));
             else
             {
-                if (Departament.Name == View.DepartamentName)
+                if (departament.Name == view.DepartamentName)
                 {
-                    View.ShowMessageBox("New departament name can not be equal to the old departament name.");
+                    view.ShowMessageBox("New departament name can not be equal to the old departament name.");
                     return;
                 }
-                Departament.Name = View.DepartamentName;
-                Engine.UpdateDepartament(Departament);
+                departament.Name = view.DepartamentName;
+                engine.UpdateDepartament(departament);
             }
-            View.SetDialogResultOK();
+            view.SetDialogResultOK();
         }
     }
 }

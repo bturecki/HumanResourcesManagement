@@ -6,21 +6,21 @@ namespace HumanResourcesManagement.Presenter
 {
     class PresenterPeopleVacations
     {
-        IEngine Engine { get; set; }
-        IPeopleVacations View { get; set; }
+        readonly IEngine engine;
+        readonly IPeopleVacations view;
         public PresenterPeopleVacations(IPeopleVacations pView)
         {
-            View = pView;
-            Engine = Factory.GetEngine();
-            View.FrmShown += ReloadGrid;
-            View.AddNewVacationBtnClick += View_AddNewVacationBtnClick;
-            View.VacationAdded += View_VacationAdded;
-            View.DeleteRecordBtnClick += View_DeleteRecordBtnClick;
+            view = pView;
+            engine = Factory.GetEngine();
+            view.FrmShown += ReloadGrid;
+            view.AddNewVacationBtnClick += View_AddNewVacationBtnClick;
+            view.VacationAdded += View_VacationAdded;
+            view.DeleteRecordBtnClick += View_DeleteRecordBtnClick;
         }
 
         private void View_DeleteRecordBtnClick(IPersonVacation pPersonVacation)
         {
-            Engine.DeleteVacation(pPersonVacation);
+            engine.DeleteVacation(pPersonVacation);
             ReloadGrid();
         }
         private void View_VacationAdded()
@@ -29,11 +29,11 @@ namespace HumanResourcesManagement.Presenter
         }
         private void View_AddNewVacationBtnClick()
         {
-            View.OpenNewVacation();
+            view.OpenNewVacation();
         }
         private void ReloadGrid()
         {
-            View.FillGrid(Engine.GetAllVacations());
+            view.FillGrid(engine.GetAllVacations());
         }
     }
 }

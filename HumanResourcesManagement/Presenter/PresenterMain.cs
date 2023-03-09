@@ -5,38 +5,38 @@ namespace HumanResourcesManagement.Presenter
 {
     class PresenterMain
     {
-        IMain View { get; set; }
+        readonly IMain view;
 
         public PresenterMain(IMain pView)
         {
-            View = pView;
-            View.LabelCreator = $"Bartosz Turecki {DateTime.Now.Year}";
-            View.PeopleBtnClick += View_PeopleBtnClick;
-            View.DepartamentsBtnClick += View_DepartamentsBtnClick;
-            View.VacationsBtnClick += View_VacationsBtnClick;
-            View.WorkingHoursBtnClick += View_WorkingHoursBtnClick;
-            View.EmailsBtnClick += View_EmailsBtnClick;
+            view = pView;
+            view.LabelCreator = $"Bartosz Turecki {DateTime.Now.Year}";
+            view.PeopleBtnClick += View_PeopleBtnClick;
+            view.DepartamentsBtnClick += View_DepartamentsBtnClick;
+            view.VacationsBtnClick += View_VacationsBtnClick;
+            view.WorkingHoursBtnClick += View_WorkingHoursBtnClick;
+            view.EmailsBtnClick += View_EmailsBtnClick;
         }
 
         private void View_EmailsBtnClick()
         {
-            View.OpenEmailsView();
+            view.OpenEmailsView();
         }
         private void View_WorkingHoursBtnClick()
         {
-            View.OpenWorkingHoursView();
+            view.OpenWorkingHoursView();
         }
         private void View_VacationsBtnClick()
         {
-            View.OpenVacationsView();
+            view.OpenVacationsView();
         }
         private void View_DepartamentsBtnClick()
         {
-            View.OpenDepartamentsView();
+            view.OpenDepartamentsView();
         }
         private void View_PeopleBtnClick()
         {
-            View.OpenPeopleView();
+            view.OpenPeopleView();
         }
     }
 }
