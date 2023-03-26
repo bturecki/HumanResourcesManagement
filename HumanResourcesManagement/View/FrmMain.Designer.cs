@@ -36,6 +36,7 @@ namespace HumanResourcesManagement
             this.btnManageVacations = new System.Windows.Forms.Button();
             this.btnWorkingHours = new System.Windows.Forms.Button();
             this.btnEmails = new System.Windows.Forms.Button();
+            this.btnExportData = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPeople
@@ -131,12 +132,29 @@ namespace HumanResourcesManagement
             this.btnEmails.UseVisualStyleBackColor = true;
             this.btnEmails.Click += new System.EventHandler(this.btnEmails_Click);
             // 
+            // btnExportData
+            // 
+            this.btnExportData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportData.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExportData.BackgroundImage")));
+            this.btnExportData.FlatAppearance.BorderSize = 2;
+            this.btnExportData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnExportData.Location = new System.Drawing.Point(12, 208);
+            this.btnExportData.Name = "btnExportData";
+            this.btnExportData.Size = new System.Drawing.Size(821, 33);
+            this.btnExportData.TabIndex = 8;
+            this.btnExportData.Text = "Export data";
+            this.btnExportData.UseVisualStyleBackColor = true;
+            this.btnExportData.Click += new System.EventHandler(this.btnExportData_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(845, 471);
+            this.Controls.Add(this.btnExportData);
             this.Controls.Add(this.btnEmails);
             this.Controls.Add(this.btnWorkingHours);
             this.Controls.Add(this.btnManageVacations);
@@ -160,6 +178,7 @@ namespace HumanResourcesManagement
         private System.Windows.Forms.Button btnManageVacations;
         private System.Windows.Forms.Button btnWorkingHours;
         private System.Windows.Forms.Button btnEmails;
+        private System.Windows.Forms.Button btnExportData;
     }
 }
 

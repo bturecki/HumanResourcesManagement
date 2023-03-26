@@ -21,6 +21,7 @@ namespace HumanResourcesManagement
         public event Action VacationsBtnClick;
         public event Action WorkingHoursBtnClick;
         public event Action EmailsBtnClick;
+        public event Action ExportDataBtnClick;
 
         public void OpenPeopleView()
         {
@@ -47,6 +48,11 @@ namespace HumanResourcesManagement
             using (FrmMails _frmMails = new FrmMails())
                 _frmMails.ShowDialog();
         }
+        public void OpenExportDataView()
+        {
+            using (FrmExportData _frmExportData = new FrmExportData())
+                _frmExportData.ShowDialog();
+        }
         private void btnShowDepartaments_Click_1(object sender, EventArgs e)
         {
             DepartamentsBtnClick();
@@ -66,6 +72,10 @@ namespace HumanResourcesManagement
         private void btnEmails_Click(object sender, EventArgs e)
         {
             EmailsBtnClick();
+        }
+        private void btnExportData_Click(object sender, EventArgs e)
+        {
+            ExportDataBtnClick();
         }
     }
 }

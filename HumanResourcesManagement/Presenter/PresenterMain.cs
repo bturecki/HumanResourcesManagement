@@ -16,8 +16,13 @@ namespace HumanResourcesManagement.Presenter
             view.VacationsBtnClick += View_VacationsBtnClick;
             view.WorkingHoursBtnClick += View_WorkingHoursBtnClick;
             view.EmailsBtnClick += View_EmailsBtnClick;
+            view.ExportDataBtnClick += View_ExportDataBtnClick;
         }
 
+        private void View_ExportDataBtnClick()
+        {
+            view.OpenExportDataView();
+        }
         private void View_EmailsBtnClick()
         {
             view.OpenEmailsView();

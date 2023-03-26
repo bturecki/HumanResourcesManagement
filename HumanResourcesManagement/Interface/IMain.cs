@@ -11,11 +11,13 @@ namespace HumanResourcesManagement.Interface
         event Action VacationsBtnClick;
         event Action WorkingHoursBtnClick;
         event Action EmailsBtnClick;
+        event Action ExportDataBtnClick;
 
         void OpenPeopleView();
         void OpenVacationsView();
         void OpenDepartamentsView();
         void OpenWorkingHoursView();
         void OpenEmailsView();
+        void OpenExportDataView();
     }
 }
