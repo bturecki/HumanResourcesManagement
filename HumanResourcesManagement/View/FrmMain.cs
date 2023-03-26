@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace HumanResourcesManagement
 {
-    public partial class FrmMain : Form, IMain
+    public partial class FrmMain : BaseForm, IMain
     {
         public string LabelCreator { set => lblCreator.Text = value; }
 

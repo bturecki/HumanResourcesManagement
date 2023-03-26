@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace HumanResourcesManagement.View
 {
-    public partial class FrmAddEditDepartament : Form, IAddEditDepartament
+    public partial class FrmAddEditDepartament : BaseForm, IAddEditDepartament
     {
         public string DepartamentName { get => tbName.Text; set => tbName.Text = value; }
         public string FrmText { set => this.Text = value; }
@@ -22,14 +22,6 @@ namespace HumanResourcesManagement.View
         private void btnSave_Click(object sender, EventArgs e)
         {
             SaveBtnClick();
-        }
-        public void ShowMessageBox(string pMessage)
-        {
-            MessageBox.Show(pMessage);
-        }
-        public void SetDialogResultOK()
-        {
-            this.DialogResult = DialogResult.OK;
         }
     }
 }

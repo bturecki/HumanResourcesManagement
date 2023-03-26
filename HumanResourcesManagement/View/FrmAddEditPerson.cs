@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace HumanResourcesManagement.View
 {
-    public partial class FrmAddEditPerson : Form, IAddEditPerson
+    public partial class FrmAddEditPerson : BaseForm, IAddEditPerson
     {
         public string FirstName { get => tbFirstName.Text; set => tbFirstName.Text = value; }
         public string LastName { get => tbLastName.Text; set => tbLastName.Text = value; }
@@ -49,14 +49,6 @@ namespace HumanResourcesManagement.View
         public void FillDepartaments(List<IDepartament> pDepartaments)
         {
             iDepartamentBindingSource.DataSource = pDepartaments;
-        }
-        public void ShowMessageBox(string pMessage)
-        {
-            MessageBox.Show(pMessage);
-        }
-        public void SetDialogResultOK()
-        {
-            this.DialogResult = DialogResult.OK;
         }
     }
 }

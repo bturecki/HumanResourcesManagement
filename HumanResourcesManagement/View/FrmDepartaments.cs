@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace HumanResourcesManagement.View
 {
-    public partial class FrmDepartaments : Form, IDepartaments
+    public partial class FrmDepartaments : BaseForm, IDepartaments
     {
         public IDepartament SelectedRow => (IDepartament)gridDepartaments.CurrentRow.DataBoundItem;
 
@@ -49,10 +49,6 @@ namespace HumanResourcesManagement.View
                 EditBtnClick();
             else if (((DataGridView)sender).Columns[e.ColumnIndex] == Delete && e.RowIndex >= 0)
                 DeleteBtnClick();
-        }
-        public bool AskForConfirm(string pMessage, string pCaption = "Confirm")
-        {
-            return MessageBox.Show(pMessage, pCaption, MessageBoxButtons.YesNo) == DialogResult.Yes;
         }
     }
 }

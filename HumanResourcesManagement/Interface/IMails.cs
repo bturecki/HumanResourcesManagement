@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace HumanResourcesManagement.Interface
 {
-    interface IMails
+    interface IMails : IBaseForm
     {
         string EmailSubject { get; set; }
         string EmailContent { get; set; }
@@ -15,6 +15,5 @@ namespace HumanResourcesManagement.Interface
 
         void FillGridPeople(List<IPersonModel> pList);
         void ClearGridSelection();
-        void ShowMessageBox(string pMessage);
     }
 }

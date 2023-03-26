@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace HumanResourcesManagement.View
 {
-    public partial class FrmExportData : Form, IExportData
+    public partial class FrmExportData : BaseForm, IExportData
     {
 
         public FrmExportData()
@@ -29,14 +29,6 @@ namespace HumanResourcesManagement.View
                     filePath = saveFileDialog.FileName;
             }
             return filePath;
-        }
-        public void ShowMessageBox(string pMessage)
-        {
-            MessageBox.Show(pMessage);
-        }
-        public void SetDialogResultOK()
-        {
-            this.DialogResult = DialogResult.OK;
         }
         private void btnGeneratePdf_Click(object sender, EventArgs e)
         {

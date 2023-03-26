@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace HumanResourcesManagement.View
 {
-    public partial class FrmPeople : Form, IPeople
+    public partial class FrmPeople : BaseForm, IPeople
     {
         public IPersonModel SelectedRow => (IPersonModel)gridPeople.CurrentRow.DataBoundItem;
 
@@ -50,9 +50,6 @@ namespace HumanResourcesManagement.View
             else if (((DataGridView)sender).Columns[e.ColumnIndex] == Delete && e.RowIndex >= 0)
                 DeleteBtnClick();
         }
-        public bool AskForConfirm(string pMessage, string pCaption = "Confirm")
-        {
-            return MessageBox.Show(pMessage, pCaption, MessageBoxButtons.YesNo) == DialogResult.Yes;
-        }
+
     }
 }

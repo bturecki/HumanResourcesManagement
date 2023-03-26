@@ -31,7 +31,7 @@ namespace DataLibrary.Entities
             if (string.IsNullOrEmpty(Content))
                 _errMsg.AppendLine("Content cannot be empty.");
 
-            
+
             pErrMsg = _errMsg.ToString();
 
             return string.IsNullOrEmpty(_errMsg.ToString());

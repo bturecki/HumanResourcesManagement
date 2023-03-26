@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace HumanResourcesManagement.View
 {
-    public partial class FrmWorkingHours : Form, IWorkingHours
+    public partial class FrmWorkingHours : BaseForm, IWorkingHours
     {
         public FrmWorkingHours()
         {

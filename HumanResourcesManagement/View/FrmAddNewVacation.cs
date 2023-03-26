@@ -3,11 +3,10 @@ using HumanResourcesManagement.Interface;
 using HumanResourcesManagement.Presenter;
 using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace HumanResourcesManagement.View
 {
-    public partial class FrmAddNewVacation : Form, IAddNewVacation
+    public partial class FrmAddNewVacation : BaseForm, IAddNewVacation
     {
         public DateTime DateFrom => dateFrom.Value;
         public DateTime DateTo => dateTo.Value;
@@ -24,14 +23,6 @@ namespace HumanResourcesManagement.View
         private void btnSave_Click(object sender, EventArgs e)
         {
             SaveBtnClick();
-        }
-        public void SetDialogResultOK()
-        {
-            this.DialogResult = DialogResult.OK;
-        }
-        public void ShowMessageBox(string pMessage)
-        {
-            MessageBox.Show(pMessage);
         }
         private void FrmAddNewVacation_Shown(object sender, EventArgs e)
         {

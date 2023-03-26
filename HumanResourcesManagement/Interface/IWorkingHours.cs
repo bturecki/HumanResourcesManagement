@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace HumanResourcesManagement.Interface
 {
-    interface IWorkingHours
+    interface IWorkingHours : IBaseForm
     {
         event Action FrmShown;
         event Action<IPersonWorkingHours> EditBtnClick;

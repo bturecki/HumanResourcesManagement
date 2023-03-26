@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace HumanResourcesManagement.Interface
 {
-    interface IAddEditPerson
+    interface IAddEditPerson : IBaseForm
     {
         string FirstName { get; set; }
         string LastName { get; set; }
@@ -15,8 +15,6 @@ namespace HumanResourcesManagement.Interface
         event Action SaveBtnClick;
         event Action FrmShown;
 
-        void ShowMessageBox(string pMessage);
-        void SetDialogResultOK();
         void FillDepartaments(List<IDepartament> pDepartaments);
     }
 }

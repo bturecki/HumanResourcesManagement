@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace HumanResourcesManagement.Interface
 {
-    interface IDepartaments
+    interface IDepartaments : IBaseForm
     {
         IDepartament SelectedRow { get; }
 
@@ -16,6 +16,5 @@ namespace HumanResourcesManagement.Interface
 
         void FillGridDepartaments(List<IDepartament> pDepartaments);
         void OpenAddingNewDepartament(IDepartament pDepartament);
-        bool AskForConfirm(string pMessage, string pCaption = "Confirm");
     }
 }

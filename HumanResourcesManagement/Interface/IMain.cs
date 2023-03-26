@@ -2,7 +2,7 @@
 
 namespace HumanResourcesManagement.Interface
 {
-    interface IMain
+    interface IMain : IBaseForm
     {
         string LabelCreator { set; }
 

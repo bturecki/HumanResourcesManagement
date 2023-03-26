@@ -77,6 +77,7 @@
     <Compile Include="Interface\IAddEditDepartament.cs" />
     <Compile Include="Interface\IAddEditPerson.cs" />
     <Compile Include="Interface\IAddNewVacation.cs" />
+    <Compile Include="Interface\IBaseForm.cs" />
     <Compile Include="Interface\IChangeWorkingHours.cs" />
     <Compile Include="Interface\IExportData.cs" />
     <Compile Include="Interface\IMails.cs" />
@@ -96,6 +97,12 @@
     <Compile Include="Presenter\PresenterPeople.cs" />
     <Compile Include="Presenter\PresenterPeopleVacations.cs" />
     <Compile Include="Presenter\PresenterWorkingHours.cs" />
+    <Compile Include="View\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmAddEditDepartament.cs">
       <SubType>Form</SubType>
     </Compile>

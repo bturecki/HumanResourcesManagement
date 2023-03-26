@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace HumanResourcesManagement.Interface
 {
-    interface IPeople
+    interface IPeople : IBaseForm
     {
         IPersonModel SelectedRow { get; }
 
@@ -16,6 +16,5 @@ namespace HumanResourcesManagement.Interface
 
         void FillGridPeople(List<IPersonModel> pPeople);
         void OpenAddingNewPerson(IPersonModel pPersonModel);
-        bool AskForConfirm(string pMessage, string pCaption = "Confirm");
     }
 }

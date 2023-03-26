@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace HumanResourcesManagement.Interface
 {
-    interface IAddNewVacation
+    interface IAddNewVacation : IBaseForm
     {
         DateTime DateFrom { get; }
         DateTime DateTo { get; }
@@ -14,7 +14,5 @@ namespace HumanResourcesManagement.Interface
         event Action FrmShown;
 
         void FillGridPeople(List<IPersonModel> pList);
-        void SetDialogResultOK();
-        void ShowMessageBox(string pMessage);
     }
 }

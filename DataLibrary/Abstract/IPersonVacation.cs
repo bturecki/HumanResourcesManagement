@@ -8,7 +8,7 @@ namespace DataLibrary.Abstract
         DateTime DateFrom { get; }
         DateTime DateTo { get; }
         string PersonName { get; }
-        string PersonLastname { get;  }
+        string PersonLastname { get; }
         int RowId { get; }
     }
 }

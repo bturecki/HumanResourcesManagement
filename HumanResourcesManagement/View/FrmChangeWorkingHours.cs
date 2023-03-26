@@ -2,11 +2,10 @@
 using HumanResourcesManagement.Interface;
 using HumanResourcesManagement.Presenter;
 using System;
-using System.Windows.Forms;
 
 namespace HumanResourcesManagement.View
 {
-    public partial class FrmChangeWorkingHours : Form, IChangeWorkingHours
+    public partial class FrmChangeWorkingHours : BaseForm, IChangeWorkingHours
     {
         public FrmChangeWorkingHours(IPersonWorkingHours pWorkingHours)
         {
@@ -20,10 +19,6 @@ namespace HumanResourcesManagement.View
 
         public event Action SaveBtnClick;
 
-        public void SetDialogResultOK()
-        {
-            this.DialogResult = DialogResult.OK;
-        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             SaveBtnClick();

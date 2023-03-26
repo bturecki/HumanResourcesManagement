@@ -2,14 +2,11 @@
 
 namespace HumanResourcesManagement.Interface
 {
-    interface IAddEditDepartament
+    interface IAddEditDepartament : IBaseForm
     {
         string DepartamentName { get; set; }
         string FrmText { set; }
 
         event Action SaveBtnClick;
-
-        void ShowMessageBox(string pMessage);
-        void SetDialogResultOK();
     }
 }

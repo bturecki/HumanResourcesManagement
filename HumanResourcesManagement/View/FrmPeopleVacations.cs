@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace HumanResourcesManagement.View
 {
-    public partial class FrmPeopleVacations : Form, IPeopleVacations
+    public partial class FrmPeopleVacations : BaseForm, IPeopleVacations
     {
         public FrmPeopleVacations()
         {

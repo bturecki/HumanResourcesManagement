@@ -1,9 +1,5 @@
 ﻿using DataLibrary.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DataLibrary.Entities
 {
@@ -28,11 +24,11 @@ namespace DataLibrary.Entities
         public decimal Salary { get; set; }
         public int DepartamentID { get; set; }
         public string DepartamentName { get; set; }
-        public string Email { get => "bartosz.turecki@gmail.com";  }
+        public string Email { get => "bartosz.turecki@gmail.com"; }
 
         public bool Validate(out string pResult)
         {
-            var _result = new StringBuilder();
+            StringBuilder _result = new StringBuilder();
 
             if (string.IsNullOrEmpty(FirstName))
                 _result.AppendLine("First name can not be null or empty.");

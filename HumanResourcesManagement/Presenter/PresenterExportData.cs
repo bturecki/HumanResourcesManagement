@@ -21,7 +21,7 @@ namespace HumanResourcesManagement.Presenter
 
         private void View_GeneratePdfBtnClick()
         {
-            if(!view.ExportPeopleChecked && !view.ExportDepartamentsChecked)
+            if (!view.ExportPeopleChecked && !view.ExportDepartamentsChecked)
             {
                 view.ShowMessageBox("There is no data to export!");
                 return;
@@ -38,13 +38,13 @@ namespace HumanResourcesManagement.Presenter
                 {
                     foreach (IPersonModel _person in engine.GetAllPeople())
                     {
-                        Paragraph paragraph = new Paragraph($"{_person.FirstName} {_person.LastName} {_person.Email} {_person.DepartamentName} {_person.Salary}" );
+                        Paragraph paragraph = new Paragraph($"{_person.FirstName} {_person.LastName} {_person.Email} {_person.DepartamentName} {_person.Salary}");
                         document.Add(paragraph);
                     }
                 }
                 if (view.ExportDepartamentsChecked)
                 {
-                    foreach (var _departament in engine.GetAllDepartaments())
+                    foreach (IDepartament _departament in engine.GetAllDepartaments())
                     {
                         Paragraph paragraph = new Paragraph($"{_departament.Name}");
                         document.Add(paragraph);

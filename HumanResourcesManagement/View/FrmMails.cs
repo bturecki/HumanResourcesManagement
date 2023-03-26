@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace HumanResourcesManagement.View
 {
-    public partial class FrmMails : Form, IMails
+    public partial class FrmMails : BaseForm, IMails
     {
         public FrmMails()
         {
@@ -45,10 +45,6 @@ namespace HumanResourcesManagement.View
         public void FillGridPeople(List<IPersonModel> pList)
         {
             iPersonModelBindingSource.DataSource = pList;
-        }
-        public void ShowMessageBox(string pMessage)
-        {
-            MessageBox.Show(pMessage);
         }
         private void btnSend_Click(object sender, System.EventArgs e)
         {
