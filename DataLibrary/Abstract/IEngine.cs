@@ -9,6 +9,7 @@ namespace DataLibrary.Abstract
         List<IDepartament> GetAllDepartaments();
         List<IPersonVacation> GetAllVacations();
         List<IPersonWorkingHours> GetAllWorkingHours();
+        bool CheckIfLoginCredintialsAreValid(string pLogin, string pPassword);
         void SavePerson(IPersonModel pPersonModel);
         void DeletePerson(IPersonModel pPersonModel);
         void SendMailAsync(IMailToSend pMailToSend);

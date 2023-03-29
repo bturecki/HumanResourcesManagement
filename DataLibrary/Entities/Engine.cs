@@ -116,15 +116,15 @@ namespace DataLibrary.Entities
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                EmailCredintials credintials = cnn.Query<EmailCredintials>("select email, pass from EmailCredintial;", new DynamicParameters()).Single();
+                Credintials credintials = cnn.Query<Credintials>("select t.email login, t.pass password from EmailCredintial t;", new DynamicParameters()).Single();
                 SmtpClient smtpClient = new SmtpClient("smtp.gmail.com")
                 {
                     Port = 587,
-                    Credentials = new NetworkCredential(credintials.Email, credintials.Pass),
+                    Credentials = new NetworkCredential(credintials.Login, credintials.Password),
                     EnableSsl = true,
                 };
                 foreach (IPersonModel _person in pMailToSend.PeopleList)
-                    smtpClient.Send(credintials.Email, _person.Email, pMailToSend.Subject, $"{_person.FirstName} {_person.LastName}, you have a new message: {pMailToSend.Content}");
+                    smtpClient.Send(credintials.Login, _person.Email, pMailToSend.Subject, $"{_person.FirstName} {_person.LastName}, you have a new message: {pMailToSend.Content}");
             }
         }
         public void DeletePerson(IPersonModel pPersonModel)
@@ -136,6 +136,13 @@ namespace DataLibrary.Entities
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
                 cnn.Execute($"delete from Departament where ID = {pDepartament.ID}");
+        }
+        public bool CheckIfLoginCredintialsAreValid(string pLogin, string pPassword)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                return cnn.Query<Credintials>("select t.login, t.password from LoginCredintials t;", new DynamicParameters()).FirstOrDefault(x => x.Login == pLogin && x.Password == pPassword) != default;
+            }
         }
     }
 }

@@ -38,6 +38,7 @@ namespace HumanResourcesManagement.View
             // cePeople
             // 
             this.cePeople.AutoSize = true;
+            this.cePeople.BackColor = System.Drawing.Color.Transparent;
             this.cePeople.Checked = true;
             this.cePeople.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cePeople.Location = new System.Drawing.Point(12, 12);
@@ -45,11 +46,12 @@ namespace HumanResourcesManagement.View
             this.cePeople.Size = new System.Drawing.Size(59, 17);
             this.cePeople.TabIndex = 0;
             this.cePeople.Text = "People";
-            this.cePeople.UseVisualStyleBackColor = true;
+            this.cePeople.UseVisualStyleBackColor = false;
             // 
             // ceDepartaments
             // 
             this.ceDepartaments.AutoSize = true;
+            this.ceDepartaments.BackColor = System.Drawing.Color.Transparent;
             this.ceDepartaments.Checked = true;
             this.ceDepartaments.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ceDepartaments.Location = new System.Drawing.Point(12, 35);
@@ -57,7 +59,7 @@ namespace HumanResourcesManagement.View
             this.ceDepartaments.Size = new System.Drawing.Size(92, 17);
             this.ceDepartaments.TabIndex = 1;
             this.ceDepartaments.Text = "Departaments";
-            this.ceDepartaments.UseVisualStyleBackColor = true;
+            this.ceDepartaments.UseVisualStyleBackColor = false;
             // 
             // btnGeneratePdf
             // 
