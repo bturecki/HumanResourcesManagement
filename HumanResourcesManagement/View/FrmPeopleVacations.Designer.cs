@@ -42,7 +42,7 @@ namespace HumanResourcesManagement.View
             this.personIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateFromDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridVacations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPersonVacationBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +64,7 @@ namespace HumanResourcesManagement.View
             this.personIDDataGridViewTextBoxColumn,
             this.dateFromDataGridViewTextBoxColumn,
             this.dateToDataGridViewTextBoxColumn,
-            this.Delete});
+            this.colDelete});
             this.gridVacations.DataSource = this.iPersonVacationBindingSource;
             this.gridVacations.Location = new System.Drawing.Point(12, 12);
             this.gridVacations.MultiSelect = false;
@@ -137,12 +137,12 @@ namespace HumanResourcesManagement.View
             // 
             // Delete
             // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.ToolTipText = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
+            this.colDelete.HeaderText = "Delete";
+            this.colDelete.Name = "Delete";
+            this.colDelete.ReadOnly = true;
+            this.colDelete.Text = "Delete";
+            this.colDelete.ToolTipText = "Delete";
+            this.colDelete.UseColumnTextForButtonValue = true;
             // 
             // FrmPeopleVacations
             // 
@@ -173,6 +173,6 @@ namespace HumanResourcesManagement.View
         private System.Windows.Forms.DataGridViewTextBoxColumn personIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateFromDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateToDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.DataGridViewButtonColumn colDelete;
     }
 }

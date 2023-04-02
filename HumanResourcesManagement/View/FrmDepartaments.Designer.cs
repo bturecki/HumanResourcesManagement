@@ -33,8 +33,8 @@ namespace HumanResourcesManagement.View
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDepartaments));
             this.gridDepartaments = new System.Windows.Forms.DataGridView();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.iDepartamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAddNewDepartament = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridDepartaments)).BeginInit();
@@ -54,8 +54,8 @@ namespace HumanResourcesManagement.View
             this.gridDepartaments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridDepartaments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
-            this.Edit,
-            this.Delete});
+            this.colEdit,
+            this.colDelete});
             this.gridDepartaments.DataSource = this.iDepartamentBindingSource;
             this.gridDepartaments.Location = new System.Drawing.Point(12, 12);
             this.gridDepartaments.MultiSelect = false;
@@ -75,25 +75,25 @@ namespace HumanResourcesManagement.View
             // 
             // Edit
             // 
-            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Text = "Edit";
-            this.Edit.ToolTipText = "Edit";
-            this.Edit.UseColumnTextForButtonValue = true;
-            this.Edit.Width = 31;
+            this.colEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colEdit.HeaderText = "Edit";
+            this.colEdit.Name = "Edit";
+            this.colEdit.ReadOnly = true;
+            this.colEdit.Text = "Edit";
+            this.colEdit.ToolTipText = "Edit";
+            this.colEdit.UseColumnTextForButtonValue = true;
+            this.colEdit.Width = 31;
             // 
             // Delete
             // 
-            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.ToolTipText = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
-            this.Delete.Width = 44;
+            this.colDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colDelete.HeaderText = "Delete";
+            this.colDelete.Name = "Delete";
+            this.colDelete.ReadOnly = true;
+            this.colDelete.Text = "Delete";
+            this.colDelete.ToolTipText = "Delete";
+            this.colDelete.UseColumnTextForButtonValue = true;
+            this.colDelete.Width = 44;
             // 
             // iDepartamentBindingSource
             // 
@@ -135,7 +135,7 @@ namespace HumanResourcesManagement.View
         private System.Windows.Forms.Button btnAddNewDepartament;
         private System.Windows.Forms.BindingSource iDepartamentBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.DataGridViewButtonColumn colEdit;
+        private System.Windows.Forms.DataGridViewButtonColumn colDelete;
     }
 }

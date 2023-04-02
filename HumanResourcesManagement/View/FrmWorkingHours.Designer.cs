@@ -37,7 +37,7 @@ namespace HumanResourcesManagement.View
             this.departamentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hourFromDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hourToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.iPersonWorkingHoursBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gvWorkingHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPersonWorkingHoursBindingSource)).BeginInit();
@@ -60,7 +60,7 @@ namespace HumanResourcesManagement.View
             this.departamentNameDataGridViewTextBoxColumn,
             this.hourFromDataGridViewTextBoxColumn,
             this.hourToDataGridViewTextBoxColumn,
-            this.edit});
+            this.colEdit});
             this.gvWorkingHours.DataSource = this.iPersonWorkingHoursBindingSource;
             this.gvWorkingHours.Location = new System.Drawing.Point(12, 12);
             this.gvWorkingHours.MultiSelect = false;
@@ -108,14 +108,14 @@ namespace HumanResourcesManagement.View
             // 
             // edit
             // 
-            this.edit.HeaderText = "Edit";
-            this.edit.Name = "edit";
-            this.edit.ReadOnly = true;
-            this.edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.edit.Text = "Edit";
-            this.edit.ToolTipText = "Edit";
-            this.edit.UseColumnTextForButtonValue = true;
+            this.colEdit.HeaderText = "Edit";
+            this.colEdit.Name = "edit";
+            this.colEdit.ReadOnly = true;
+            this.colEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colEdit.Text = "Edit";
+            this.colEdit.ToolTipText = "Edit";
+            this.colEdit.UseColumnTextForButtonValue = true;
             // 
             // iPersonWorkingHoursBindingSource
             // 
@@ -148,6 +148,6 @@ namespace HumanResourcesManagement.View
         private System.Windows.Forms.DataGridViewTextBoxColumn departamentNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hourFromDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hourToDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn edit;
+        private System.Windows.Forms.DataGridViewButtonColumn colEdit;
     }
 }

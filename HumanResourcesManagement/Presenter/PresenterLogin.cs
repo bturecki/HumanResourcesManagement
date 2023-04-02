@@ -18,7 +18,10 @@ namespace HumanResourcesManagement.Presenter
         private void View_LoginBtnClick()
         {
             if (engine.CheckIfLoginCredintialsAreValid(view.Username, view.Password))
+            {
+                CurrentUser.IsAdmin = engine.CheckIfIsAdmin(view.Username);
                 view.Login();
+            }
             else
                 view.ShowMessageBox("Incorrect username or password.", "Error");
         }

@@ -9,6 +9,9 @@ namespace HumanResourcesManagement.View
 {
     public partial class FrmPeopleVacations : BaseForm, IPeopleVacations
     {
+        public bool AddNewVacationButtonVisible { set => btnAddNewVacation.Visible = value; }
+        public bool AdminGridColumnsVisible { set => colDelete.Visible = value; }
+
         public FrmPeopleVacations()
         {
             InitializeComponent();

@@ -11,6 +11,9 @@ namespace HumanResourcesManagement.View
     {
         public IPersonModel SelectedRow => (IPersonModel)gridPeople.CurrentRow.DataBoundItem;
 
+        public bool AddNewPersonButtonVisible { set => btnAddNewPerson.Visible = value; }
+        public bool AdminGridColumnsVisible { set => colEdit.Visible = colDelete.Visible = value; }
+
         public FrmPeople()
         {
             InitializeComponent();
@@ -45,9 +48,9 @@ namespace HumanResourcesManagement.View
         }
         private void gridPeople_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (((DataGridView)sender).Columns[e.ColumnIndex] == Edit && e.RowIndex >= 0)
+            if (((DataGridView)sender).Columns[e.ColumnIndex] == colEdit && e.RowIndex >= 0)
                 EditBtnClick();
-            else if (((DataGridView)sender).Columns[e.ColumnIndex] == Delete && e.RowIndex >= 0)
+            else if (((DataGridView)sender).Columns[e.ColumnIndex] == colDelete && e.RowIndex >= 0)
                 DeleteBtnClick();
         }
 

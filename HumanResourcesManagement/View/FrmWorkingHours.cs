@@ -15,6 +15,8 @@ namespace HumanResourcesManagement.View
             new PresenterWorkingHours(this);
         }
 
+        public bool AdminGridColumnsVisible { set => colEdit.Visible = value; }
+
         public event Action FrmShown;
         public event Action<IPersonWorkingHours> EditBtnClick;
 

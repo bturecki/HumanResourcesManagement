@@ -7,6 +7,8 @@ namespace HumanResourcesManagement.Interface
     interface IPeople : IBaseForm
     {
         IPersonModel SelectedRow { get; }
+        bool AddNewPersonButtonVisible { set; }
+        bool AdminGridColumnsVisible { set; }
 
         event Action FrmShown;
         event Action AddNewPersonBtnClick;

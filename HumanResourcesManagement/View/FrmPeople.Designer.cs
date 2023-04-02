@@ -38,8 +38,8 @@ namespace HumanResourcesManagement.View
             this.Salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DepartamentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.iPersonModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAddNewPerson = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridPeople)).BeginInit();
@@ -64,8 +64,8 @@ namespace HumanResourcesManagement.View
             this.Salary,
             this.DepartamentName,
             this.Email,
-            this.Edit,
-            this.Delete});
+            this.colEdit,
+            this.colDelete});
             this.gridPeople.DataSource = this.iPersonModelBindingSource;
             this.gridPeople.Location = new System.Drawing.Point(12, 12);
             this.gridPeople.MultiSelect = false;
@@ -126,27 +126,27 @@ namespace HumanResourcesManagement.View
             // 
             // Edit
             // 
-            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Edit.FillWeight = 167.1382F;
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Text = "Edit";
-            this.Edit.ToolTipText = "Edit";
-            this.Edit.UseColumnTextForButtonValue = true;
-            this.Edit.Width = 31;
+            this.colEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colEdit.FillWeight = 167.1382F;
+            this.colEdit.HeaderText = "Edit";
+            this.colEdit.Name = "Edit";
+            this.colEdit.ReadOnly = true;
+            this.colEdit.Text = "Edit";
+            this.colEdit.ToolTipText = "Edit";
+            this.colEdit.UseColumnTextForButtonValue = true;
+            this.colEdit.Width = 31;
             // 
             // Delete
             // 
-            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Delete.FillWeight = 89.64433F;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.ToolTipText = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
-            this.Delete.Width = 44;
+            this.colDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colDelete.FillWeight = 89.64433F;
+            this.colDelete.HeaderText = "Delete";
+            this.colDelete.Name = "Delete";
+            this.colDelete.ReadOnly = true;
+            this.colDelete.Text = "Delete";
+            this.colDelete.ToolTipText = "Delete";
+            this.colDelete.UseColumnTextForButtonValue = true;
+            this.colDelete.Width = 44;
             // 
             // iPersonModelBindingSource
             // 
@@ -193,7 +193,7 @@ namespace HumanResourcesManagement.View
         private System.Windows.Forms.DataGridViewTextBoxColumn Salary;
         private System.Windows.Forms.DataGridViewTextBoxColumn DepartamentName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.DataGridViewButtonColumn colEdit;
+        private System.Windows.Forms.DataGridViewButtonColumn colDelete;
     }
 }

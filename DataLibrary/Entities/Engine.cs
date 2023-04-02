@@ -144,5 +144,12 @@ namespace DataLibrary.Entities
                 return cnn.Query<Credintials>("select t.login, t.password from LoginCredintials t;", new DynamicParameters()).FirstOrDefault(x => x.Login == pLogin && x.Password == pPassword) != default;
             }
         }
+        public bool CheckIfIsAdmin(string pLogin)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                return cnn.Query<Credintials>("select t.login, t.password from LoginCredintials t where t.is_admin = 1;", new DynamicParameters()).FirstOrDefault(x => x.Login == pLogin) != default;
+            }
+        }
     }
 }

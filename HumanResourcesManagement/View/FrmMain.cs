@@ -2,7 +2,6 @@
 using HumanResourcesManagement.Presenter;
 using HumanResourcesManagement.View;
 using System;
-using System.Windows.Forms;
 
 namespace HumanResourcesManagement
 {

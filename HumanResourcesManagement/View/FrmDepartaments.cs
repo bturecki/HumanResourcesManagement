@@ -10,6 +10,8 @@ namespace HumanResourcesManagement.View
     public partial class FrmDepartaments : BaseForm, IDepartaments
     {
         public IDepartament SelectedRow => (IDepartament)gridDepartaments.CurrentRow.DataBoundItem;
+        public bool AddNewDepartamentButtonVisible { set => btnAddNewDepartament.Visible = value; }
+        public bool AdminGridColumnsVisible { set => colEdit.Visible = colDelete.Visible = value; }
 
         public FrmDepartaments()
         {
@@ -45,9 +47,9 @@ namespace HumanResourcesManagement.View
         }
         private void gridDepartaments_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (((DataGridView)sender).Columns[e.ColumnIndex] == Edit && e.RowIndex >= 0)
+            if (((DataGridView)sender).Columns[e.ColumnIndex] == colEdit && e.RowIndex >= 0)
                 EditBtnClick();
-            else if (((DataGridView)sender).Columns[e.ColumnIndex] == Delete && e.RowIndex >= 0)
+            else if (((DataGridView)sender).Columns[e.ColumnIndex] == colDelete && e.RowIndex >= 0)
                 DeleteBtnClick();
         }
     }

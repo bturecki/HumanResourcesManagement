@@ -18,6 +18,7 @@ namespace HumanResourcesManagement.Presenter
             view.PersonEdited += View_PersonEdited;
             view.EditBtnClick += View_EditBtnClick;
             view.DeleteBtnClick += View_DeleteBtnClick;
+            view.AddNewPersonButtonVisible = view.AdminGridColumnsVisible = CurrentUser.IsAdmin;
         }
 
         private void View_DeleteBtnClick()

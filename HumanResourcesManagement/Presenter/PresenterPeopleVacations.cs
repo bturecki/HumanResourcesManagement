@@ -16,6 +16,7 @@ namespace HumanResourcesManagement.Presenter
             view.AddNewVacationBtnClick += View_AddNewVacationBtnClick;
             view.VacationAdded += View_VacationAdded;
             view.DeleteRecordBtnClick += View_DeleteRecordBtnClick;
+            view.AddNewVacationButtonVisible = view.AdminGridColumnsVisible = CurrentUser.IsAdmin;
         }
 
         private void View_DeleteRecordBtnClick(IPersonVacation pPersonVacation)

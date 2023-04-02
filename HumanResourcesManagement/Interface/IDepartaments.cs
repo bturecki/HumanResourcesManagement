@@ -7,6 +7,8 @@ namespace HumanResourcesManagement.Interface
     interface IDepartaments : IBaseForm
     {
         IDepartament SelectedRow { get; }
+        bool AddNewDepartamentButtonVisible { set; }
+        bool AdminGridColumnsVisible { set; }
 
         event Action FrmShown;
         event Action AddNewDepartamentBtnClick;

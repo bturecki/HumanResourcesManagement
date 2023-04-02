@@ -14,6 +14,7 @@ namespace HumanResourcesManagement.Presenter
             engine = Factory.GetEngine();
             view.FrmShown += View_FrmShown;
             view.EditBtnClick += View_EditBtnClick;
+            view.AdminGridColumnsVisible = CurrentUser.IsAdmin;
         }
         private void View_EditBtnClick(IPersonWorkingHours pPersonWorkingHours)
         {

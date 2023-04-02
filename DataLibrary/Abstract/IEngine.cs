@@ -10,6 +10,7 @@ namespace DataLibrary.Abstract
         List<IPersonVacation> GetAllVacations();
         List<IPersonWorkingHours> GetAllWorkingHours();
         bool CheckIfLoginCredintialsAreValid(string pLogin, string pPassword);
+        bool CheckIfIsAdmin(string pLogin);
         void SavePerson(IPersonModel pPersonModel);
         void DeletePerson(IPersonModel pPersonModel);
         void SendMailAsync(IMailToSend pMailToSend);

@@ -82,6 +82,7 @@
     <Compile Include="Abstract\IPersonModel.cs" />
     <Compile Include="Abstract\IPersonVacation.cs" />
     <Compile Include="Abstract\IPersonWorkingHours.cs" />
+    <Compile Include="CurrentUser.cs" />
     <Compile Include="Entities\Departament.cs" />
     <Compile Include="Entities\Credintials.cs" />
     <Compile Include="Entities\Engine.cs" />

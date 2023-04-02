@@ -6,6 +6,9 @@ namespace HumanResourcesManagement.Interface
 {
     interface IPeopleVacations : IBaseForm
     {
+        bool AddNewVacationButtonVisible { set; }
+        bool AdminGridColumnsVisible { set; }
+
         event Action FrmShown;
         event Action AddNewVacationBtnClick;
         event Action VacationAdded;
