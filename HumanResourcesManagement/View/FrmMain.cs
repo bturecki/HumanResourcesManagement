@@ -8,6 +8,7 @@ namespace HumanResourcesManagement
     public partial class FrmMain : BaseForm, IMain
     {
         public string LabelCreator { set => lblCreator.Text = value; }
+        public bool BtnEmailsVisible { set => btnEmails.Visible = value; }
 
         public FrmMain()
         {

@@ -1,4 +1,5 @@
-﻿using HumanResourcesManagement.Interface;
+﻿using DataLibrary;
+using HumanResourcesManagement.Interface;
 using System;
 
 namespace HumanResourcesManagement.Presenter
@@ -17,6 +18,7 @@ namespace HumanResourcesManagement.Presenter
             view.WorkingHoursBtnClick += View_WorkingHoursBtnClick;
             view.EmailsBtnClick += View_EmailsBtnClick;
             view.ExportDataBtnClick += View_ExportDataBtnClick;
+            view.BtnEmailsVisible = CurrentUser.IsAdmin;
         }
 
         private void View_ExportDataBtnClick()

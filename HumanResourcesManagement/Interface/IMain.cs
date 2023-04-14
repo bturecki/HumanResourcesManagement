@@ -5,6 +5,7 @@ namespace HumanResourcesManagement.Interface
     interface IMain : IBaseForm
     {
         string LabelCreator { set; }
+        bool BtnEmailsVisible { set; }
 
         event Action PeopleBtnClick;
         event Action DepartamentsBtnClick;

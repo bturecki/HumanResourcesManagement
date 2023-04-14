@@ -124,7 +124,7 @@ namespace HumanResourcesManagement
             this.btnEmails.FlatAppearance.BorderSize = 2;
             this.btnEmails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnEmails.Location = new System.Drawing.Point(12, 169);
+            this.btnEmails.Location = new System.Drawing.Point(12, 207);
             this.btnEmails.Name = "btnEmails";
             this.btnEmails.Size = new System.Drawing.Size(821, 33);
             this.btnEmails.TabIndex = 7;
@@ -140,7 +140,7 @@ namespace HumanResourcesManagement
             this.btnExportData.FlatAppearance.BorderSize = 2;
             this.btnExportData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnExportData.Location = new System.Drawing.Point(12, 208);
+            this.btnExportData.Location = new System.Drawing.Point(12, 168);
             this.btnExportData.Name = "btnExportData";
             this.btnExportData.Size = new System.Drawing.Size(821, 33);
             this.btnExportData.TabIndex = 8;
