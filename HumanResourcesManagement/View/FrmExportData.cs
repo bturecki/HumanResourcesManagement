@@ -16,6 +16,9 @@ namespace HumanResourcesManagement.View
 
         public bool ExportPeopleChecked => cePeople.Checked;
         public bool ExportDepartamentsChecked => ceDepartaments.Checked;
+        public bool ExportVacationsChecked => ceVacations.Checked;
+        public bool ExportWorkingHoursChecked => ceWorkingHours.Checked;
+
         public event Action GeneratePdfBtnClick;
 
         public string GetSaveFilePath(string pFileTypes, string pDefaultFileName = "HumanResourcesManagementData.pdf")

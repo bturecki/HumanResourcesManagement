@@ -6,6 +6,8 @@ namespace HumanResourcesManagement.Interface
     {
         bool ExportPeopleChecked { get; }
         bool ExportDepartamentsChecked { get; }
+        bool ExportVacationsChecked { get; }
+        bool ExportWorkingHoursChecked { get; }
         event Action GeneratePdfBtnClick;
         string GetSaveFilePath(string pFileTypes, string pDefaultFileName = "HumanResourcesManagementData.pdf");
     }

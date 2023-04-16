@@ -33,6 +33,8 @@ namespace HumanResourcesManagement.View
             this.cePeople = new System.Windows.Forms.CheckBox();
             this.ceDepartaments = new System.Windows.Forms.CheckBox();
             this.btnGeneratePdf = new System.Windows.Forms.Button();
+            this.ceWorkingHours = new System.Windows.Forms.CheckBox();
+            this.ceVacations = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // cePeople
@@ -63,7 +65,7 @@ namespace HumanResourcesManagement.View
             // 
             // btnGeneratePdf
             // 
-            this.btnGeneratePdf.Location = new System.Drawing.Point(12, 58);
+            this.btnGeneratePdf.Location = new System.Drawing.Point(12, 104);
             this.btnGeneratePdf.Name = "btnGeneratePdf";
             this.btnGeneratePdf.Size = new System.Drawing.Size(92, 23);
             this.btnGeneratePdf.TabIndex = 2;
@@ -71,12 +73,40 @@ namespace HumanResourcesManagement.View
             this.btnGeneratePdf.UseVisualStyleBackColor = true;
             this.btnGeneratePdf.Click += new System.EventHandler(this.btnGeneratePdf_Click);
             // 
+            // ceWorkingHours
+            // 
+            this.ceWorkingHours.AutoSize = true;
+            this.ceWorkingHours.BackColor = System.Drawing.Color.Transparent;
+            this.ceWorkingHours.Checked = true;
+            this.ceWorkingHours.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ceWorkingHours.Location = new System.Drawing.Point(12, 81);
+            this.ceWorkingHours.Name = "ceWorkingHours";
+            this.ceWorkingHours.Size = new System.Drawing.Size(95, 17);
+            this.ceWorkingHours.TabIndex = 3;
+            this.ceWorkingHours.Text = "Working hours";
+            this.ceWorkingHours.UseVisualStyleBackColor = false;
+            // 
+            // ceVacations
+            // 
+            this.ceVacations.AutoSize = true;
+            this.ceVacations.BackColor = System.Drawing.Color.Transparent;
+            this.ceVacations.Checked = true;
+            this.ceVacations.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ceVacations.Location = new System.Drawing.Point(12, 58);
+            this.ceVacations.Name = "ceVacations";
+            this.ceVacations.Size = new System.Drawing.Size(73, 17);
+            this.ceVacations.TabIndex = 4;
+            this.ceVacations.Text = "Vacations";
+            this.ceVacations.UseVisualStyleBackColor = false;
+            // 
             // FrmExportData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(549, 248);
+            this.ClientSize = new System.Drawing.Size(120, 132);
+            this.Controls.Add(this.ceVacations);
+            this.Controls.Add(this.ceWorkingHours);
             this.Controls.Add(this.btnGeneratePdf);
             this.Controls.Add(this.ceDepartaments);
             this.Controls.Add(this.cePeople);
@@ -94,5 +124,7 @@ namespace HumanResourcesManagement.View
         private System.Windows.Forms.CheckBox cePeople;
         private System.Windows.Forms.CheckBox ceDepartaments;
         private System.Windows.Forms.Button btnGeneratePdf;
+        private System.Windows.Forms.CheckBox ceWorkingHours;
+        private System.Windows.Forms.CheckBox ceVacations;
     }
 }
