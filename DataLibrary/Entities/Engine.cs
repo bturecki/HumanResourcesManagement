@@ -9,6 +9,7 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using static DataLibrary.Tools.DateHelper;
 
 namespace DataLibrary.Entities
 {
@@ -71,11 +72,13 @@ namespace DataLibrary.Entities
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
                 cnn.Execute($"insert into LoginLogs(login, date_time, type) values ('{pLogin}', {ConvertToUnixTimestamp(pDateTime)}, {(int)pType})");
         }
-        private static double ConvertToUnixTimestamp(DateTime date)
+        public List<ILoginLogs> GetAllLoginLogs()
         {
-            DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-            TimeSpan diff = date.ToUniversalTime() - origin;
-            return Math.Floor(diff.TotalSeconds);
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                IEnumerable<LoginLogs> output = cnn.Query<LoginLogs>("select t.login, t.date_time DateSec, t.type LogType from LoginLogs t order by t.date_time desc;");
+                return output.ToList<ILoginLogs>();
+            }
         }
         public List<IPersonVacation> GetAllVacations()
         {

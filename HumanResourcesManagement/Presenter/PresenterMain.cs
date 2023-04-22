@@ -25,10 +25,14 @@ namespace HumanResourcesManagement.Presenter
             view.EmailsBtnClick += View_EmailsBtnClick;
             view.ExportDataBtnClick += View_ExportDataBtnClick;
             view.AddLicensesBtnClick += View_AddLicensesBtnClick;
+            view.LoginLogsBtnClick += View_LoginLogsBtnClick;
             view.FrmClosing += View_FrmClosing;
-            view.BtnEmailsVisible = view.BtnLicensesVisible = CurrentUser.IsAdmin;
+            view.BtnEmailsVisible = view.BtnLicensesVisible = view.BtnLoginLogsVisible = CurrentUser.IsAdmin;
         }
-
+        private void View_LoginLogsBtnClick()
+        {
+            view.OpenLoginLogsView();
+        }
         private void View_FrmClosing()
         {
             if (!isLogoutDone)

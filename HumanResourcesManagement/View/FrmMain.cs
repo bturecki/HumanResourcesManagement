@@ -10,6 +10,7 @@ namespace HumanResourcesManagement
         public string LabelCreator { set => lblCreator.Text = value; }
         public bool BtnEmailsVisible { set => btnEmails.Visible = value; }
         public bool BtnLicensesVisible { set => btnLicenses.Visible = value; }
+        public bool BtnLoginLogsVisible { set => btnLoginLogs.Visible = value; }
 
         public FrmMain()
         {
@@ -25,6 +26,7 @@ namespace HumanResourcesManagement
         public event Action ExportDataBtnClick;
         public event Action AddLicensesBtnClick;
         public event Action FrmClosing;
+        public event Action LoginLogsBtnClick;
 
         public void OpenPeopleView()
         {
@@ -61,6 +63,11 @@ namespace HumanResourcesManagement
             using (FrmLicenses _frmAddNewLicense = new FrmLicenses())
                 _frmAddNewLicense.ShowDialog();
         }
+        public void OpenLoginLogsView()
+        {
+            using (FrmLoginLogs _frmLoginLogs = new FrmLoginLogs())
+                _frmLoginLogs.ShowDialog();
+        }
         private void btnShowDepartaments_Click_1(object sender, EventArgs e)
         {
             DepartamentsBtnClick();
@@ -92,6 +99,10 @@ namespace HumanResourcesManagement
         private void FrmMain_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
         {
             FrmClosing();
+        }
+        private void btnLoginLogs_Click(object sender, EventArgs e)
+        {
+            LoginLogsBtnClick();
         }
     }
 }

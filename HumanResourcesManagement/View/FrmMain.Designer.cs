@@ -38,6 +38,7 @@ namespace HumanResourcesManagement
             this.btnEmails = new System.Windows.Forms.Button();
             this.btnExportData = new System.Windows.Forms.Button();
             this.btnLicenses = new System.Windows.Forms.Button();
+            this.btnLoginLogs = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPeople
@@ -165,12 +166,29 @@ namespace HumanResourcesManagement
             this.btnLicenses.UseVisualStyleBackColor = true;
             this.btnLicenses.Click += new System.EventHandler(this.btnAddNewLicense_Click);
             // 
+            // btnLoginLogs
+            // 
+            this.btnLoginLogs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLoginLogs.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLoginLogs.BackgroundImage")));
+            this.btnLoginLogs.FlatAppearance.BorderSize = 2;
+            this.btnLoginLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoginLogs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnLoginLogs.Location = new System.Drawing.Point(12, 285);
+            this.btnLoginLogs.Name = "btnLoginLogs";
+            this.btnLoginLogs.Size = new System.Drawing.Size(821, 33);
+            this.btnLoginLogs.TabIndex = 10;
+            this.btnLoginLogs.Text = "Login logs";
+            this.btnLoginLogs.UseVisualStyleBackColor = true;
+            this.btnLoginLogs.Click += new System.EventHandler(this.btnLoginLogs_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(845, 471);
+            this.Controls.Add(this.btnLoginLogs);
             this.Controls.Add(this.btnLicenses);
             this.Controls.Add(this.btnExportData);
             this.Controls.Add(this.btnEmails);
@@ -199,6 +217,7 @@ namespace HumanResourcesManagement
         private System.Windows.Forms.Button btnEmails;
         private System.Windows.Forms.Button btnExportData;
         private System.Windows.Forms.Button btnLicenses;
+        private System.Windows.Forms.Button btnLoginLogs;
     }
 }
 

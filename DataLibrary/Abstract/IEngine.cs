@@ -17,6 +17,7 @@ namespace DataLibrary.Abstract
         void DeletePerson(IPersonModel pPersonModel);
         void SendMailAsync(IMailToSend pMailToSend);
         void AddLoginLog(string pLogin, DateTime pDateTime, EnumLoginLogType pType);
+        List<ILoginLogs> GetAllLoginLogs();
         void DeleteVacation(IPersonVacation pPersonVacation);
         void UpdatePerson(IPersonModel pPersonModel);
         void SaveDepartament(IDepartament pDepartament);
