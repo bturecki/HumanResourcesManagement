@@ -18,9 +18,14 @@ namespace HumanResourcesManagement.Presenter
             view.WorkingHoursBtnClick += View_WorkingHoursBtnClick;
             view.EmailsBtnClick += View_EmailsBtnClick;
             view.ExportDataBtnClick += View_ExportDataBtnClick;
-            view.BtnEmailsVisible = CurrentUser.IsAdmin;
+            view.AddLicensesBtnClick += View_AddLicensesBtnClick;
+            view.BtnEmailsVisible = view.BtnLicensesVisible = CurrentUser.IsAdmin;
         }
 
+        private void View_AddLicensesBtnClick()
+        {
+            view.OpenLicensesView();
+        }
         private void View_ExportDataBtnClick()
         {
             view.OpenExportDataView();

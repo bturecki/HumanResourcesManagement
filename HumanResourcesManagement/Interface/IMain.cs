@@ -6,6 +6,7 @@ namespace HumanResourcesManagement.Interface
     {
         string LabelCreator { set; }
         bool BtnEmailsVisible { set; }
+        bool BtnLicensesVisible { set; }
 
         event Action PeopleBtnClick;
         event Action DepartamentsBtnClick;
@@ -13,6 +14,7 @@ namespace HumanResourcesManagement.Interface
         event Action WorkingHoursBtnClick;
         event Action EmailsBtnClick;
         event Action ExportDataBtnClick;
+        event Action AddLicensesBtnClick;
 
         void OpenPeopleView();
         void OpenVacationsView();
@@ -20,5 +22,6 @@ namespace HumanResourcesManagement.Interface
         void OpenWorkingHoursView();
         void OpenEmailsView();
         void OpenExportDataView();
+        void OpenLicensesView();
     }
 }

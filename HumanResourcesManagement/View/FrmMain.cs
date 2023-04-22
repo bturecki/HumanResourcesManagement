@@ -9,6 +9,7 @@ namespace HumanResourcesManagement
     {
         public string LabelCreator { set => lblCreator.Text = value; }
         public bool BtnEmailsVisible { set => btnEmails.Visible = value; }
+        public bool BtnLicensesVisible { set => btnLicenses.Visible = value; }
 
         public FrmMain()
         {
@@ -22,6 +23,7 @@ namespace HumanResourcesManagement
         public event Action WorkingHoursBtnClick;
         public event Action EmailsBtnClick;
         public event Action ExportDataBtnClick;
+        public event Action AddLicensesBtnClick;
 
         public void OpenPeopleView()
         {
@@ -53,6 +55,11 @@ namespace HumanResourcesManagement
             using (FrmExportData _frmExportData = new FrmExportData())
                 _frmExportData.ShowDialog();
         }
+        public void OpenLicensesView()
+        {
+            using (FrmLicenses _frmAddNewLicense = new FrmLicenses())
+                _frmAddNewLicense.ShowDialog();
+        }
         private void btnShowDepartaments_Click_1(object sender, EventArgs e)
         {
             DepartamentsBtnClick();
@@ -76,6 +83,10 @@ namespace HumanResourcesManagement
         private void btnExportData_Click(object sender, EventArgs e)
         {
             ExportDataBtnClick();
+        }
+        private void btnAddNewLicense_Click(object sender, EventArgs e)
+        {
+            AddLicensesBtnClick();
         }
     }
 }

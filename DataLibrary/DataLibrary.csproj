@@ -76,6 +76,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ICustomCredintials.cs" />
     <Compile Include="Abstract\IDepartament.cs" />
     <Compile Include="Abstract\IEngine.cs" />
     <Compile Include="Abstract\IMailToSend.cs" />
@@ -84,7 +85,7 @@
     <Compile Include="Abstract\IPersonWorkingHours.cs" />
     <Compile Include="CurrentUser.cs" />
     <Compile Include="Entities\Departament.cs" />
-    <Compile Include="Entities\Credintials.cs" />
+    <Compile Include="Entities\CustomCredintials.cs" />
     <Compile Include="Entities\Engine.cs" />
     <Compile Include="Entities\MailToSend.cs" />
     <Compile Include="Entities\PersonModel.cs" />

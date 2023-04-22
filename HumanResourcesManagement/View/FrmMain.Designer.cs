@@ -37,6 +37,7 @@ namespace HumanResourcesManagement
             this.btnWorkingHours = new System.Windows.Forms.Button();
             this.btnEmails = new System.Windows.Forms.Button();
             this.btnExportData = new System.Windows.Forms.Button();
+            this.btnLicenses = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPeople
@@ -148,12 +149,29 @@ namespace HumanResourcesManagement
             this.btnExportData.UseVisualStyleBackColor = true;
             this.btnExportData.Click += new System.EventHandler(this.btnExportData_Click);
             // 
+            // btnLicenses
+            // 
+            this.btnLicenses.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLicenses.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLicenses.BackgroundImage")));
+            this.btnLicenses.FlatAppearance.BorderSize = 2;
+            this.btnLicenses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLicenses.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnLicenses.Location = new System.Drawing.Point(12, 246);
+            this.btnLicenses.Name = "btnLicenses";
+            this.btnLicenses.Size = new System.Drawing.Size(821, 33);
+            this.btnLicenses.TabIndex = 9;
+            this.btnLicenses.Text = "Manage licenses";
+            this.btnLicenses.UseVisualStyleBackColor = true;
+            this.btnLicenses.Click += new System.EventHandler(this.btnAddNewLicense_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(845, 471);
+            this.Controls.Add(this.btnLicenses);
             this.Controls.Add(this.btnExportData);
             this.Controls.Add(this.btnEmails);
             this.Controls.Add(this.btnWorkingHours);
@@ -179,6 +197,7 @@ namespace HumanResourcesManagement
         private System.Windows.Forms.Button btnWorkingHours;
         private System.Windows.Forms.Button btnEmails;
         private System.Windows.Forms.Button btnExportData;
+        private System.Windows.Forms.Button btnLicenses;
     }
 }
 

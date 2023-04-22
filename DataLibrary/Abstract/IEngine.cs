@@ -9,6 +9,7 @@ namespace DataLibrary.Abstract
         List<IDepartament> GetAllDepartaments();
         List<IPersonVacation> GetAllVacations();
         List<IPersonWorkingHours> GetAllWorkingHours();
+        List<ICustomCredintials> GetAllCredintialsLogins();
         bool CheckIfLoginCredintialsAreValid(string pLogin, string pPassword);
         bool CheckIfIsAdmin(string pLogin);
         void SavePerson(IPersonModel pPersonModel);
@@ -22,5 +23,7 @@ namespace DataLibrary.Abstract
         void AddPersonVacation(IPersonModel pPersonModel, DateTime pDateFrom, DateTime pDateTo);
         bool CanSaveVacation(IPersonModel pPersonModel, DateTime pDateFrom, DateTime pDateTo);
         void SavePersonWorkingHours(IPersonWorkingHours pPersonWorkingHours, TimeSpan pTimeFrom, TimeSpan pTimeTo);
+        bool InsertNewLicence(string pLogin, string pPassword, bool pIsAdmin, out string pErrorText);
+        void DeleteLicense(ICustomCredintials pCustomCredintials);
     }
 }

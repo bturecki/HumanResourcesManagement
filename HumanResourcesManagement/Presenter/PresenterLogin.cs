@@ -20,6 +20,7 @@ namespace HumanResourcesManagement.Presenter
             if (engine.CheckIfLoginCredintialsAreValid(view.Username, view.Password))
             {
                 CurrentUser.IsAdmin = engine.CheckIfIsAdmin(view.Username);
+                CurrentUser.Login = view.Username;
                 view.Login();
             }
             else

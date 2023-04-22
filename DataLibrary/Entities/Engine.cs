@@ -116,7 +116,7 @@ namespace DataLibrary.Entities
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                Credintials credintials = cnn.Query<Credintials>("select t.email login, t.pass password from EmailCredintial t;", new DynamicParameters()).Single();
+                CustomCredintials credintials = cnn.Query<CustomCredintials>("select t.email login, t.pass password from EmailCredintial t;", new DynamicParameters()).Single();
                 SmtpClient smtpClient = new SmtpClient("smtp.gmail.com")
                 {
                     Port = 587,
@@ -141,15 +141,55 @@ namespace DataLibrary.Entities
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                return cnn.Query<Credintials>("select t.login, t.password from LoginCredintials t;", new DynamicParameters()).FirstOrDefault(x => x.Login == pLogin && x.Password == pPassword) != default;
+                return cnn.Query<CustomCredintials>("select t.login, t.password from LoginCredintials t;", new DynamicParameters()).FirstOrDefault(x => x.Login == pLogin && x.Password == pPassword) != default;
             }
+        }
+        public bool CheckIfLicenseLoginArleadyExists(string pLogin)
+        {
+            return GetAllCredintialsLogins().FirstOrDefault(x => x.Login == pLogin) != default;
         }
         public bool CheckIfIsAdmin(string pLogin)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                return cnn.Query<Credintials>("select t.login, t.password from LoginCredintials t where t.is_admin = 1;", new DynamicParameters()).FirstOrDefault(x => x.Login == pLogin) != default;
+                return cnn.Query<CustomCredintials>("select t.login, t.password from LoginCredintials t where t.is_admin = 1;", new DynamicParameters()).FirstOrDefault(x => x.Login == pLogin) != default;
             }
+        }
+        public bool InsertNewLicence(string pLogin, string pPassword, bool pIsAdmin, out string pErrorText)
+        {
+            if (!CurrentUser.IsAdmin) // just to be sure
+                throw new Exception("The user has insufficient rights to perform this operation!");
+            if (string.IsNullOrEmpty(pLogin) || string.IsNullOrEmpty(pPassword))
+            {
+                pErrorText = "Login and password can not be null!";
+                return false;
+            }
+            if (CheckIfLicenseLoginArleadyExists(pLogin))
+            {
+                pErrorText = "License with given login already exists!";
+                return false;
+            }
+            else
+            {
+                using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+                {
+                    cnn.Execute($"insert into LoginCredintials (Login, Password, is_admin) values ('{pLogin}', '{pPassword}', {pIsAdmin})");
+                }
+                pErrorText = string.Empty;
+                return true;
+            }
+        }
+        public List<ICustomCredintials> GetAllCredintialsLogins()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                return cnn.Query<CustomCredintials>("select t.login, t.is_admin IsAdmin from LoginCredintials t;", new DynamicParameters()).ToList<ICustomCredintials>();
+            }
+        }
+        public void DeleteLicense(ICustomCredintials pCustomCredintials)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+                cnn.Execute($"delete from LoginCredintials where login = '{pCustomCredintials.Login}';");
         }
     }
 }

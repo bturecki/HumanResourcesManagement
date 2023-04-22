@@ -80,6 +80,7 @@
     <Compile Include="Interface\IBaseForm.cs" />
     <Compile Include="Interface\IChangeWorkingHours.cs" />
     <Compile Include="Interface\IExportData.cs" />
+    <Compile Include="Interface\ILicenses.cs" />
     <Compile Include="Interface\ILogin.cs" />
     <Compile Include="Interface\IMails.cs" />
     <Compile Include="Interface\IMain.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Presenter\PresenterAddNewVacation.cs" />
     <Compile Include="Presenter\PresenterChangeWorkingHours.cs" />
     <Compile Include="Presenter\PresenterExportData.cs" />
+    <Compile Include="Presenter\PresenterLicenses.cs" />
     <Compile Include="Presenter\PresenterLogin.cs" />
     <Compile Include="Presenter\PresenterMails.cs" />
     <Compile Include="Presenter\PresenterMain.cs" />
@@ -128,6 +130,12 @@
     </Compile>
     <Compile Include="View\FrmChangeWorkingHours.Designer.cs">
       <DependentUpon>FrmChangeWorkingHours.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmLicenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmLicenses.Designer.cs">
+      <DependentUpon>FrmLicenses.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmMails.cs">
       <SubType>Form</SubType>
@@ -191,6 +199,9 @@
     <EmbeddedResource Include="View\FrmChangeWorkingHours.resx">
       <DependentUpon>FrmChangeWorkingHours.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmLicenses.resx">
+      <DependentUpon>FrmLicenses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmMails.resx">
       <DependentUpon>FrmMails.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,6 +238,7 @@
     </EmbeddedResource>
     <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DataLibrary.Abstract.ICustomCredintials.datasource" />
     <None Include="Properties\DataSources\DataLibrary.Abstract.IDepartament.datasource" />
     <None Include="Properties\DataSources\DataLibrary.Abstract.IPersonModel.datasource" />
     <None Include="Properties\DataSources\DataLibrary.Abstract.IPersonVacation.datasource" />
