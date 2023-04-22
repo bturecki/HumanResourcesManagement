@@ -90,7 +90,7 @@ namespace HumanResourcesManagement.Presenter
                     document.Add(new Paragraph($"|{_fristNameCaption.PadRight(_maxFirstNameLength)}|{_lastNameCaption.PadRight(_maxLastNameLength)}|{_dateFromCaption.PadRight(_maxDateLength)}|{_dateToCaption.PadRight(_maxDateLength)}|", _tablesFont));
                     document.Add(new Paragraph($"|{(new string('-', _maxFirstNameLength))}|{(new string('-', _maxLastNameLength))}|{(new string('-', _maxDateLength))}|{(new string('-', _maxDateLength))}|", _tablesFont));
 
-                    foreach (var _vacation in engine.GetAllVacations())
+                    foreach (IPersonVacation _vacation in engine.GetAllVacations())
                         document.Add(new Paragraph($"|{_vacation.PersonName.PadRight(_maxFirstNameLength)}|{_vacation.PersonLastname.PadRight(_maxLastNameLength)}|{_vacation.DateFrom.Date.ToString("dd.MM.yyyy").PadRight(_maxDateLength)}|{_vacation.DateTo.Date.ToString("dd.MM.yyyy").PadRight(_maxDateLength)}|", _tablesFont));
 
                     document.Add(new Paragraph($"|{(new string('-', _maxFirstNameLength))}|{(new string('-', _maxLastNameLength))}|{(new string('-', _maxDateLength))}|{(new string('-', _maxDateLength))}|", _tablesFont));
@@ -107,7 +107,7 @@ namespace HumanResourcesManagement.Presenter
                     document.Add(new Paragraph($"|{_fristNameCaption.PadRight(_maxFirstNameLength)}|{_lastNameCaption.PadRight(_maxLastNameLength)}|{_hourFromCaption.PadRight(_maxHourLength)}|{_hourToCaption.PadRight(_maxHourLength)}|", _tablesFont));
                     document.Add(new Paragraph($"|{(new string('-', _maxFirstNameLength))}|{(new string('-', _maxLastNameLength))}|{(new string('-', _maxHourLength))}|{(new string('-', _maxHourLength))}|", _tablesFont));
 
-                    foreach (var _workingHours in engine.GetAllWorkingHours())
+                    foreach (IPersonWorkingHours _workingHours in engine.GetAllWorkingHours())
                         document.Add(new Paragraph($"|{_workingHours.LastName.PadRight(_maxFirstNameLength)}|{_workingHours.LastName.PadRight(_maxLastNameLength)}|{_workingHours.HourFrom.ToString().PadRight(_maxHourLength)}|{_workingHours.HourTo.ToString().PadRight(_maxHourLength)}|", _tablesFont));
 
                     document.Add(new Paragraph($"|{(new string('-', _maxFirstNameLength))}|{(new string('-', _maxLastNameLength))}|{(new string('-', _maxHourLength))}|{(new string('-', _maxHourLength))}|", _tablesFont));
