@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLibrary.Enums;
+using System;
 using System.Collections.Generic;
 
 namespace DataLibrary.Abstract
@@ -15,6 +16,7 @@ namespace DataLibrary.Abstract
         void SavePerson(IPersonModel pPersonModel);
         void DeletePerson(IPersonModel pPersonModel);
         void SendMailAsync(IMailToSend pMailToSend);
+        void AddLoginLog(string pLogin, DateTime pDateTime, EnumLoginLogType pType);
         void DeleteVacation(IPersonVacation pPersonVacation);
         void UpdatePerson(IPersonModel pPersonModel);
         void SaveDepartament(IDepartament pDepartament);

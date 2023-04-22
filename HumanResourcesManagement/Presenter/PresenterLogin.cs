@@ -1,6 +1,7 @@
 ﻿using DataLibrary;
 using DataLibrary.Abstract;
 using HumanResourcesManagement.Interface;
+using System;
 
 namespace HumanResourcesManagement.Presenter
 {
@@ -21,6 +22,7 @@ namespace HumanResourcesManagement.Presenter
             {
                 CurrentUser.IsAdmin = engine.CheckIfIsAdmin(view.Username);
                 CurrentUser.Login = view.Username;
+                engine.AddLoginLog(CurrentUser.Login, DateTime.Now, DataLibrary.Enums.EnumLoginLogType.Login);
                 view.Login();
             }
             else

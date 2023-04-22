@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using DataLibrary.Abstract;
+using DataLibrary.Enums;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -64,6 +65,11 @@ namespace DataLibrary.Entities
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
                 cnn.Execute($"insert into Vacation(PersonID, DateFrom, DateTo) values ({pPersonModel.ID}, {ConvertToUnixTimestamp(pDateFrom)}, {ConvertToUnixTimestamp(pDateTo)})");
+        }
+        public void AddLoginLog(string pLogin, DateTime pDateTime, EnumLoginLogType pType)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+                cnn.Execute($"insert into LoginLogs(login, date_time, type) values ('{pLogin}', {ConvertToUnixTimestamp(pDateTime)}, {(int)pType})");
         }
         private static double ConvertToUnixTimestamp(DateTime date)
         {

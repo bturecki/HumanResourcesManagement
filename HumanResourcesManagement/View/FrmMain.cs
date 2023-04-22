@@ -24,6 +24,7 @@ namespace HumanResourcesManagement
         public event Action EmailsBtnClick;
         public event Action ExportDataBtnClick;
         public event Action AddLicensesBtnClick;
+        public event Action FrmClosing;
 
         public void OpenPeopleView()
         {
@@ -87,6 +88,10 @@ namespace HumanResourcesManagement
         private void btnAddNewLicense_Click(object sender, EventArgs e)
         {
             AddLicensesBtnClick();
+        }
+        private void FrmMain_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
+        {
+            FrmClosing();
         }
     }
 }

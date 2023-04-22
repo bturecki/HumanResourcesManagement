@@ -1,16 +1,22 @@
 ﻿using DataLibrary;
+using DataLibrary.Abstract;
 using HumanResourcesManagement.Interface;
 using System;
+using System.Windows.Forms;
 
 namespace HumanResourcesManagement.Presenter
 {
     class PresenterMain
     {
         readonly IMain view;
+        readonly IEngine engine;
+        bool isLogoutDone;
 
         public PresenterMain(IMain pView)
         {
             view = pView;
+            engine = Factory.GetEngine();
+            isLogoutDone = false;
             view.LabelCreator = $"Bartosz Turecki {DateTime.Now.Year}";
             view.PeopleBtnClick += View_PeopleBtnClick;
             view.DepartamentsBtnClick += View_DepartamentsBtnClick;
@@ -19,9 +25,19 @@ namespace HumanResourcesManagement.Presenter
             view.EmailsBtnClick += View_EmailsBtnClick;
             view.ExportDataBtnClick += View_ExportDataBtnClick;
             view.AddLicensesBtnClick += View_AddLicensesBtnClick;
+            view.FrmClosing += View_FrmClosing;
             view.BtnEmailsVisible = view.BtnLicensesVisible = CurrentUser.IsAdmin;
         }
 
+        private void View_FrmClosing()
+        {
+            if (!isLogoutDone)
+            {
+                engine.AddLoginLog(CurrentUser.Login, DateTime.Now, DataLibrary.Enums.EnumLoginLogType.Logout);
+                isLogoutDone = true;
+            }
+            Application.Exit();
+        }
         private void View_AddLicensesBtnClick()
         {
             view.OpenLicensesView();

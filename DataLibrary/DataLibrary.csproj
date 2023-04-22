@@ -91,6 +91,7 @@
     <Compile Include="Entities\PersonModel.cs" />
     <Compile Include="Entities\PersonVacation.cs" />
     <Compile Include="Entities\PersonWorkingHours.cs" />
+    <Compile Include="Enums\EnumLoginLogType.cs" />
     <Compile Include="Factory.cs" />
   </ItemGroup>
   <ItemGroup />

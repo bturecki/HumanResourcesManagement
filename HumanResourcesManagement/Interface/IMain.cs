@@ -15,6 +15,7 @@ namespace HumanResourcesManagement.Interface
         event Action EmailsBtnClick;
         event Action ExportDataBtnClick;
         event Action AddLicensesBtnClick;
+        event Action FrmClosing;
 
         void OpenPeopleView();
         void OpenVacationsView();
