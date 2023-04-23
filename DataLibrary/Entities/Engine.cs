@@ -15,6 +15,10 @@ namespace DataLibrary.Entities
 {
     class Engine : IEngine
     {
+        private static string LoadConnectionString(string id = "Default")
+        {
+            return ConfigurationManager.ConnectionStrings[id].ConnectionString;
+        }
         public List<IPersonModel> GetAllPeople()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -28,7 +32,7 @@ namespace DataLibrary.Entities
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 cnn.Execute("insert into Person (FirstName, LastName, Salary) values (@FirstName, @LastName, @Salary)", pPersonModel);
-                pPersonModel.ID = cnn.Query<int>("select max(id) from Person", new DynamicParameters()).Single();
+                pPersonModel.ID = cnn.Query<int>("select max(id) from Person").Single();
                 cnn.Execute("insert into PersonDepartament (PersonID, DepartamentID) values (@ID, @DepartamentID)", pPersonModel);
             }
         }
@@ -36,7 +40,7 @@ namespace DataLibrary.Entities
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                IEnumerable<Departament> output = cnn.Query<Departament>("select * from Departament", new DynamicParameters());
+                IEnumerable<Departament> output = cnn.Query<Departament>("select * from Departament");
                 return output.ToList<IDepartament>();
             }
         }
@@ -44,10 +48,6 @@ namespace DataLibrary.Entities
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
                 cnn.Execute("insert into Departament (Name) values (@Name)", pDepartament);
-        }
-        private static string LoadConnectionString(string id = "Default")
-        {
-            return ConfigurationManager.ConnectionStrings[id].ConnectionString;
         }
         public void UpdatePerson(IPersonModel pPersonModel)
         {
@@ -65,12 +65,23 @@ namespace DataLibrary.Entities
         public void AddPersonVacation(IPersonModel pPersonModel, DateTime pDateFrom, DateTime pDateTo)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-                cnn.Execute($"insert into Vacation(PersonID, DateFrom, DateTo) values ({pPersonModel.ID}, {ConvertToUnixTimestamp(pDateFrom)}, {ConvertToUnixTimestamp(pDateTo)})");
+            {
+                cnn.Execute("insert into Vacation(PersonID, DateFrom, DateTo) values (@PersonID, @DateFrom, @DateTo)",
+                    new { PersonID = pPersonModel.ID, DateFrom = ConvertToUnixTimestamp(pDateFrom), DateTo = ConvertToUnixTimestamp(pDateTo) });
+            }
         }
         public void AddLoginLog(string pLogin, DateTime pDateTime, EnumLoginLogType pType)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-                cnn.Execute($"insert into LoginLogs(login, date_time, type) values ('{pLogin}', {ConvertToUnixTimestamp(pDateTime)}, {(int)pType})");
+            {
+                var parameters = new
+                {
+                    Login = pLogin,
+                    DateTime = ConvertToUnixTimestamp(pDateTime),
+                    Type = (int)pType
+                };
+                cnn.Execute("insert into LoginLogs(login, date_time, type) values (@Login, @DateTime, @Type)", parameters);
+            }
         }
         public List<ILoginLogs> GetAllLoginLogs()
         {
@@ -84,7 +95,7 @@ namespace DataLibrary.Entities
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                IEnumerable<PersonVacation> output = cnn.Query<PersonVacation>("select t.id rowid, t.PersonID, t.DateFrom DateFromSec, t.DateTo DateToSec, p.FirstName PersonName, p.LastName PersonLastName from Vacation t inner join Person p on t.PersonID = p.ID;", new DynamicParameters());
+                IEnumerable<PersonVacation> output = cnn.Query<PersonVacation>("select t.id rowid, t.PersonID, t.DateFrom DateFromSec, t.DateTo DateToSec, p.FirstName PersonName, p.LastName PersonLastName from Vacation t inner join Person p on t.PersonID = p.ID;");
                 return output.ToList<IPersonVacation>();
             }
         }
@@ -92,21 +103,29 @@ namespace DataLibrary.Entities
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                IEnumerable<PersonVacation> output = cnn.Query<PersonVacation>($"select t.id rowid, t.PersonID, t.DateFrom DateFromSec, t.DateTo DateToSec, p.FirstName PersonName, p.LastName PersonLastName from Vacation t inner join Person p on t.PersonID = p.ID where t.PersonID = {pPersonModel.ID} and ((t.DateFrom between {ConvertToUnixTimestamp(pDateFrom)} and {ConvertToUnixTimestamp(pDateTo)}) or (t.DateTo between {ConvertToUnixTimestamp(pDateFrom)} and {ConvertToUnixTimestamp(pDateTo)}));", new DynamicParameters());
+                string query = "select t.id rowid, t.PersonID, t.DateFrom DateFromSec, t.DateTo DateToSec, p.FirstName PersonName, p.LastName PersonLastName " +
+                               "from Vacation t inner join Person p on t.PersonID = p.ID " +
+                               "where t.PersonID = @PersonID and ((t.DateFrom between @DateFrom and @DateTo) or (t.DateTo between @DateFrom and @DateTo));";
+                var parameters = new DynamicParameters();
+                parameters.Add("@PersonID", pPersonModel.ID);
+                parameters.Add("@DateFrom", ConvertToUnixTimestamp(pDateFrom));
+                parameters.Add("@DateTo", ConvertToUnixTimestamp(pDateTo));
+                IEnumerable<PersonVacation> output = cnn.Query<PersonVacation>(query, parameters);
                 return output.ToList<IPersonVacation>().Count() == 0;
             }
         }
         public void DeleteVacation(IPersonVacation pPersonVacation)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-                cnn.Execute($"delete from Vacation where ID = {pPersonVacation.RowId};");
+            {
+                cnn.Execute("delete from Vacation where ID = @id", new { id = pPersonVacation.RowId });
+            }
         }
-
         public List<IPersonWorkingHours> GetAllWorkingHours()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                IEnumerable<PersonWorkingHours> output = cnn.Query<PersonWorkingHours>("select p.id, p.firstname, p.lastname, p.salary, pd.departamentid, d.name DepartamentName, wh.HoursFrom FromTicks, wh.HoursTo ToTicks from Person p inner join PersonDepartament pd on p.id = pd.personid inner join Departament d on pd.DepartamentID = d.ID left join WorkingHours wh on wh.PersonID = p.id", new DynamicParameters());
+                IEnumerable<PersonWorkingHours> output = cnn.Query<PersonWorkingHours>("select p.id, p.firstname, p.lastname, p.salary, pd.departamentid, d.name DepartamentName, wh.HoursFrom FromTicks, wh.HoursTo ToTicks from Person p inner join PersonDepartament pd on p.id = pd.personid inner join Departament d on pd.DepartamentID = d.ID left join WorkingHours wh on wh.PersonID = p.id");
                 return output.ToList<IPersonWorkingHours>();
             }
         }
@@ -114,18 +133,18 @@ namespace DataLibrary.Entities
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                IEnumerable<PersonWorkingHours> output = cnn.Query<PersonWorkingHours>($"select p.id, p.firstname, p.lastname, p.salary, pd.departamentid, d.name DepartamentName, wh.HoursFrom FromTicks, wh.HoursTo ToTicks from Person p inner join PersonDepartament pd on p.id = pd.personid inner join Departament d on pd.DepartamentID = d.ID left join WorkingHours wh on wh.PersonID = p.id where wh.PersonID = {pPersonWorkingHours.ID}", new DynamicParameters());
+                IEnumerable<PersonWorkingHours> output = cnn.Query<PersonWorkingHours>("select p.id, p.firstname, p.lastname, p.salary, pd.departamentid, d.name DepartamentName, wh.HoursFrom FromTicks, wh.HoursTo ToTicks from Person p inner join PersonDepartament pd on p.id = pd.personid inner join Departament d on pd.DepartamentID = d.ID left join WorkingHours wh on wh.PersonID = p.id where wh.PersonID = @PersonID", new { PersonID = pPersonWorkingHours.ID });
                 if (output.Count() == 0)
-                    cnn.Execute($"insert into WorkingHours(PersonID, HoursFrom, HoursTo) values({pPersonWorkingHours.ID}, {pTimeFrom.Ticks}, {pTimeTo.Ticks});");
+                    cnn.Execute("insert into WorkingHours(PersonID, HoursFrom, HoursTo) values(@PersonID, @HoursFromTicks, @HoursToTicks);", new { PersonID = pPersonWorkingHours.ID, HoursFromTicks = pTimeFrom.Ticks, HoursToTicks = pTimeTo.Ticks });
                 else
-                    cnn.Execute($"update WorkingHours set HoursFrom = {pTimeFrom.Ticks}, HoursTo = {pTimeTo.Ticks} where PersonID = {pPersonWorkingHours.ID};");
+                    cnn.Execute("update WorkingHours set HoursFrom = @HoursFromTicks, HoursTo = @HoursToTicks where PersonID = @PersonID;", new { PersonID = pPersonWorkingHours.ID, HoursFromTicks = pTimeFrom.Ticks, HoursToTicks = pTimeTo.Ticks });
             }
         }
         public void SendMailAsync(IMailToSend pMailToSend)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                CustomCredintials credintials = cnn.Query<CustomCredintials>("select t.email login, t.pass password from EmailCredintial t;", new DynamicParameters()).Single();
+                CustomCredintials credintials = cnn.Query<CustomCredintials>("select t.email login, t.pass password from EmailCredintial t;").Single();
                 SmtpClient smtpClient = new SmtpClient("smtp.gmail.com")
                 {
                     Port = 587,
@@ -139,18 +158,26 @@ namespace DataLibrary.Entities
         public void DeletePerson(IPersonModel pPersonModel)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-                cnn.Execute($"delete from Person where ID = {pPersonModel.ID.Value}");
+            {
+                string query = "delete from Person where ID = @PersonID";
+                cnn.Execute(query, new { PersonID = pPersonModel.ID });
+            }
         }
         public void DeleteDepartament(IDepartament pDepartament)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-                cnn.Execute($"delete from Departament where ID = {pDepartament.ID}");
+            {
+                string query = "delete from Departament where ID = @Id";
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@Id", pDepartament.ID);
+                cnn.Execute(query, parameters);
+            }
         }
         public bool CheckIfLoginCredintialsAreValid(string pLogin, string pPassword)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                return cnn.Query<CustomCredintials>("select t.login, t.password from LoginCredintials t;", new DynamicParameters()).FirstOrDefault(x => x.Login == pLogin && x.Password == pPassword) != default;
+                return cnn.Query<CustomCredintials>("select t.login, t.password from LoginCredintials t;").FirstOrDefault(x => x.Login == pLogin && x.Password == pPassword) != default;
             }
         }
         public bool CheckIfLicenseLoginArleadyExists(string pLogin)
@@ -161,7 +188,7 @@ namespace DataLibrary.Entities
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                return cnn.Query<CustomCredintials>("select t.login, t.password from LoginCredintials t where t.is_admin = 1;", new DynamicParameters()).FirstOrDefault(x => x.Login == pLogin) != default;
+                return cnn.Query<CustomCredintials>("select t.login, t.password from LoginCredintials t where t.is_admin = 1;").FirstOrDefault(x => x.Login == pLogin) != default;
             }
         }
         public bool InsertNewLicence(string pLogin, string pPassword, bool pIsAdmin, out string pErrorText)
@@ -182,7 +209,8 @@ namespace DataLibrary.Entities
             {
                 using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
                 {
-                    cnn.Execute($"insert into LoginCredintials (Login, Password, is_admin) values ('{pLogin}', '{pPassword}', {pIsAdmin})");
+                    cnn.Execute("insert into LoginCredintials (Login, Password, is_admin) values (@Login, @Password, @IsAdmin)",
+                        new { Login = pLogin, Password = pPassword, IsAdmin = pIsAdmin });
                 }
                 pErrorText = string.Empty;
                 return true;
@@ -192,13 +220,17 @@ namespace DataLibrary.Entities
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                return cnn.Query<CustomCredintials>("select t.login, t.is_admin IsAdmin from LoginCredintials t;", new DynamicParameters()).ToList<ICustomCredintials>();
+                return cnn.Query<CustomCredintials>("select t.login, t.is_admin IsAdmin from LoginCredintials t;").ToList<ICustomCredintials>();
             }
         }
         public void DeleteLicense(ICustomCredintials pCustomCredintials)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-                cnn.Execute($"delete from LoginCredintials where login = '{pCustomCredintials.Login}';");
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@login", pCustomCredintials.Login);
+                cnn.Execute("delete from LoginCredintials where login = @login;", parameters);
+            }
         }
     }
 }
