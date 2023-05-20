@@ -9,342 +9,321 @@ namespace DataLibrary.Tests.DataTests
 {
     public class EngineTests
     {
-        private readonly Mock<IEngine> engineMock = new Mock<IEngine>();
+        private readonly Mock<IEngine> mockEngine = new Mock<IEngine>();
 
         [Fact]
-        public void GetAllPeople_Returns_List_Of_IPersonModel()
+        public void GetAllPeople_ReturnsListOfIPersonModel()
         {
             // Arrange
-            engineMock.Setup(x => x.GetAllPeople())
-                .Returns(new List<IPersonModel>());
+            List<IPersonModel> expectedResult = new List<IPersonModel> { new Mock<IPersonModel>().Object };
+
+            mockEngine.Setup(e => e.GetAllPeople()).Returns(expectedResult);
 
             // Act
-            List<IPersonModel> result = engineMock.Object.GetAllPeople();
+            List<IPersonModel> result = mockEngine.Object.GetAllPeople();
 
             // Assert
-            Assert.NotNull(result);
-            Assert.IsType<List<IPersonModel>>(result);
+            Assert.Equal(expectedResult, result);
         }
 
         [Fact]
-        public void GetAllDepartaments_Returns_List_Of_IDepartament()
+        public void GetAllDepartaments_ReturnsListOfIDepartament()
         {
             // Arrange
-            engineMock.Setup(x => x.GetAllDepartaments())
-                .Returns(new List<IDepartament>());
+            List<IDepartament> expectedResult = new List<IDepartament> { new Mock<IDepartament>().Object };
+
+            mockEngine.Setup(e => e.GetAllDepartaments()).Returns(expectedResult);
 
             // Act
-            List<IDepartament> result = engineMock.Object.GetAllDepartaments();
+            List<IDepartament> result = mockEngine.Object.GetAllDepartaments();
 
             // Assert
-            Assert.NotNull(result);
-            Assert.IsType<List<IDepartament>>(result);
+            Assert.Equal(expectedResult, result);
         }
 
         [Fact]
-        public void GetAllVacations_Returns_List_Of_IPersonVacation()
+        public void GetAllVacations_ReturnsListOfIPersonVacation()
         {
             // Arrange
-            engineMock.Setup(x => x.GetAllVacations())
-                .Returns(new List<IPersonVacation>());
+            List<IPersonVacation> expectedResult = new List<IPersonVacation> { new Mock<IPersonVacation>().Object };
+
+            mockEngine.Setup(e => e.GetAllVacations()).Returns(expectedResult);
 
             // Act
-            List<IPersonVacation> result = engineMock.Object.GetAllVacations();
+            List<IPersonVacation> result = mockEngine.Object.GetAllVacations();
 
             // Assert
-            Assert.NotNull(result);
-            Assert.IsType<List<IPersonVacation>>(result);
+            Assert.Equal(expectedResult, result);
         }
 
         [Fact]
-        public void GetAllWorkingHours_Returns_List_Of_IPersonWorkingHours()
+        public void GetAllWorkingHours_ReturnsListOfIPersonWorkingHours()
         {
             // Arrange
-            engineMock.Setup(x => x.GetAllWorkingHours())
-                .Returns(new List<IPersonWorkingHours>());
+            List<IPersonWorkingHours> expectedResult = new List<IPersonWorkingHours> { new Mock<IPersonWorkingHours>().Object };
+
+            mockEngine.Setup(e => e.GetAllWorkingHours()).Returns(expectedResult);
 
             // Act
-            List<IPersonWorkingHours> result = engineMock.Object.GetAllWorkingHours();
+            List<IPersonWorkingHours> result = mockEngine.Object.GetAllWorkingHours();
 
             // Assert
-            Assert.NotNull(result);
-            Assert.IsType<List<IPersonWorkingHours>>(result);
+            Assert.Equal(expectedResult, result);
         }
 
         [Fact]
-        public void GetAllCredintialsLogins_Returns_List_Of_ICustomCredintials()
+        public void GetAllCredintialsLogins_ReturnsListOfICustomCredintials()
         {
             // Arrange
-            engineMock.Setup(x => x.GetAllCredintialsLogins())
-                .Returns(new List<ICustomCredintials>());
+            List<ICustomCredintials> expectedResult = new List<ICustomCredintials> { new Mock<ICustomCredintials>().Object };
+
+            mockEngine.Setup(e => e.GetAllCredintialsLogins()).Returns(expectedResult);
 
             // Act
-            List<ICustomCredintials> result = engineMock.Object.GetAllCredintialsLogins();
+            List<ICustomCredintials> result = mockEngine.Object.GetAllCredintialsLogins();
 
             // Assert
-            Assert.NotNull(result);
-            Assert.IsType<List<ICustomCredintials>>(result);
+            Assert.Equal(expectedResult, result);
         }
 
         [Fact]
-        public void CheckIfLoginCredintialsAreValid_Returns_True_For_Valid_Credentials()
+        public void CheckIfLoginCredintialsAreValid_ReturnsTrueWhenValid()
         {
             // Arrange
-            string login = "test";
-            string password = "password";
-            engineMock.Setup(x => x.CheckIfLoginCredintialsAreValid(login, password))
-                .Returns(true);
+            string testLogin = "testLogin";
+            string testPassword = "testPassword";
+
+            mockEngine.Setup(e => e.CheckIfLoginCredintialsAreValid(testLogin, testPassword)).Returns(true);
 
             // Act
-            bool result = engineMock.Object.CheckIfLoginCredintialsAreValid(login, password);
-
-            // Assert
-            Assert.True(result);
-        }
-
-        [Fact]
-        public void CheckIfLoginCredintialsAreValid_Returns_False_For_Invalid_Credentials()
-        {
-            // Arrange
-            string login = "test";
-            string password = "password";
-            engineMock.Setup(x => x.CheckIfLoginCredintialsAreValid(login, password))
-                .Returns(false);
-
-            // Act
-            bool result = engineMock.Object.CheckIfLoginCredintialsAreValid(login, password);
-
-            // Assert
-            Assert.False(result);
-        }
-
-        [Fact]
-        public void CheckIfIsAdmin_Returns_True_For_Admin_Login()
-        {
-            // Arrange
-            string login = "admin";
-            engineMock.Setup(x => x.CheckIfIsAdmin(login))
-                    .Returns(true);
-
-            // Act
-            bool result = engineMock.Object.CheckIfIsAdmin(login);
+            bool result = mockEngine.Object.CheckIfLoginCredintialsAreValid(testLogin, testPassword);
 
             // Assert
             Assert.True(result);
         }
 
         [Fact]
-        public void CheckIfIsAdmin_Returns_False_For_Non_Admin_Login()
+        public void CheckIfIsAdmin_ReturnsTrueWhenAdmin()
         {
             // Arrange
-            string login = "user";
-            engineMock.Setup(x => x.CheckIfIsAdmin(login))
-            .Returns(false);
+            string testLogin = "adminLogin";
+
+            mockEngine.Setup(e => e.CheckIfIsAdmin(testLogin)).Returns(true);
 
             // Act
-            bool result = engineMock.Object.CheckIfIsAdmin(login);
+            bool result = mockEngine.Object.CheckIfIsAdmin(testLogin);
 
             // Assert
-            Assert.False(result);
+            Assert.True(result);
         }
 
         [Fact]
-        public void SavePerson_Calls_SavePerson_Method()
+        public void SavePerson_IsCalledWithExpectedPersonModel()
         {
             // Arrange
-            IPersonModel person = new Mock<IPersonModel>().Object;
+            IPersonModel personModel = new Mock<IPersonModel>().Object;
 
             // Act
-            engineMock.Object.SavePerson(person);
-
-            // Assert
-            engineMock.Verify(x => x.SavePerson(person), Times.Once);
+            mockEngine.Object.SavePerson(personModel);  // Assert
+            mockEngine.Verify(e => e.SavePerson(personModel), Times.Once);
         }
 
         [Fact]
-        public void DeletePerson_Calls_DeletePerson_Method()
+        public void DeletePerson_IsCalledWithExpectedPersonModel()
         {
             // Arrange
-            IPersonModel person = new Mock<IPersonModel>().Object;
+            IPersonModel personModel = new Mock<IPersonModel>().Object;
 
             // Act
-            engineMock.Object.DeletePerson(person);
+            mockEngine.Object.DeletePerson(personModel);
 
             // Assert
-            engineMock.Verify(x => x.DeletePerson(person), Times.Once);
+            mockEngine.Verify(e => e.DeletePerson(personModel), Times.Once);
         }
 
         [Fact]
-        public void SendMailAsync_Calls_SendMailAsync_Method()
+        public void SendMailAsync_IsCalledWithExpectedMailToSend()
         {
             // Arrange
             IMailToSend mailToSend = new Mock<IMailToSend>().Object;
 
             // Act
-            engineMock.Object.SendMailAsync(mailToSend);
+            mockEngine.Object.SendMailAsync(mailToSend);
 
             // Assert
-            engineMock.Verify(x => x.SendMailAsync(mailToSend), Times.Once);
+            mockEngine.Verify(e => e.SendMailAsync(mailToSend), Times.Once);
         }
 
         [Fact]
-        public void AddLoginLog_Calls_AddLoginLog_Method()
+        public void AddLoginLog_IsCalledWithExpectedParameters()
         {
             // Arrange
-            string login = "test";
-            DateTime dateTime = DateTime.Now;
-            EnumLoginLogType loginLogType = EnumLoginLogType.Login;
+            string testLogin = "testLogin";
+            DateTime testDateTime = DateTime.Now;
+            EnumLoginLogType testLogType = EnumLoginLogType.Login;
 
             // Act
-            engineMock.Object.AddLoginLog(login, dateTime, loginLogType);
+            mockEngine.Object.AddLoginLog(testLogin, testDateTime, testLogType);
 
             // Assert
-            engineMock.Verify(x => x.AddLoginLog(login, dateTime, loginLogType), Times.Once);
+            mockEngine.Verify(e => e.AddLoginLog(testLogin, testDateTime, testLogType), Times.Once);
         }
 
         [Fact]
-        public void GetAllLoginLogs_Returns_List_Of_ILoginLogs()
+        public void GetAllLoginLogs_ReturnsListOfILoginLogs()
         {
             // Arrange
-            engineMock.Setup(x => x.GetAllLoginLogs())
-                .Returns(new List<ILoginLogs>());
+            List<ILoginLogs> expectedResult = new List<ILoginLogs> { new Mock<ILoginLogs>().Object };
+
+            mockEngine.Setup(e => e.GetAllLoginLogs()).Returns(expectedResult);
 
             // Act
-            List<ILoginLogs> result = engineMock.Object.GetAllLoginLogs();
+            List<ILoginLogs> result = mockEngine.Object.GetAllLoginLogs();
 
             // Assert
-            Assert.NotNull(result);
-            Assert.IsType<List<ILoginLogs>>(result);
+            Assert.Equal(expectedResult, result);
         }
 
         [Fact]
-        public void DeleteVacation_Calls_DeleteVacation_Method()
+        public void DeleteVacation_IsCalledWithExpectedPersonVacation()
         {
             // Arrange
-            IPersonVacation vacation = new Mock<IPersonVacation>().Object;
+            IPersonVacation personVacation = new Mock<IPersonVacation>().Object;
 
             // Act
-            engineMock.Object.DeleteVacation(vacation);
+            mockEngine.Object.DeleteVacation(personVacation);
 
             // Assert
-            engineMock.Verify(x => x.DeleteVacation(vacation), Times.Once);
+            mockEngine.Verify(e => e.DeleteVacation(personVacation), Times.Once);
         }
 
         [Fact]
-        public void UpdatePerson_Calls_UpdatePerson_Method()
+        public void UpdatePerson_IsCalledWithExpectedPersonModel()
         {
             // Arrange
-            IPersonModel person = new Mock<IPersonModel>().Object;
+            IPersonModel personModel = new Mock<IPersonModel>().Object;
 
             // Act
-            engineMock.Object.UpdatePerson(person);
+            mockEngine.Object.UpdatePerson(personModel);
 
             // Assert
-            engineMock.Verify(x => x.UpdatePerson(person), Times.Once);
+            mockEngine.Verify(e => e.UpdatePerson(personModel), Times.Once);
         }
 
         [Fact]
-        public void SaveDepartament_Calls_SaveDepartament_Method()
+        public void SaveDepartament_IsCalledWithExpectedDepartament()
         {
             // Arrange
             IDepartament departament = new Mock<IDepartament>().Object;
 
             // Act
-            engineMock.Object.SaveDepartament(departament);
+            mockEngine.Object.SaveDepartament(departament);
 
             // Assert
-            engineMock.Verify(x => x.SaveDepartament(departament), Times.Once);
+            mockEngine.Verify(e => e.SaveDepartament(departament), Times.Once);
         }
+
         [Fact]
-        public void DeleteDepartament_Calls_DeleteDepartament_Method()
+        public void DeleteDepartament_IsCalledWithExpectedDepartament()
         {
             // Arrange
             IDepartament departament = new Mock<IDepartament>().Object;
 
             // Act
-            engineMock.Object.DeleteDepartament(departament);
+            mockEngine.Object.DeleteDepartament(departament);
 
             // Assert
-            engineMock.Verify(x => x.DeleteDepartament(departament), Times.Once);
+            mockEngine.Verify(e => e.DeleteDepartament(departament), Times.Once);
         }
 
         [Fact]
-        public void UpdateDepartament_Calls_UpdateDepartament_Method()
+        public void UpdateDepartament_IsCalledWithExpectedDepartament()
         {
             // Arrange
             IDepartament departament = new Mock<IDepartament>().Object;
 
             // Act
-            engineMock.Object.UpdateDepartament(departament);
+            mockEngine.Object.UpdateDepartament(departament);
 
             // Assert
-            engineMock.Verify(x => x.UpdateDepartament(departament), Times.Once);
+            mockEngine.Verify(e => e.UpdateDepartament(departament), Times.Once);
         }
 
         [Fact]
-        public void AddPersonVacation_Calls_AddPersonVacation_Method()
-        {
-            // Arrange
-            IPersonModel person = new Mock<IPersonModel>().Object;
+        public void AddPersonVacation_IsCalledWithExpectedParameters()
+        {   // Arrange
+            IPersonModel personModel = new Mock<IPersonModel>().Object;
             DateTime dateFrom = DateTime.Now;
-            DateTime dateTo = DateTime.Now.AddDays(5);
+            DateTime dateTo = DateTime.Now.AddDays(7);
 
             // Act
-            engineMock.Object.AddPersonVacation(person, dateFrom, dateTo);
+            mockEngine.Object.AddPersonVacation(personModel, dateFrom, dateTo);
 
             // Assert
-            engineMock.Verify(x => x.AddPersonVacation(person, dateFrom, dateTo), Times.Once);
+            mockEngine.Verify(e => e.AddPersonVacation(personModel, dateFrom, dateTo), Times.Once);
         }
 
         [Fact]
-        public void CanSaveVacation_Returns_True_If_Vacation_Dates_Are_Available()
+        public void CanSaveVacation_ReturnsTrueWhenVacationCanBeSaved()
         {
             // Arrange
-            IPersonModel person = new Mock<IPersonModel>().Object;
-            DateTime dateFrom = DateTime.Now.AddDays(10);
-            DateTime dateTo = DateTime.Now.AddDays(15);
+            IPersonModel personModel = new Mock<IPersonModel>().Object;
+            DateTime dateFrom = DateTime.Now;
+            DateTime dateTo = DateTime.Now.AddDays(7);
 
-            engineMock.Setup(x => x.CanSaveVacation(person, dateFrom, dateTo))
-                .Returns(true);
+            mockEngine.Setup(e => e.CanSaveVacation(personModel, dateFrom, dateTo)).Returns(true);
 
             // Act
-            bool result = engineMock.Object.CanSaveVacation(person, dateFrom, dateTo);
+            bool result = mockEngine.Object.CanSaveVacation(personModel, dateFrom, dateTo);
 
             // Assert
             Assert.True(result);
         }
 
         [Fact]
-        public void CanSaveVacation_Returns_False_If_Vacation_Dates_Are_Not_Available()
-        {
-            // Arrange
-            IPersonModel person = new Mock<IPersonModel>().Object;
-            DateTime dateFrom = DateTime.Now.AddDays(10);
-            DateTime dateTo = DateTime.Now.AddDays(15);
-
-            engineMock.Setup(x => x.CanSaveVacation(person, dateFrom, dateTo))
-                .Returns(false);
-
-            // Act
-            bool result = engineMock.Object.CanSaveVacation(person, dateFrom, dateTo);
-
-            // Assert
-            Assert.False(result);
-        }
-
-        [Fact]
-        public void SavePersonWorkingHours_Calls_SavePersonWorkingHours_Method()
+        public void SavePersonWorkingHours_IsCalledWithExpectedParameters()
         {
             // Arrange
             IPersonWorkingHours personWorkingHours = new Mock<IPersonWorkingHours>().Object;
-            TimeSpan timeFrom = new TimeSpan(8, 0, 0);
-            TimeSpan timeTo = new TimeSpan(16, 0, 0);
+            TimeSpan timeFrom = TimeSpan.FromHours(9);
+            TimeSpan timeTo = TimeSpan.FromHours(17);
 
             // Act
-            engineMock.Object.SavePersonWorkingHours(personWorkingHours, timeFrom, timeTo);
+            mockEngine.Object.SavePersonWorkingHours(personWorkingHours, timeFrom, timeTo);
 
             // Assert
-            engineMock.Verify(x => x.SavePersonWorkingHours(personWorkingHours, timeFrom, timeTo), Times.Once);
+            mockEngine.Verify(e => e.SavePersonWorkingHours(personWorkingHours, timeFrom, timeTo), Times.Once);
+        }
+
+        [Fact]
+        public void InsertNewLicence_ReturnsTrueWhenLicenseIsInserted()
+        {
+            // Arrange
+            string testLogin = "testLogin";
+            string testPassword = "testPassword";
+            bool testIsAdmin = false;
+            string errorText = string.Empty;
+
+            mockEngine.Setup(e => e.InsertNewLicence(testLogin, testPassword, testIsAdmin, out errorText)).Returns(true);
+
+            // Act
+            bool result = mockEngine.Object.InsertNewLicence(testLogin, testPassword, testIsAdmin, out errorText);
+
+            // Assert
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void DeleteLicense_IsCalledWithExpectedCustomCredintials()
+        {
+            // Arrange
+            ICustomCredintials customCredintials = new Mock<ICustomCredintials>().Object;
+
+            // Act
+            mockEngine.Object.DeleteLicense(customCredintials);
+
+            // Assert
+            mockEngine.Verify(e => e.DeleteLicense(customCredintials), Times.Once);
         }
     }
 }

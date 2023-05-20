@@ -32,7 +32,10 @@ namespace HumanResourcesManagement.Presenter
             }
             string _filePath = view.GetSaveFilePath("PDF Files (*.pdf)|*.pdf");
             if (string.IsNullOrEmpty(_filePath))
+            {
+                view.ShowMessageBox("The operation has been canceled!");
                 return;
+            }
 
             Document document = new Document();
             Font _headersFont = new Font(BaseFont.CreateFont(FontName, BaseFont.CP1250, true), 20);

@@ -209,10 +209,8 @@ namespace HumanResourcesManagement.View
             this.tbEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbEmail.BackColor = System.Drawing.SystemColors.Control;
             this.tbEmail.Location = new System.Drawing.Point(3, 139);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.ReadOnly = true;
             this.tbEmail.Size = new System.Drawing.Size(603, 20);
             this.tbEmail.TabIndex = 12;
             this.tbEmail.Text = "bartosz.turecki@gmail.com";

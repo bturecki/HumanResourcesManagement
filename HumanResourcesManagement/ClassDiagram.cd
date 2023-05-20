@@ -1,254 +1,387 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="HumanResourcesManagement.View.FrmWorkingHours" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="14.25" Y="2.25" Width="1.5" />
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="HumanResourcesManagement.View.BaseForm">
+    <Position X="28.25" Y="14" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAABABACAAAAKggACAQAACgAgEAAAAAAAAAgAABAE=</HashCode>
-      <FileName>View\FrmWorkingHours.cs</FileName>
+      <HashCode>AAAAAAEAACAABAAAAACAAAACAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>View\BaseForm.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="HumanResourcesManagement.View.FrmAddEditDepartament" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="0.75" Y="2.25" Width="1.5" />
+  <Class Name="HumanResourcesManagement.View.FrmAddEditDepartament">
+    <Position X="18" Y="17.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAEAACAEBBAAAACAAAACAAAIEBAAAEAAAAIAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAEABAAAACAAAACAAAIEBAAAEAAAAIAAAA=</HashCode>
       <FileName>View\FrmAddEditDepartament.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="HumanResourcesManagement.View.FrmAddEditPerson" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="2.25" Y="2.25" Width="1.5" />
+  <Class Name="HumanResourcesManagement.View.FrmAddEditPerson">
+    <Position X="22.5" Y="17.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAAEHEAACAgBBAAAAGEAAACAAAIABAIAEJAAA4AACg=</HashCode>
+      <HashCode>gAAAEHAAACAgABAAAAGEAAACAAAIABAIAEJAAA4AACg=</HashCode>
       <FileName>View\FrmAddEditPerson.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="HumanResourcesManagement.View.FrmAddNewVacation" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="3.75" Y="2.25" Width="1.5" />
+  <Class Name="HumanResourcesManagement.View.FrmAddNewVacation">
+    <Position X="27" Y="17.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIQAABEAACAABBCgAACBAAACgAAAABAAAkAQAYIEAAA=</HashCode>
+      <HashCode>AIQAABAAACAAABCgAACBAAACgAAAABAAAkAQAYIEAAA=</HashCode>
       <FileName>View\FrmAddNewVacation.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="HumanResourcesManagement.View.FrmChangeWorkingHours" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="5.25" Y="2.25" Width="1.5" />
+  <Class Name="HumanResourcesManagement.View.FrmChangeWorkingHours">
+    <Position X="31.5" Y="17.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAQQAAABCQABAAAAACBAAACAAAIABAAAEAAAAIAAAA=</HashCode>
+      <HashCode>BAAQQAAABCQAAAAAAACBAAACAAAIABAAAEAAAAIAAAA=</HashCode>
       <FileName>View\FrmChangeWorkingHours.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="HumanResourcesManagement.View.FrmDepartaments" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="6.75" Y="2.25" Width="1.5" />
+  <Class Name="HumanResourcesManagement.View.FrmDepartaments">
+    <Position X="36" Y="17.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gggAABAAACAAEAAAAACAAAADgAEEAAAKABCGACwAAAA=</HashCode>
+      <HashCode>kggAABAAACAAEAQAAACACAADgAAEAAAoABCGAAwAAAA=</HashCode>
       <FileName>View\FrmDepartaments.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="HumanResourcesManagement.View.FrmMails" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="8.25" Y="2.25" Width="1.5" />
+  <Class Name="HumanResourcesManagement.View.FrmExportData">
+    <Position X="40.5" Y="17.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAEABMAJiEIABCgAACBAAASgAAAAAAAAgCAAQMAgAA=</HashCode>
+      <HashCode>AAAABAIABCIAAAAAAACgAEYCAAAAAAAAEEAABAAAIAA=</HashCode>
+      <FileName>View\FrmExportData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HumanResourcesManagement.View.FrmLicenses">
+    <Position X="13.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIABBAACgAAMQQAACAAQCCiACIgAAiAmCQABAAAAI=</HashCode>
+      <FileName>View\FrmLicenses.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HumanResourcesManagement.View.FrmLoginLogs">
+    <Position X="20.25" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABCAAGAAAAQAAACAAABCAAAAAAAggAAARBAAAAA=</HashCode>
+      <FileName>View\FrmLoginLogs.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HumanResourcesManagement.View.FrmMails">
+    <Position X="24.75" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAEABIAJiEIABCgAACBAAASgAAAAAAAAgCAAQMAgAA=</HashCode>
       <FileName>View\FrmMails.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="HumanResourcesManagement.View.FrmPeople" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="11.25" Y="2.25" Width="1.5" />
+  <Class Name="HumanResourcesManagement.View.FrmPeople">
+    <Position X="29.25" Y="17.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ggiAADAAACAAAAAgEACBAAACgAEEEAACAgCIATAAAAA=</HashCode>
+      <HashCode>ggiAADAAACABAAQgEACBCAACgAAEEAAgAgCIARAAAAA=</HashCode>
       <FileName>View\FrmPeople.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="HumanResourcesManagement.View.FrmPeopleVacations" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="12.75" Y="2.25" Width="1.5" />
+  <Class Name="HumanResourcesManagement.View.FrmPeopleVacations">
+    <Position X="33.75" Y="17.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABABAAICAABBIFAASAAAACAAEgAACAgAAAAIAAFAM=</HashCode>
+      <HashCode>AAABABAAICgABBYFAASACAACAAAgAACAgAAAAIAAFAM=</HashCode>
       <FileName>View\FrmPeopleVacations.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="HumanResourcesManagement.FrmMain" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="9.75" Y="2.25" Width="1.5" />
+  <Class Name="HumanResourcesManagement.View.FrmWorkingHours">
+    <Position X="38.25" Y="17.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BwAhACEASGAAEAABIICQACACAAACAAAgIAACAAAAgAA=</HashCode>
+      <HashCode>AAAAABABACAAAAKggACASAACgAgEAAAgAAAAAAAABAE=</HashCode>
+      <FileName>View\FrmWorkingHours.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HumanResourcesManagement.FrmLogin">
+    <Position X="42.75" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAEAAAQCAAAACAEAIAQACAkAQAAQEAAA=</HashCode>
+      <FileName>View\FrmLogin.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HumanResourcesManagement.FrmMain">
+    <Position X="15.75" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BwAjACkGSGAAEAABIYmQASACBAAGAAAwIAACACBAhCA=</HashCode>
       <FileName>View\FrmMain.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="HumanResourcesManagement.Presenter.PresenterWorkingHours" Collapsed="true">
-    <Position X="14.25" Y="0.5" Width="1.5" />
+  <Class Name="HumanResourcesManagement.Presenter.PresenterAddEditDepartament">
+    <Position X="18" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAhAAAABAAAAAAAAAA=</HashCode>
-      <FileName>Presenter\PresenterWorkingHours.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="View" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="HumanResourcesManagement.Presenter.PresenterAddEditDepartament" Collapsed="true">
-    <Position X="0.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAIAABAAAABAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAIAAAAAAAAQAAAAQAAAA=</HashCode>
       <FileName>Presenter\PresenterAddEditDepartament.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="View" />
+      <Field Name="view" />
+      <Field Name="engine" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="HumanResourcesManagement.Presenter.PresenterAddEditPerson" Collapsed="true">
-    <Position X="2.25" Y="0.5" Width="1.5" />
+  <Class Name="HumanResourcesManagement.Presenter.PresenterAddEditPerson">
+    <Position X="21.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAYAAhAAAABAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAIAAgAAAAAQAAAAQAAAA=</HashCode>
       <FileName>Presenter\PresenterAddEditPerson.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="View" />
+      <Field Name="view" />
+      <Field Name="engine" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="HumanResourcesManagement.Presenter.PresenterAddNewVacation" Collapsed="true">
-    <Position X="3.75" Y="0.5" Width="1.5" />
+  <Class Name="HumanResourcesManagement.Presenter.PresenterAddNewVacation">
+    <Position X="23.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAhAAAABAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAgAAAAAQAAAAQAAAA=</HashCode>
       <FileName>Presenter\PresenterAddNewVacation.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="View" />
+      <Field Name="view" />
+      <Field Name="engine" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="HumanResourcesManagement.Presenter.PresenterChangeWorkingHours" Collapsed="true">
-    <Position X="5.25" Y="0.5" Width="1.5" />
+  <Class Name="HumanResourcesManagement.Presenter.PresenterChangeWorkingHours">
+    <Position X="27" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAIBAAAABAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAgAAAAAQAAAA=</HashCode>
       <FileName>Presenter\PresenterChangeWorkingHours.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="View" />
+      <Field Name="engine" />
+      <Field Name="iew" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="HumanResourcesManagement.Presenter.PresenterDepartaments" Collapsed="true">
-    <Position X="6.75" Y="0.5" Width="1.5" />
+  <Class Name="HumanResourcesManagement.Presenter.PresenterDepartaments">
+    <Position X="31.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAAAAAAAAAIICAAAAAAAAhAAAABAQAAAAAAAA=</HashCode>
+      <HashCode>AAAQAAAAAAAAAAAAIICAAAAAAAAgAAAAAQQAAAQAAAA=</HashCode>
       <FileName>Presenter\PresenterDepartaments.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="View" />
+      <Field Name="view" />
+      <Field Name="engine" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="HumanResourcesManagement.Presenter.PresenterMails" Collapsed="true">
-    <Position X="8.25" Y="0.5" Width="1.5" />
+  <Class Name="HumanResourcesManagement.Presenter.PresenterExportData">
+    <Position X="15.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAhAAAABAAAAAAAAAA=</HashCode>
+      <HashCode>CgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAQAAAA=</HashCode>
+      <FileName>Presenter\PresenterExportData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="engine" />
+      <Field Name="view" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HumanResourcesManagement.Presenter.PresenterLicenses">
+    <Position X="15.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAACAAAAAIAAgAAAAAQAAAAQAAAA=</HashCode>
+      <FileName>Presenter\PresenterLicenses.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="view" />
+      <Field Name="engine" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HumanResourcesManagement.Presenter.PresenterLogin">
+    <Position X="20.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQABAAQAAAA=</HashCode>
+      <FileName>Presenter\PresenterLogin.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="view" />
+      <Field Name="engine" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HumanResourcesManagement.Presenter.PresenterLoginLogs">
+    <Position X="24.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAQAAAAQAAAA=</HashCode>
+      <FileName>Presenter\PresenterLoginLogs.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="engine" />
+      <Field Name="view" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HumanResourcesManagement.Presenter.PresenterMails">
+    <Position X="28" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAQAAAAQAAAA=</HashCode>
       <FileName>Presenter\PresenterMails.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="View" />
+      <Field Name="view" />
+      <Field Name="engine" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="HumanResourcesManagement.Presenter.PresenterMain" Collapsed="true">
-    <Position X="9.75" Y="0.5" Width="1.5" />
+  <Class Name="HumanResourcesManagement.Presenter.PresenterMain">
+    <Position X="25.25" Y="11.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAJAAAAAAAAAAAAABAAAAAAAAAAAQCAA=</HashCode>
+      <HashCode>AAARAAAACgAAAJAAAAAAAAgAAAAAQAAAAQAAAAQQCAA=</HashCode>
       <FileName>Presenter\PresenterMain.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="View" />
+      <Field Name="view" />
+      <Field Name="engine" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="HumanResourcesManagement.Presenter.PresenterPeople" Collapsed="true">
-    <Position X="11.25" Y="0.5" Width="1.5" />
+  <Class Name="HumanResourcesManagement.Presenter.PresenterPeople">
+    <Position X="34.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQACAAAAAAICAAAAAAAAhAAAABAAAAAAAACA=</HashCode>
+      <HashCode>AAAAAAAAQACAAAAAAICAAAAAAAAgAAAAAQAAAAQAACA=</HashCode>
       <FileName>Presenter\PresenterPeople.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="View" />
+      <Field Name="view" />
+      <Field Name="engine" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="HumanResourcesManagement.Presenter.PresenterPeopleVacations" Collapsed="true">
-    <Position X="12.75" Y="0.5" Width="1.5" />
+  <Class Name="HumanResourcesManagement.Presenter.PresenterPeopleVacations">
+    <Position X="13" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAAIAAAAAEAAAAAAAAAAABAAAABCAAAAAAAAA=</HashCode>
+      <HashCode>AAAQAAAAAIAAAAAEAAAAAAAAAAAAAAAAASAAAAQAAAA=</HashCode>
       <FileName>Presenter\PresenterPeopleVacations.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="View" />
+      <Field Name="view" />
+      <Field Name="engine" />
     </ShowAsAssociation>
   </Class>
-  <Interface Name="HumanResourcesManagement.Interface.IWorkingHours" Collapsed="true">
-    <Position X="14.25" Y="1.5" Width="1.5" />
+  <Class Name="HumanResourcesManagement.Presenter.PresenterWorkingHours">
+    <Position X="18.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAABAAAAAAAAIAAAAAAAAAAAAEAAAAAAAAAAAABAA=</HashCode>
-      <FileName>Interface\IWorkingHours.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAgAAAAAQAAAAQAAAA=</HashCode>
+      <FileName>Presenter\PresenterWorkingHours.cs</FileName>
     </TypeIdentifier>
-  </Interface>
-  <Interface Name="HumanResourcesManagement.Interface.IAddEditDepartament" Collapsed="true">
-    <Position X="0.75" Y="1.5" Width="1.5" />
+    <ShowAsAssociation>
+      <Field Name="engine" />
+      <Field Name="view" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="HumanResourcesManagement.Interface.IAddEditDepartament">
+    <Position X="18" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAEAAAAABAAAAAAAAAAAAAAIEAAAAEAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIEAAAAEAAAAAAAAA=</HashCode>
       <FileName>Interface\IAddEditDepartament.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="HumanResourcesManagement.Interface.IAddEditPerson" Collapsed="true">
-    <Position X="2.25" Y="1.5" Width="1.5" />
+  <Interface Name="HumanResourcesManagement.Interface.IAddEditPerson">
+    <Position X="24.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAHEAAAAgBAAAAAAAAAAAAAAIAAAAAEBAAAAAAAg=</HashCode>
+      <HashCode>AAAAAHAAAAAgAAAAAAAAAAAAAAAIAAAAAEBAAAAAAAg=</HashCode>
       <FileName>Interface\IAddEditPerson.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="HumanResourcesManagement.Interface.IAddNewVacation" Collapsed="true">
-    <Position X="3.75" Y="1.5" Width="1.5" />
+  <Interface Name="HumanResourcesManagement.Interface.IAddNewVacation">
+    <Position X="29.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIAAABEAAAAABAAAAAAAAAAAAAAAABAAAEAAAQAEAAA=</HashCode>
+      <HashCode>AIAAABAAAAAAAAAAAAAAAAAAAAAAABAAAEAAAQAEAAA=</HashCode>
       <FileName>Interface\IAddNewVacation.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="HumanResourcesManagement.Interface.IChangeWorkingHours" Collapsed="true">
-    <Position X="5.25" Y="1.5" Width="1.5" />
+  <Interface Name="HumanResourcesManagement.Interface.IBaseForm">
+    <Position X="28.25" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAQAAAAAAAABAAAAAAAAAAAAAAIAAAAAEAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAEAAAAABAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Interface\IBaseForm.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HumanResourcesManagement.Interface.IChangeWorkingHours">
+    <Position X="36" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAQAAAAAAAAAAAAAAAAAAAAAAAIAAAAAEAAAAAAAAA=</HashCode>
       <FileName>Interface\IChangeWorkingHours.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="HumanResourcesManagement.Interface.IDepartaments" Collapsed="true">
-    <Position X="6.75" Y="1.5" Width="1.5" />
+  <Interface Name="HumanResourcesManagement.Interface.IDepartaments">
+    <Position X="40.5" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAAABAAAAAAEAAAAAAAAAAAgAAEAAAAABCEACAAAAA=</HashCode>
+      <HashCode>kAAAABAAAAAAEAAAAAAACAAAgAAEAAAAABCEAAAAAAA=</HashCode>
       <FileName>Interface\IDepartaments.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="HumanResourcesManagement.Interface.IMails" Collapsed="true">
-    <Position X="8.25" Y="1.5" Width="1.5" />
+  <Interface Name="HumanResourcesManagement.Interface.IExportData">
+    <Position X="13.5" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEABEAAgAAAAAAAAAAAAAAAAAAAAAAAACAAQMAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAEEAABAAAIAA=</HashCode>
+      <FileName>Interface\IExportData.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HumanResourcesManagement.Interface.ILicenses">
+    <Position X="20.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAQAAiAAAAAACAECQAAAAAAA=</HashCode>
+      <FileName>Interface\ILicenses.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HumanResourcesManagement.Interface.ILogin">
+    <Position X="27" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAACAAAQAAQAAAA=</HashCode>
+      <FileName>Interface\ILogin.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HumanResourcesManagement.Interface.ILoginLogs">
+    <Position X="31.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Interface\ILoginLogs.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HumanResourcesManagement.Interface.IMails">
+    <Position X="33.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEABAAAgAAAAAAAAAAAAAAAAAAAAAAAACAAQMAAAA=</HashCode>
       <FileName>Interface\IMails.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="HumanResourcesManagement.Interface.IMain" Collapsed="true">
-    <Position X="9.75" Y="1.5" Width="1.5" />
+  <Interface Name="HumanResourcesManagement.Interface.IMain">
+    <Position X="38.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BQAgAAAAAEAAEAAAIAAQAAAAAAAAAAAgIAACAAAAgAA=</HashCode>
+      <HashCode>BQAiAAgCAEAAEAABIAkQAAAAAAAEAAAgIAACACAAhCA=</HashCode>
       <FileName>Interface\IMain.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="HumanResourcesManagement.Interface.IPeople" Collapsed="true">
-    <Position X="11.25" Y="1.5" Width="1.5" />
+  <Interface Name="HumanResourcesManagement.Interface.IPeople">
+    <Position X="42.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAABAAAAAAAAAgEAAAAAAAgAAEAAAAAACAATAAAAA=</HashCode>
+      <HashCode>AAAAABAAAAABAAAgEAAACAAAgAAEAAAAAACAARAAAAA=</HashCode>
       <FileName>Interface\IPeople.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="HumanResourcesManagement.Interface.IPeopleVacations" Collapsed="true">
-    <Position X="12.75" Y="1.5" Width="1.5" />
+  <Interface Name="HumanResourcesManagement.Interface.IPeopleVacations">
+    <Position X="15.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAABAAIAAAAAIBAAAAAAAAAAAAAACAgAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAABAAIAgAAAIBAAAACAAAAAAAAACAgAAAAAAAAAA=</HashCode>
       <FileName>Interface\IPeopleVacations.cs</FileName>
     </TypeIdentifier>
+  </Interface>
+  <Interface Name="HumanResourcesManagement.Interface.IWorkingHours">
+    <Position X="22.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAIAAAAACAAAAAAEAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Interface\IWorkingHours.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DataLibrary.Abstract.IEngine" Collapsed="true">
+    <Position X="18" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
   </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

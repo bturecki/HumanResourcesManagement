@@ -155,7 +155,7 @@ namespace HumanResourcesManagement.View
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPeopleVacations";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "People vacations";
+            this.Text = "List of vacations";
             this.Shown += new System.EventHandler(this.FrmPeopleVacations_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.gridVacations)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPersonVacationBindingSource)).EndInit();

@@ -1,38 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="DataLibrary.Entities.PersonWorkingHours" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="0.75" Y="1.5" Width="1.5" />
+  <Class Name="DataLibrary.Entities.CustomCredintials" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAgAGAAICCAgCAAAAAAAQAAAAAAEAAABAAAAAAAAAg=</HashCode>
-      <FileName>Entities\PersonWorkingHours.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAACAAAQAAAAAAA=</HashCode>
+      <FileName>Entities\CustomCredintials.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="DataLibrary.Entities.Departament" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="5" Y="1.25" Width="1.5" />
+    <Position X="12.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\Departament.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="DataLibrary.Entities.EmailCredintials" Collapsed="true">
-    <Position X="10.25" Y="1.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Entities\EmailCredintials.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="DataLibrary.Entities.Engine" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="6.75" Y="1.25" Width="1.5" />
+    <Position X="5.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAgBACIAAECAAAAEBBAAAAAAAAgQAAgAQgAAiA=</HashCode>
+      <HashCode>kACAIAAhBACIQAEAAAAAEBBAAAgAAAAgQAAgBQiAAiA=</HashCode>
       <FileName>Entities\Engine.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="DataLibrary.Entities.LoginLogs" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAQAAAAAAAAAAAAAQAAAAQAAAAAAA=</HashCode>
+      <FileName>Entities\LoginLogs.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
   <Class Name="DataLibrary.Entities.MailToSend" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="8.5" Y="1.25" Width="1.5" />
+    <Position X="7.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAgCAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\MailToSend.cs</FileName>
@@ -40,7 +41,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="DataLibrary.Entities.PersonModel" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="3.25" Y="1.75" Width="1.5" />
+    <Position X="9" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAGAAACCAgAAAAAAAAAAAAAAAEAAABAAAAAAAAAg=</HashCode>
       <FileName>Entities\PersonModel.cs</FileName>
@@ -48,54 +49,104 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="DataLibrary.Entities.PersonVacation" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="10.25" Y="1.25" Width="1.5" />
+    <Position X="14.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAAAAAAAAAAAIAAAQAAEAABAAAABAAAEEABA=</HashCode>
+      <HashCode>QAAAAAAAAAAAAAAAAAAIAAAQAAAAABAAAABAAAEEABA=</HashCode>
       <FileName>Entities\PersonVacation.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="DataLibrary.Abstract.IPersonWorkingHours" Collapsed="true">
-    <Position X="0.75" Y="0.5" Width="1.5" />
+  <Class Name="DataLibrary.Entities.PersonWorkingHours" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAgAEAAIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAg=</HashCode>
-      <FileName>Abstract\IPersonWorkingHours.cs</FileName>
+      <HashCode>AAAgAGAAICCAgCAAAAAAAQAAAAAAEAAABAAAAAAAAAg=</HashCode>
+      <FileName>Entities\PersonWorkingHours.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLibrary.Tools.DateHelper" Collapsed="true">
+    <Position X="7.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tools\DateHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataLibrary.CurrentUser" Collapsed="true">
+    <Position X="5.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>CurrentUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataLibrary.Factory" Collapsed="true">
+    <Position X="9" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAQAAAEAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Factory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="DataLibrary.Abstract.ICustomCredintials" Collapsed="true">
+    <Position X="3.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Abstract\ICustomCredintials.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="DataLibrary.Abstract.IDepartament" Collapsed="true">
-    <Position X="5" Y="0.5" Width="1.5" />
+    <Position X="12.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Abstract\IDepartament.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="DataLibrary.Abstract.IEngine" Collapsed="true">
-    <Position X="6.75" Y="0.5" Width="1.5" />
+    <Position X="5.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAgBACIAAEAAAAAEBBAAAAAAAAAQAAgAQgAAiA=</HashCode>
+      <HashCode>kACAIAAgBACIQAEAAAAAEBBAAAgAAAAAQAAgBQiAAiA=</HashCode>
       <FileName>Abstract\IEngine.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="DataLibrary.Abstract.ILoginLogs" Collapsed="true">
+    <Position X="2" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAA=</HashCode>
+      <FileName>Abstract\ILoginLogs.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Interface Name="DataLibrary.Abstract.IMailToSend" Collapsed="true">
-    <Position X="8.5" Y="0.5" Width="1.5" />
+    <Position X="7.25" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAgCAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Abstract\IMailToSend.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="DataLibrary.Abstract.IPersonModel" Collapsed="true">
-    <Position X="3.25" Y="1" Width="1.5" />
+    <Position X="9" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAGAAACCAgAAAAAAAAAAAAAAAEAAABAAAAAAAAAg=</HashCode>
       <FileName>Abstract\IPersonModel.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="DataLibrary.Abstract.IPersonVacation" Collapsed="true">
-    <Position X="10.25" Y="0.5" Width="1.5" />
+    <Position X="14.25" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAAAAAAAAAAIAAAQAAAAABAAAAAAAAAEABA=</HashCode>
       <FileName>Abstract\IPersonVacation.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="DataLibrary.Abstract.IPersonWorkingHours" Collapsed="true">
+    <Position X="10.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAEAAIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Abstract\IPersonWorkingHours.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="DataLibrary.Enums.EnumLoginLogType" Collapsed="true">
+    <Position X="10.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Enums\EnumLoginLogType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

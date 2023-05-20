@@ -131,7 +131,7 @@ namespace HumanResourcesManagement.View
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmWorkingHours";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Working hours";
+            this.Text = "List of working hours";
             this.Shown += new System.EventHandler(this.FrmWorkingHours_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.gvWorkingHours)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPersonWorkingHoursBindingSource)).EndInit();
