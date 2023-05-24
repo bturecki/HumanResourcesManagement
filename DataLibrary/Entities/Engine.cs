@@ -179,8 +179,8 @@ namespace DataLibrary.Entities
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 string query = "SELECT * FROM LoginCredintials t WHERE t.login = @Login AND t.password = @Password;";
-                CustomCredintials result = cnn.Query<CustomCredintials>(query, new { Login = pLogin, Password = hashedPassword }).FirstOrDefault();
-                return result != null;
+                CustomCredintials result = cnn.Query<CustomCredintials>(query, new { Login = pLogin, Password = hashedPassword }).SingleOrDefault();
+                return result != default;
             }
         }
         public bool CheckIfLicenseLoginArleadyExists(string pLogin)
