@@ -106,7 +106,7 @@ namespace DataLibrary.Entities
                 string query = "select t.id rowid, t.PersonID, t.DateFrom DateFromSec, t.DateTo DateToSec, p.FirstName PersonName, p.LastName PersonLastName " +
                                "from Vacation t inner join Person p on t.PersonID = p.ID " +
                                "where t.PersonID = @PersonID and ((t.DateFrom between @DateFrom and @DateTo) or (t.DateTo between @DateFrom and @DateTo));";
-                var parameters = new DynamicParameters();
+                DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@PersonID", pPersonModel.ID);
                 parameters.Add("@DateFrom", ConvertToUnixTimestamp(pDateFrom));
                 parameters.Add("@DateTo", ConvertToUnixTimestamp(pDateTo));
@@ -177,7 +177,7 @@ namespace DataLibrary.Entities
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                return cnn.Query<CustomCredintials>("select t.login, t.password from LoginCredintials t;").FirstOrDefault(x => x.Login == pLogin && x.Password == pPassword) != default;
+                return cnn.Query<CustomCredintials>("select t.login, t.password from LoginCredintials t;").FirstOrDefault(x => x.Login == pLogin && x.Password == HashPassword(pPassword)) != default;
             }
         }
         public bool CheckIfLicenseLoginArleadyExists(string pLogin)
@@ -189,6 +189,15 @@ namespace DataLibrary.Entities
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 return cnn.Query<CustomCredintials>("select t.login, t.password from LoginCredintials t where t.is_admin = 1;").FirstOrDefault(x => x.Login == pLogin) != default;
+            }
+        }
+        public string HashPassword(string password)
+        {
+            using (System.Security.Cryptography.SHA256 sha256 = System.Security.Cryptography.SHA256.Create())
+            {
+                byte[] passwordBytes = System.Text.Encoding.UTF8.GetBytes(password);
+                byte[] hashedPasswordBytes = sha256.ComputeHash(passwordBytes);
+                return System.Convert.ToBase64String(hashedPasswordBytes);
             }
         }
         public bool InsertNewLicence(string pLogin, string pPassword, bool pIsAdmin, out string pErrorText)
@@ -209,8 +218,9 @@ namespace DataLibrary.Entities
             {
                 using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
                 {
+                    string hashedPassword = HashPassword(pPassword);
                     cnn.Execute("insert into LoginCredintials (Login, Password, is_admin) values (@Login, @Password, @IsAdmin)",
-                        new { Login = pLogin, Password = pPassword, IsAdmin = pIsAdmin });
+                        new { Login = pLogin, Password = hashedPassword, IsAdmin = pIsAdmin });
                 }
                 pErrorText = string.Empty;
                 return true;
