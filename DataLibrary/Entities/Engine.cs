@@ -175,9 +175,12 @@ namespace DataLibrary.Entities
         }
         public bool CheckIfLoginCredintialsAreValid(string pLogin, string pPassword)
         {
+            string hashedPassword = HashPassword(pPassword);
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                return cnn.Query<CustomCredintials>("select t.login, t.password from LoginCredintials t;").FirstOrDefault(x => x.Login == pLogin && x.Password == HashPassword(pPassword)) != default;
+                string query = "SELECT * FROM LoginCredintials t WHERE t.login = @Login AND t.password = @Password;";
+                CustomCredintials result = cnn.Query<CustomCredintials>(query, new { Login = pLogin, Password = hashedPassword }).FirstOrDefault();
+                return result != null;
             }
         }
         public bool CheckIfLicenseLoginArleadyExists(string pLogin)
