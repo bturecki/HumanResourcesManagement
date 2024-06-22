@@ -11,4 +11,4 @@ Kluczowe Funkcje:
 - Historia Logowania: Rejestrowanie historii logowania użytkowników.
 
 Bezpieczeństwo:
-Aplikacja zapewnia odpowiednie poziomy dostępu, gdzie administratorzy mają rozszerzone uprawnienia do zarządzania danymi, podczas gdy zwykli użytkownicy mają ograniczony dostęp do funkcji zarządzania firmą.
+- Aplikacja zapewnia odpowiednie poziomy dostępu, gdzie administratorzy mają rozszerzone uprawnienia do zarządzania danymi, podczas gdy zwykli użytkownicy mają ograniczony dostęp do funkcji zarządzania firmą.
