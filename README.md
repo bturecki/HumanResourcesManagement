@@ -9,3 +9,6 @@ Kluczowe Funkcje:
 - Wysyłanie Maili: Wysyłanie wiadomości email na skrzynki pocztowe pracowników.
 - Generowanie Raportów: Tworzenie raportów zbiorczych w formacie PDF.
 - Historia Logowania: Rejestrowanie historii logowania użytkowników.
+
+Bezpieczeństwo:
+Aplikacja zapewnia odpowiednie poziomy dostępu, gdzie administratorzy mają rozszerzone uprawnienia do zarządzania danymi, podczas gdy zwykli użytkownicy mają ograniczony dostęp do funkcji zarządzania firmą.
